@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>采购申请删除字段 A-REQ-DEL</title>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<div class="page">
+  <div class="tip">接口 <b>A-REQ-DEL</b> · <code>requisition.deleted</code>。仅删除事务<strong>提交成功后</strong>调用；删除前须保留原 FID/EntryId。一般不放进「同步到AMOS」组合菜单，属自动通知。</div>
+  <div class="panel">
+    <table class="grid">
+      <thead><tr><th>字段</th><th>类型</th><th>必填</th><th>说明与约束</th><th>会议结论</th></tr></thead>
+      <tbody>
+        <tr data-field-row data-path="subject.pid" data-type="string" data-req="是"><td><code>subject.pid</code></td><td>string</td><td>是</td><td>原申请 FID，与 data.requisitionId 相同；^[1-9][0-9]{0,29}$</td><td><select><option>纳入</option><option>待定</option><option>不纳入</option></select></td></tr>
+        <tr data-field-row data-path="sequence" data-type="integer" data-req="是"><td><code>sequence</code></td><td>integer</td><td>是</td><td>与 data.sourceVersion 数值相同</td><td><select><option>纳入</option><option>待定</option><option>不纳入</option></select></td></tr>
+        <tr data-field-row data-path="data.formId" data-type="string" data-req="是"><td><code>data.formId</code></td><td>string</td><td>是</td><td>固定 PUR_Requisition</td><td><select><option>纳入</option><option>待定</option><option>不纳入</option></select></td></tr>
+        <tr data-field-row data-path="data.requisitionId" data-type="string" data-req="是"><td><code>data.requisitionId</code></td><td>string</td><td>是</td><td>原申请 FID，不是单号</td><td><select><option>纳入</option><option>待定</option><option>不纳入</option></select></td></tr>
+        <tr data-field-row data-path="data.deletionScope" data-type="string" data-req="是"><td><code>data.deletionScope</code></td><td>string</td><td>是</td><td>document=整单；entries=部分明细</td><td><select><option>纳入</option><option>待定</option><option>不纳入</option></select></td></tr>
+        <tr data-field-row data-path="data.entryIds" data-type="string[]" data-req="条件"><td><code>data.entryIds</code></td><td>string[]</td><td>条件</td><td>entries 时 1～1000 个原 FEntryID；document 时禁止传</td><td><select><option>纳入</option><option>待定</option><option>不纳入</option></select></td></tr>
+        <tr data-field-row data-path="data.sourceVersion" data-type="string" data-req="是"><td><code>data.sourceVersion</code></td><td>string</td><td>是</td><td>同一 FID 持久递增删除版本；不可用随机数</td><td><select><option>纳入</option><option>待定</option><option>不纳入</option></select></td></tr>
+        <tr data-field-row data-path="data.deletedAt" data-type="string" data-req="是"><td><code>data.deletedAt</code></td><td>string</td><td>是</td><td>ISO8601 含时区；不得晚于 occurredAt</td><td><select><option>纳入</option><option>待定</option><option>不纳入</option></select></td></tr>
+        <tr data-field-row data-path="data.operationId" data-type="string" data-req="是"><td><code>data.operationId</code></td><td>string</td><td>是</td><td>删除操作稳定编号；重试不换号</td><td><select><option>纳入</option><option>待定</option><option>不纳入</option></select></td></tr>
+        <tr data-field-row data-path="data.billNo" data-type="string" data-req="否"><td><code>data.billNo</code></td><td>string</td><td>否</td><td>原单号，仅展示追踪</td><td><select><option>待定</option><option>纳入</option><option>不纳入</option></select></td></tr>
+        <tr data-field-row data-path="data.reason" data-type="string" data-req="否"><td><code>data.reason</code></td><td>string</td><td>否</td><td>删除原因，最长 500</td><td><select><option>待定</option><option>纳入</option><option>不纳入</option></select></td></tr>
+        <tr data-field-row data-path="data.operator.sourceUserId" data-type="string" data-req="条件"><td><code>data.operator.sourceUserId</code></td><td>string</td><td>条件</td><td>operator 出现时必填</td><td><select><option>待定</option><option>纳入</option><option>不纳入</option></select></td></tr>
+        <tr data-field-row data-path="data.operator.displayName" data-type="string" data-req="否"><td><code>data.operator.displayName</code></td><td>string</td><td>否</td><td>操作人姓名</td><td><select><option>待定</option><option>纳入</option><option>不纳入</option></select></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="confirm-bar">
+    <div class="sum">覆盖 CSV：申请整单/部分明细删除后同步。</div>
+    <button class="btn p" type="button" onclick="act('导出会议确认')">导出会议确认</button>
+  </div>
+</div>
+<script src="_ui.js"></script>
+</body>
+</html>

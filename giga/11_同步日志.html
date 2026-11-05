@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>同步日志</title>
+<link rel="stylesheet" href="common.css">
+</head>
+<body data-api="A-REQ-DEL">
+<div class="page">
+  <div class="toolbar">
+    <input type="text" id="qBill" placeholder="单据编号/FID" value="">
+    <select id="qApi">
+      <option selected>全部接口</option>
+      <option>A-003</option>
+      <option>A-007</option>
+      <option>A-REQ-DEL</option>
+      <option>A-PO-DEL</option>
+    </select>
+    <select id="qResult">
+      <option selected>全部结果</option>
+      <option>成功</option>
+      <option>失败</option>
+    </select>
+    <button class="btn p" type="button" onclick="act('查询日志')">查询</button>
+    <button class="btn" type="button" onclick="act('手工重发')">手工重发</button>
+    <button class="btn" type="button" onclick="act('同步报文')">同步报文</button>
+    <button class="btn" type="button" onclick="act('落库字段')">落库字段（内部）▸</button>
+  </div>
+
+  <div class="panel" style="margin-bottom:12px">
+    <table class="grid" id="logGrid">
+      <thead>
+        <tr>
+          <th><input type="checkbox" onclick="document.querySelectorAll('#logGrid tbody input[type=checkbox]').forEach(c=>c.checked=this.checked)"></th>
+          <th>时间</th>
+          <th>单据类型</th>
+          <th>触发</th>
+          <th>接口</th>
+          <th>单据</th>
+          <th>原单是否还在</th>
+          <th>通知 id / operationId</th>
+          <th>结果</th>
+          <th>recordPid</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- 采购申请 ×3：审核 / 删除 / 手工同步到AMOS -->
+        <tr data-scene="audit" data-bill-type="req">
+          <td><input type="checkbox"></td>
+          <td>2026-11-05 09:12:18</td>
+          <td>采购申请</td>
+          <td>审核</td>
+          <td><span class="tag sys">A-003</span></td>
+          <td>CGSQ2611050001 / FID 101</td>
+          <td><span class="tag on">仍在</span></td>
+          <td><code>kd-req-audit-001</code></td>
+          <td><span class="tag on">成功</span></td>
+          <td><code>REC-91001</code></td>
+          <td class="ops"><a href="javascript:;" onclick="act('同步报文')">报文</a></td>
+        </tr>
+        <tr class="selected" data-scene="after-del" data-del-fail="1" data-bill-type="req">
+          <td><input type="checkbox" checked></td>
+          <td>2026-11-05 15:42:08</td>
+          <td>采购申请</td>
+          <td>删除</td>
+          <td><span class="tag sys">A-REQ-DEL</span></td>
+          <td>CGSQ000088 / FID 88 / Entry 21</td>
+          <td><span class="tag err">已删除</span></td>
+          <td><code>kd-del-op-req-001</code></td>
+          <td><span class="tag err">失败</span> <span style="color:#d9534f;font-size:12px">超时</span></td>
+          <td>-</td>
+          <td class="ops">
+            <a href="javascript:;" onclick="act('手工重发')">重发</a>
+            <a href="javascript:;" onclick="act('同步报文')">报文</a>
+          </td>
+        </tr>
+        <tr data-scene="manual" data-bill-type="req">
+          <td><input type="checkbox"></td>
+          <td>2026-11-05 11:05:44</td>
+          <td>采购申请</td>
+          <td>同步到AMOS</td>
+          <td><span class="tag sys">A-003</span></td>
+          <td>CGSQ000120 / FID 120</td>
+          <td><span class="tag on">仍在</span></td>
+          <td><code>kd-req-manual-001</code></td>
+          <td><span class="tag on">成功</span></td>
+          <td><code>REC-91020</code></td>
+          <td class="ops"><a href="javascript:;" onclick="act('同步报文')">报文</a></td>
+        </tr>
+
+        <!-- 采购订单 ×3：审核 / 删除 / 手工同步到AMOS -->
+        <tr data-scene="audit" data-bill-type="po">
+          <td><input type="checkbox"></td>
+          <td>2026-11-05 10:20:05</td>
+          <td>采购订单</td>
+          <td>审核</td>
+          <td><span class="tag sys">A-007</span></td>
+          <td>CGDD300001 / FID 300001</td>
+          <td><span class="tag on">仍在</span></td>
+          <td><code>kd-po-audit-001</code></td>
+          <td><span class="tag on">成功</span></td>
+          <td><code>REC-93001</code></td>
+          <td class="ops"><a href="javascript:;" onclick="act('同步报文')">报文</a></td>
+        </tr>
+        <tr data-scene="after-del" data-bill-type="po">
+          <td><input type="checkbox"></td>
+          <td>2026-11-05 14:20:33</td>
+          <td>采购订单</td>
+          <td>删除</td>
+          <td><span class="tag sys">A-PO-DEL</span></td>
+          <td>CGDD300088 / FID 300088</td>
+          <td><span class="tag err">已删除</span></td>
+          <td><code>kd-del-op-po-001</code></td>
+          <td><span class="tag on">成功</span></td>
+          <td><code>REC-93088</code></td>
+          <td class="ops"><a href="javascript:;" onclick="act('同步报文')">报文</a></td>
+        </tr>
+        <tr data-scene="manual" data-bill-type="po">
+          <td><input type="checkbox"></td>
+          <td>2026-11-05 13:18:27</td>
+          <td>采购订单</td>
+          <td>同步到AMOS</td>
+          <td><span class="tag sys">A-007</span></td>
+          <td>CGDD300099 / FID 300099</td>
+          <td><span class="tag on">仍在</span></td>
+          <td><code>kd-po-manual-001</code></td>
+          <td><span class="tag on">成功</span></td>
+          <td><code>REC-93099</code></td>
+          <td class="ops"><a href="javascript:;" onclick="act('同步报文')">报文</a></td>
+        </tr>
+
+        <!-- 采购订单变更单 ×2：审核 / 手工同步到AMOS（同 A-007） -->
+        <tr data-scene="audit" data-bill-type="po-change">
+          <td><input type="checkbox"></td>
+          <td>2026-11-05 16:08:11</td>
+          <td>采购订单变更单</td>
+          <td>审核</td>
+          <td><span class="tag sys">A-007</span></td>
+          <td>CGDDX2611050001 / FID 501001 · 原单 CGDD300001</td>
+          <td><span class="tag on">仍在</span></td>
+          <td><code>kd-pox-audit-001</code></td>
+          <td><span class="tag on">成功</span></td>
+          <td><code>REC-95001</code></td>
+          <td class="ops"><a href="javascript:;" onclick="act('同步报文')">报文</a></td>
+        </tr>
+        <tr data-scene="manual" data-bill-type="po-change">
+          <td><input type="checkbox"></td>
+          <td>2026-11-05 16:22:40</td>
+          <td>采购订单变更单</td>
+          <td>同步到AMOS</td>
+          <td><span class="tag sys">A-007</span></td>
+          <td>CGDDX2611030008 / FID 501008 · 原单 CGDD300099</td>
+          <td><span class="tag on">仍在</span></td>
+          <td><code>kd-pox-manual-001</code></td>
+          <td><span class="tag on">成功</span></td>
+          <td><code>REC-95008</code></td>
+          <td class="ops"><a href="javascript:;" onclick="act('同步报文')">报文</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="pager">
+      <span>共 8 行</span>
+    </div>
+  </div>
+</div>
+<script src="_ui.js"></script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>金蝶云·星空 · AMOS采购对接演示</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Microsoft YaHei","PingFang SC",sans-serif}
+:root{--kd-blue:#0b6bff;--line:#e5e8ef;--nav:#f5f6f8}
+html,body{height:100%;overflow:hidden;background:#eef0f4}
+.shell{display:flex;flex-direction:column;height:100vh}
+.kd-top{
+  height:44px;background:#2d5afe;color:#fff;display:flex;align-items:center;
+  padding:0 14px;gap:14px;flex-shrink:0;user-select:none
+}
+.kd-logo{display:flex;align-items:baseline;gap:4px;font-weight:700;letter-spacing:.5px}
+.kd-logo .cn{font-size:16px}
+.kd-logo .en{font-size:11px;opacity:.9;font-weight:500}
+.kd-env{font-size:12px;opacity:.95;padding-left:10px;border-left:1px solid rgba(255,255,255,.28)}
+.kd-top .spacer{flex:1}
+.kd-top .acts{display:flex;align-items:center;gap:14px;font-size:12px}
+.kd-top .acts span{opacity:.92;cursor:default}
+.kd-user{display:flex;align-items:center;gap:6px}
+.kd-user .av{width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-size:11px}
+
+.body{flex:1;display:flex;min-height:0}
+
+/* 左：领域 + 供应链向下展开子项（同列，对标星空） */
+.nav{
+  width:200px;background:var(--nav);border-right:1px solid var(--line);
+  flex-shrink:0;overflow-y:auto;padding:8px 0 16px
+}
+.nav .di{
+  padding:12px 16px;font-size:14px;color:#222;cursor:pointer;line-height:1.3
+}
+.nav .di:hover{background:#eef1f6}
+.nav .di.on{color:var(--kd-blue);font-weight:600}
+.nav .di.dim{color:#333}
+.nav .sub{display:none;padding:0 0 4px}
+.nav .sub.open{display:block}
+.nav .di.child{
+  padding:14px 16px 14px 28px;font-size:14px;font-weight:500;color:#222
+}
+.nav .di.child:hover{background:#eef1f6}
+.nav .di.child.on{color:var(--kd-blue);background:#eaf1ff}
+.nav .di.child.dim{color:#333;opacity:.85}
+
+.main{flex:1;display:flex;flex-direction:column;min-width:0;background:#fff}
+.tabbar{
+  height:36px;background:#f7f8fb;border-bottom:1px solid var(--line);
+  display:flex;align-items:center;padding:0 8px;gap:4px;flex-shrink:0
+}
+.tabbar .home-btn{
+  border:0;background:transparent;height:28px;padding:0 10px;border-radius:4px;
+  cursor:pointer;font-size:12px;color:#666
+}
+.tabbar .home-btn:hover{background:#eef1f6;color:var(--kd-blue)}
+.tab{
+  height:28px;padding:0 12px;display:flex;align-items:center;gap:8px;
+  background:#fff;border:1px solid var(--line);border-bottom-color:#fff;border-radius:4px 4px 0 0;
+  font-size:12px;color:#333;margin-top:8px;position:relative;top:1px
+}
+.tab.home{background:transparent;border-color:transparent;color:#888}
+.tab .x{color:#99a;font-size:12px;cursor:pointer}
+.badge-demo{margin-left:auto;font-size:11px;background:#fff3e0;color:#e65100;padding:2px 8px;border-radius:10px}
+.frame-wrap{flex:1;position:relative;background:#fff;min-height:0}
+.frame-wrap iframe{width:100%;height:100%;border:0;background:#fff}
+</style>
+</head>
+<body>
+<div class="shell">
+  <div class="kd-top">
+    <div class="kd-logo"><span class="cn">金蝶云</span><span class="en">·星空</span></div>
+    <div class="kd-env">测试1 | 100 捷嘉智造-2026-09新系统</div>
+    <div class="spacer"></div>
+    <div class="acts">
+      <span>在线客服</span>
+      <span>帮助</span>
+      <span>消息</span>
+      <div class="kd-user"><span class="av">D</span>demo</div>
+    </div>
+  </div>
+  <div class="body">
+    <div class="nav" id="nav">
+      <div class="di dim" data-domain="mine">我的</div>
+      <div class="di dim" data-domain="hr">员工服务</div>
+      <div class="di dim" data-domain="fi">财务会计</div>
+      <div class="di dim" data-domain="tax">税务管理</div>
+      <div class="di dim" data-domain="cost">成本管理</div>
+      <div class="di dim" data-domain="asset">资产管理</div>
+      <div class="di dim" data-domain="ma">管理会计</div>
+      <div class="di on" data-domain="scm" id="domScm">供应链</div>
+      <div class="sub open" id="scmSub">
+        <div class="di child on" data-app="pur" id="appPur">采购管理</div>
+        <div class="di child dim" data-app="sal">销售管理</div>
+        <div class="di child dim" data-app="credit">信用管理</div>
+        <div class="di child dim" data-app="inv">库存管理</div>
+        <div class="di child dim" data-app="ios">组织间结算</div>
+      </div>
+      <div class="di dim" data-domain="ec">电商与分销</div>
+      <div class="di dim" data-domain="base">基础管理</div>
+      <div class="di dim" data-domain="sys">系统管理</div>
+    </div>
+    <div class="main">
+      <div class="tabbar">
+        <button class="home-btn" id="btnHome" title="返回采购管理菜单">采购管理</button>
+        <div class="tab home" id="tabTitle">菜单</div>
+        <span class="badge-demo">静态演示 · 对标星空</span>
+      </div>
+      <div class="frame-wrap">
+        <iframe id="mainFrame" src="01_采购管理菜单.html" title="主内容"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+const HOME = { name: '采购管理', src: '01_采购管理菜单.html', home: true };
+
+const PAGES = {
+  '采购管理': HOME,
+  '采购申请单列表': { name: '采购申请单列表', src: '20_采购申请列表.html' },
+  'AMOS连接配置': { name: 'AMOS连接配置', src: '10_AMOS连接配置.html' },
+  '同步日志': { name: '同步日志', src: '11_同步日志.html' },
+  '采购订单列表': { name: '采购订单列表', src: '30_采购订单列表.html' },
+  '采购订单变更单列表': { name: '采购订单变更单列表', src: '34_采购订单变更单列表.html' },
+  '字段分析': { name: '字段分析', src: '02_会议字段总览.html' },
+  '同步字段 A-003': { name: '同步字段 A-003', src: '21_采购申请_同步字段.html' },
+  '删除字段 A-REQ-DEL': { name: '删除字段 A-REQ-DEL', src: '22_采购申请_删除字段.html' },
+  '状态回写字段': { name: '状态回写字段', src: '23_采购申请_状态回写.html' },
+  '同步字段 A-007': { name: '同步字段 A-007', src: '31_采购订单_同步字段.html' },
+  '删除字段 A-PO-DEL': { name: '删除字段 A-PO-DEL', src: '32_采购订单_删除字段.html' },
+  '订单状态回写字段': { name: '订单状态回写字段', src: '33_采购订单_状态回写.html' }
+};
+
+const scmSub = document.getElementById('scmSub');
+const tabTitle = document.getElementById('tabTitle');
+const frame = document.getElementById('mainFrame');
+
+function showPurApp() {
+  document.getElementById('domScm').classList.add('on');
+  scmSub.classList.add('open');
+  document.querySelectorAll('.nav .di[data-domain]').forEach(el => {
+    if (el.dataset.domain !== 'scm') el.classList.remove('on');
+  });
+  document.querySelectorAll('.nav .di[data-app]').forEach(el => {
+    el.classList.toggle('on', el.dataset.app === 'pur');
+  });
+}
+
+function openPage(name) {
+  const it = PAGES[name];
+  if (!it) return;
+  showPurApp();
+  frame.src = it.src;
+  if (it.home) {
+    tabTitle.className = 'tab home';
+    tabTitle.textContent = '菜单';
+  } else {
+    tabTitle.className = 'tab';
+    tabTitle.innerHTML = it.name + ' <span class="x" title="返回菜单">×</span>';
+    const x = tabTitle.querySelector('.x');
+    if (x) x.onclick = (e) => { e.stopPropagation(); openHome(); };
+  }
+}
+
+function openHome() {
+  openPage('采购管理');
+}
+
+document.querySelectorAll('.nav .di[data-domain]').forEach(el => {
+  el.onclick = () => {
+    if (el.dataset.domain === 'scm') {
+      scmSub.classList.add('open');
+      openHome();
+    }
+  };
+});
+
+document.querySelectorAll('.nav .di[data-app]').forEach(el => {
+  el.onclick = (e) => {
+    e.stopPropagation();
+    if (el.dataset.app === 'pur') openHome();
+  };
+});
+
+document.getElementById('btnHome').onclick = openHome;
+
+window.addEventListener('message', (e) => {
+  const d = e.data || {};
+  if (d.page && PAGES[d.page]) openPage(d.page);
+});
+
+openHome();
+</script>
+</body>
+</html>

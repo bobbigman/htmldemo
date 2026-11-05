@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>采购申请单列表</title>
+<link rel="stylesheet" href="common.css">
+</head>
+<body data-api="A-003" data-del-api="A-REQ-DEL">
+<div class="page kd-list">
+  <div class="menubar">
+    <button class="mi" type="button" onclick="act('过滤')">过滤</button>
+    <button class="mi" type="button" onclick="act('刷新')">刷新</button>
+    <span class="sep"></span>
+    <button class="mi" type="button" onclick="act('新增')">新增</button>
+    <button class="mi danger hot" type="button" onclick="act('删除')">删除</button>
+    <button class="mi" type="button" onclick="act('提交')">提交 ▾</button>
+    <button class="mi hot" type="button" onclick="act('审核')">审核 ▾</button>
+    <span class="sep"></span>
+    <button class="mi" type="button" onclick="act('下推')">下推</button>
+    <button class="mi" type="button" onclick="act('关联查询')">关联查询 ▾</button>
+    <button class="mi" type="button" onclick="act('业务操作')">业务操作 ▾</button>
+    <span class="sep"></span>
+    <div class="combo hot">
+      <button class="mi" type="button" onclick="toggleCombo(this)">同步到AMOS ▾</button>
+      <div class="menu">
+        <a class="hot" href="javascript:;" onclick="act('同步到AMOS')">同步到AMOS</a>
+        <a class="hot" href="javascript:;" onclick="act('取消同步标记')">取消同步标记</a>
+        <a class="hot" href="javascript:;" onclick="act('同步报文')">同步报文</a>
+      </div>
+    </div>
+    <span class="sep"></span>
+    <button class="mi" type="button" onclick="act('选项')">选项 ▾</button>
+    <button class="mi" type="button" onclick="act('退出')">退出</button>
+  </div>
+
+  <div class="filter-zone">
+    <div class="schemes">
+      <span class="lab">我的方案</span>
+      <button class="scheme" type="button" onclick="pickScheme(this)">默认方案（个人）</button>
+      <button class="scheme" type="button" onclick="pickScheme(this)">今天</button>
+      <button class="scheme" type="button" onclick="pickScheme(this)">本周</button>
+      <button class="scheme on" type="button" onclick="pickScheme(this)">本月</button>
+      <button class="scheme" type="button" onclick="pickScheme(this)">我的采购申请</button>
+      <button class="scheme" type="button" onclick="pickScheme(this)">未完成采购申请单</button>
+      <button class="scheme" type="button" onclick="pickScheme(this)">待处理采购申请单</button>
+    </div>
+    <div class="quick-filter">
+      <span class="lab">快捷过滤</span>
+      <select><option>单据编号</option><option>物料编码</option><option>物料名称</option></select>
+      <select style="min-width:72px"><option>包含</option><option>等于</option></select>
+      <input type="text" placeholder="请输入关键字后回车查询" style="min-width:200px">
+      <select><option>采购员</option><option>申请组织</option></select>
+      <input type="text" placeholder="请选择内容后回车查询" style="min-width:160px">
+      <button class="qf-search" type="button" onclick="act('过滤')" title="搜索">⌕</button>
+      <a class="qf-link" href="javascript:;" onclick="act('保存方案')">保存</a>
+      <a class="qf-link" href="javascript:;" onclick="act('重置过滤')">重置</a>
+    </div>
+  </div>
+
+  <div class="list-body">
+    <table class="grid" id="reqGrid">
+      <thead>
+        <tr>
+          <th class="chkcol"><input type="checkbox" onclick="toggleAll(this)"></th>
+          <th style="width:110px">单据类型<span class="gear">⚙</span></th>
+          <th style="width:130px">单据编号<span class="gear">⚙</span></th>
+          <th style="width:72px">数据状态<span class="gear">⚙</span></th>
+          <th style="width:72px">关闭状态<span class="gear">⚙</span></th>
+          <th style="width:160px">申请组织<span class="gear">⚙</span></th>
+          <th style="width:90px">申请日期<span class="gear">⚙</span></th>
+          <th style="width:120px">物料编码<span class="gear">⚙</span></th>
+          <th style="width:100px">物料名称<span class="gear">⚙</span></th>
+          <th style="width:80px">申请数量<span class="gear">⚙</span></th>
+          <th style="width:72px">剩余数量<span class="gear">⚙</span></th>
+          <th style="width:72px">同步状态<span class="gear">⚙</span></th>
+          <th style="width:120px">同步错误<span class="gear">⚙</span></th>
+          <th style="width:70px">FID</th>
+          <th style="width:70px">EntryId</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="selected" data-remain-qty="350" data-bill="CGSQ2611050001" data-fid="101" data-entry="11" data-bill-status="已审核" data-synced="0">
+          <td class="chkcol"><input type="checkbox" checked></td>
+          <td>批量采购申请</td>
+          <td><a class="bill" href="javascript:;">CGSQ2611050001</a></td>
+          <td>已审核</td>
+          <td>未关闭</td>
+          <td>捷嘉智造-2026-09新系统</td>
+          <td>2026/11/5</td>
+          <td><a class="bill" href="javascript:;">D510000354500</a></td>
+          <td>贴片电容</td>
+          <td class="num">350</td>
+          <td class="num"><b>350</b></td>
+          <td><span class="tag pend" data-sync-status>未同步</span></td>
+          <td data-sync-err>-</td>
+          <td><code>101</code></td>
+          <td><code>11</code></td>
+        </tr>
+        <tr data-remain-qty="100" data-bill="CGSQ000101" data-fid="101" data-entry="12" data-bill-status="已审核" data-synced="0">
+          <td class="chkcol"><input type="checkbox"></td>
+          <td>标准采购申请</td>
+          <td><a class="bill" href="javascript:;">CGSQ000101</a></td>
+          <td>已审核</td>
+          <td>未关闭</td>
+          <td>捷嘉智造-2026-09新系统</td>
+          <td>2026/11/3</td>
+          <td><a class="bill" href="javascript:;">M6205</a></td>
+          <td>轴承 6205</td>
+          <td class="num">100</td>
+          <td class="num"><b>100</b></td>
+          <td><span class="tag pend" data-sync-status>未同步</span></td>
+          <td data-sync-err>-</td>
+          <td><code>101</code></td>
+          <td><code>12</code></td>
+        </tr>
+        <tr data-remain-qty="0" data-bill="CGSQ000101" data-fid="101" data-entry="13" data-bill-status="已审核" data-synced="0">
+          <td class="chkcol"><input type="checkbox"></td>
+          <td>标准采购申请</td>
+          <td><a class="bill" href="javascript:;">CGSQ000101</a></td>
+          <td>已审核</td>
+          <td>未关闭</td>
+          <td>捷嘉智造-2026-09新系统</td>
+          <td>2026/11/3</td>
+          <td><a class="bill" href="javascript:;">NBR-8</a></td>
+          <td>密封圈 NBR</td>
+          <td class="num">200</td>
+          <td class="num"><span class="tag err">0</span></td>
+          <td><span class="tag pend" data-sync-status>未同步</span></td>
+          <td data-sync-err>-</td>
+          <td><code>101</code></td>
+          <td><code>13</code></td>
+        </tr>
+        <tr data-remain-qty="50" data-bill="CGSQ000088" data-fid="88" data-entry="21" data-bill-status="反审核" data-synced="0">
+          <td class="chkcol"><input type="checkbox"></td>
+          <td>标准采购申请</td>
+          <td><a class="bill" href="javascript:;">CGSQ000088</a></td>
+          <td>重新审核</td>
+          <td>未关闭</td>
+          <td>捷嘉智造-2026-09新系统</td>
+          <td>2026/10/28</td>
+          <td><a class="bill" href="javascript:;">HY-46</a></td>
+          <td>液压油</td>
+          <td class="num">50</td>
+          <td class="num"><b>50</b></td>
+          <td><span class="tag err" data-sync-status>失败</span></td>
+          <td data-sync-err>401 令牌失效</td>
+          <td><code>88</code></td>
+          <td><code>21</code></td>
+        </tr>
+        <tr data-remain-qty="80" data-bill="CGSQ000120" data-fid="120" data-entry="31" data-bill-status="已审核" data-synced="1">
+          <td class="chkcol"><input type="checkbox"></td>
+          <td>批量采购申请</td>
+          <td><a class="bill" href="javascript:;">CGSQ000120</a></td>
+          <td>已审核</td>
+          <td>未关闭</td>
+          <td>捷嘉智造-2026-09新系统</td>
+          <td>2026/11/1</td>
+          <td><a class="bill" href="javascript:;">GASKET-M8</a></td>
+          <td>垫片 M8</td>
+          <td class="num">80</td>
+          <td class="num"><b>80</b></td>
+          <td><span class="tag on" data-sync-status>成功</span></td>
+          <td data-sync-err>-</td>
+          <td><code>120</code></td>
+          <td><code>31</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="demo-notes discuss-detail-del">
+    <div class="discuss-title">明细删了怎么传？（待与 AMOS 确认）</div>
+    <div class="discuss-body">
+      <p>改单再审核后同步，我们准备按「保存后的整单现状」通知你们，<strong>不单独报「删了哪一行」</strong>。</p>
+      <p>举例：原来 3 行明细，用户删掉 1 行后保存再审——同步时仍按现在单上剩下的 2 行（整单）给你们；你们按单号重取最新即可。</p>
+      <p class="discuss-ask">请确认：这样可行，还是必须另传「删除了哪几行」？</p>
+    </div>
+  </div>
+  <div class="statusbar">
+    <span>已选 <b id="selCount">1</b> 行</span>
+    <div class="pager">
+      <span>第</span><input value="1" readonly><span>1</span><span>页 / 1 页</span>
+      <button type="button" title="第一页">|&lt;</button>
+      <button type="button" title="上一页">&lt;</button>
+      <button type="button" title="下一页">&gt;</button>
+      <button type="button" title="最后一页">&gt;|</button>
+      <span>每页显示</span>
+      <select><option>200</option><option>100</option><option>50</option></select>
+      <span>行 / 共 <b id="rowCount">5</b> 行</span>
+    </div>
+  </div>
+
+  <div class="demo-notes">
+    <div class="tip warn"><b>创建询价条件：</b>仅<strong>剩余数量 &gt; 0</strong> 的明细可发起询价。审核后自动同步时，剩余数量 ≤ 0 的行会略过；手工点「同步到AMOS」时会提示拦截。</div>
+  </div>
+</div>
+<script src="_ui.js"></script>
+<script>
+function pickScheme(el) {
+  document.querySelectorAll('.scheme').forEach(function (s) { s.classList.remove('on'); });
+  el.classList.add('on');
+  if (window.xyToast) xyToast('已切换方案：' + el.textContent.trim() + '（演示）');
+}
+function toggleAll(master) {
+  document.querySelectorAll('#reqGrid tbody input[type=checkbox]').forEach(function (c) {
+    c.checked = master.checked;
+    c.closest('tr').classList.toggle('selected', c.checked);
+  });
+  updateSel();
+}
+function updateSel() {
+  var n = document.querySelectorAll('#reqGrid tbody tr.selected, #reqGrid tbody input:checked').length;
+  var checked = document.querySelectorAll('#reqGrid tbody input[type=checkbox]:checked').length;
+  var el = document.getElementById('selCount');
+  if (el) el.textContent = checked;
+}
+document.querySelectorAll('#reqGrid tbody tr').forEach(function (tr) {
+  tr.addEventListener('click', function (e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'A') return;
+    var ck = tr.querySelector('input[type=checkbox]');
+    if (!ck) return;
+    ck.checked = !ck.checked;
+    tr.classList.toggle('selected', ck.checked);
+    updateSel();
+  });
+  var ck = tr.querySelector('input[type=checkbox]');
+  if (ck) {
+    ck.addEventListener('change', function () {
+      tr.classList.toggle('selected', ck.checked);
+      updateSel();
+    });
+  }
+});
+updateSel();
+</script>
+</body>
+</html>

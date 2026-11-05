@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>采购订单状态回写字段</title>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<div class="page">
+  <div class="tip">CSV：采购订单显示 AMOS 同步状态、编号、同步时间。下列为金蝶侧建议字段；业务编号若依赖 AMOS 回写，需另确认通道。</div>
+  <div class="panel">
+    <table class="grid">
+      <thead><tr><th>字段（建议标识）</th><th>展示名</th><th>层级</th><th>说明</th><th>会议结论</th></tr></thead>
+      <tbody>
+        <tr data-field-row data-path="F_AMOS_SyncStatus" data-type="string" data-req="是"><td><code>F_AMOS_SyncStatus</code></td><td>同步状态</td><td>建议表头</td><td>未同步/成功/失败</td><td><select><option>纳入</option><option>待定</option><option>不纳入</option></select></td></tr>
+        <tr data-field-row data-path="F_AMOS_SyncTime" data-type="datetime" data-req="是"><td><code>F_AMOS_SyncTime</code></td><td>同步时间</td><td>建议表头</td><td>最近一次同步时间</td><td><select><option>纳入</option><option>待定</option><option>不纳入</option></select></td></tr>
+        <tr data-field-row data-path="F_AMOS_RecordPid" data-type="string" data-req="否"><td><code>F_AMOS_RecordPid</code></td><td>AMOS通知编号</td><td>建议表头</td><td>返回 recordPid，不是采购订单号</td><td><select><option>纳入</option><option>待定</option><option>不纳入</option></select></td></tr>
+        <tr data-field-row data-path="F_AMOS_OrderNo" data-type="string" data-req="否"><td><code>F_AMOS_OrderNo</code></td><td>AMOS协同订单号</td><td>待定</td><td>若需要业务编号回写，另定 GET/回调</td><td><select><option>待定</option><option>纳入</option><option>不纳入</option></select></td></tr>
+        <tr data-field-row data-path="F_AMOS_SyncError" data-type="string" data-req="否"><td><code>F_AMOS_SyncError</code></td><td>同步错误</td><td>建议表头</td><td>失败原因</td><td><select><option>纳入</option><option>待定</option><option>不纳入</option></select></td></tr>
+        <tr data-field-row data-path="F_AMOS_EventId" data-type="string" data-req="否"><td><code>F_AMOS_EventId</code></td><td>最近通知id</td><td>建议表头</td><td>对日志</td><td><select><option>待定</option><option>纳入</option><option>不纳入</option></select></td></tr>
+        <tr data-field-row data-path="F_AMOS_Linked" data-type="bool" data-req="否"><td><code>F_AMOS_Linked</code></td><td>AMOS建单关联</td><td>可选</td><td>是否属于自动同步范围</td><td><select><option>待定</option><option>纳入</option><option>不纳入</option></select></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="confirm-bar">
+    <div class="sum">覆盖 CSV：同步状态回写（采购订单）。</div>
+    <button class="btn p" type="button" onclick="act('导出会议确认')">导出会议确认</button>
+  </div>
+</div>
+<script src="_ui.js"></script>
+</body>
+</html>

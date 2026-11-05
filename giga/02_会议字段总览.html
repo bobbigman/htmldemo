@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>字段分析</title>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<div class="page">
+  <div class="tip">来源：<code>docs/采购模块同步功能.csv</code>。下表把功能点映射到接口与字段确认页，会议时逐条勾结论。</div>
+  <div class="tip"><b>方案口径（无需新按钮）：</b>CSV 虽拆成「新增同步 / 修改同步」，对第三方仍是同一套 POST——申请改单 = <b>A-003</b>，订单改单/变更单 = <b>A-007</b>。界面只保留审核、删除、组合菜单；改单场景写进备注与本表「同套」列即可。</div>
+  <div class="panel">
+    <table class="grid">
+      <thead>
+        <tr>
+          <th>模块</th>
+          <th>客户化功能点</th>
+          <th>开发说明（摘要）</th>
+          <th>对标接口</th>
+          <th>字段确认页</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>公共设置</td>
+          <td>AMOS连接配置与同步日志</td>
+          <td>配置管地址/令牌；日志独立落库。删后场景说明在申请/订单列表抽屉；补救在同步日志按单号重发</td>
+          <td>—</td>
+          <td><a href="javascript:;" onclick="parent.postMessage({page:'AMOS连接配置'},'*')">连接配置</a> · <a href="javascript:;" onclick="parent.postMessage({page:'同步日志'},'*')">同步日志</a></td>
+        </tr>
+        <tr>
+          <td>同步状态回写</td>
+          <td>单据上显示AMOS同步结果（GET）</td>
+          <td>申请单/订单显示同步状态、编号、同步时间</td>
+          <td>GET 回写字段</td>
+          <td><a href="javascript:;" onclick="parent.postMessage({page:'状态回写字段'},'*')">申请回写</a> · <a href="javascript:;" onclick="parent.postMessage({page:'订单状态回写字段'},'*')">订单回写</a></td>
+        </tr>
+        <tr>
+          <td>新增同步</td>
+          <td>采购申请单发起AMOS询价（POST）</td>
+          <td>列表勾选或单据内勾选明细，一键发送；重复发送拦截。条件：剩余数量&gt;0；自动审核略过≤0；手工点拦截提示</td>
+          <td>A-003</td>
+          <td><a href="javascript:;" onclick="parent.postMessage({page:'同步字段 A-003'},'*')">申请同步字段</a></td>
+        </tr>
+        <tr>
+          <td>新增同步</td>
+          <td>采购订单审核后自动同步（POST）</td>
+          <td>审核通过自动通知；反审核后再审不重复生成</td>
+          <td>A-007</td>
+          <td><a href="javascript:;" onclick="parent.postMessage({page:'同步字段 A-007'},'*')">订单同步字段</a></td>
+        </tr>
+        <tr>
+          <td>修改同步</td>
+          <td>采购申请单变更后同步（POST）</td>
+          <td>已同步申请修改保存后通知 AMOS 重取；与首次询价同一 POST，无新按钮</td>
+          <td>A-003（同套）</td>
+          <td><a href="javascript:;" onclick="parent.postMessage({page:'同步字段 A-003'},'*')">申请同步字段</a></td>
+        </tr>
+        <tr>
+          <td>修改同步</td>
+          <td>采购订单反审核改单后同步（POST）</td>
+          <td>反审核改单后保存/再审通知 AMOS；与首次审核同步同一 POST，无新按钮</td>
+          <td>A-007（同套）</td>
+          <td><a href="javascript:;" onclick="parent.postMessage({page:'同步字段 A-007'},'*')">订单同步字段</a></td>
+        </tr>
+        <tr>
+          <td>修改同步</td>
+          <td>采购订单变更单审核后同步（POST）</td>
+          <td>变更单审核后自动同步；也可手工点「同步到AMOS」；仍走 A-007，无新接口、无删除同步</td>
+          <td>A-007（同套）</td>
+          <td><a href="javascript:;" onclick="parent.postMessage({page:'采购订单变更单列表'},'*')">变更单列表</a> · <a href="javascript:;" onclick="parent.postMessage({page:'同步字段 A-007'},'*')">订单同步字段</a></td>
+        </tr>
+        <tr>
+          <td>删除同步</td>
+          <td>采购申请单删除后同步（POST）</td>
+          <td>整单或部分明细删除后通知停止使用</td>
+          <td>A-REQ-DEL</td>
+          <td><a href="javascript:;" onclick="parent.postMessage({page:'删除字段 A-REQ-DEL'},'*')">申请删除字段</a></td>
+        </tr>
+        <tr>
+          <td>删除同步</td>
+          <td>采购订单删除后同步（POST）</td>
+          <td>整单或部分明细删除后通知停止协同；已发货等转人工</td>
+          <td>A-PO-DEL</td>
+          <td><a href="javascript:;" onclick="parent.postMessage({page:'删除字段 A-PO-DEL'},'*')">订单删除字段</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tip warn" style="margin-top:12px">界面菜单统一说法：组合菜单「同步到AMOS」→ 子项「同步到AMOS / 取消同步标记 / 同步报文」。不说「推送/上报」。<br>申请询价门槛：界面须展示「剩余数量 &gt; 0」；自动审核略过，手工同步拦截提示（见采购申请列表演示）。</div>
+</div>
+<script src="_ui.js"></script>
+</body>
+</html>

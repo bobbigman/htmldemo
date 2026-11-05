@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMOS连接配置</title>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<div class="page">
+  <div class="toolbar">
+    <button class="btn p" type="button" onclick="act('保存连接配置')">保存</button>
+    <button class="btn" type="button" onclick="act('测试连接')">测试连接</button>
+  </div>
+  <div class="panel">
+    <table class="grid">
+      <thead>
+        <tr>
+          <th style="width:28%">配置项</th>
+          <th style="width:36%">配置值</th>
+          <th>示例/说明</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>环境根地址<br><code>AMOS_API_BASE</code></td>
+          <td><input type="text" style="width:100%;box-sizing:border-box;padding:6px 8px;border:1px solid #d0d5dd;border-radius:3px" value="https://amos-test.example.com"></td>
+          <td>测试/生产 HTTPS 根地址，路径再拼 event-sources</td>
+        </tr>
+        <tr>
+          <td>永久集成令牌<br><code>AMOS_INTEGRATION_TOKEN</code></td>
+          <td><input type="password" style="width:100%;box-sizing:border-box;padding:6px 8px;border:1px solid #d0d5dd;border-radius:3px" value="amos-demo-token-********"></td>
+          <td>Bearer 令牌；不自动过期，可撤销替换；不用金蝶 AppSecret</td>
+        </tr>
+        <tr>
+          <td>环境标识</td>
+          <td>
+            <select style="width:100%;box-sizing:border-box;padding:6px 8px;border:1px solid #d0d5dd;border-radius:3px">
+              <option selected>测试</option>
+              <option>生产</option>
+            </select>
+          </td>
+          <td>测试 / 生产，与根地址、令牌成对</td>
+        </tr>
+        <tr>
+          <td>超时时间(ms)</td>
+          <td><input type="text" style="width:100%;box-sizing:border-box;padding:6px 8px;border:1px solid #d0d5dd;border-radius:3px" value="30000"></td>
+          <td>建议会议定默认值；超时按失败重试</td>
+        </tr>
+        <tr>
+          <td>重试间隔与告警责任</td>
+          <td><input type="text" style="width:100%;box-sizing:border-box;padding:6px 8px;border:1px solid #d0d5dd;border-radius:3px" value="间隔 60s × 3 次；超时告警对接运维"></td>
+          <td>文档要求联调前双方确认；可先占位</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<script src="_ui.js"></script>
+</body>
+</html>

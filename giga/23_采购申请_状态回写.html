@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>采购申请状态回写字段</title>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<div class="page">
+  <div class="tip">CSV：单据上显示 AMOS 同步结果（GET）。第三方事件文档以 POST 通知为主；下列为<strong>金蝶单据侧建议落库/展示字段</strong>，会议需确认是否纳入及挂在表头还是明细。</div>
+  <div class="panel">
+    <table class="grid">
+      <thead><tr><th>字段（建议标识）</th><th>展示名</th><th>层级</th><th>说明</th><th>会议结论</th></tr></thead>
+      <tbody>
+        <tr data-field-row data-path="F_AMOS_SyncStatus" data-type="string" data-req="是"><td><code>F_AMOS_SyncStatus</code></td><td>同步状态</td><td>建议明细</td><td>未同步/成功/失败/处理中</td><td><select><option>纳入</option><option>待定</option><option>不纳入</option></select></td></tr>
+        <tr data-field-row data-path="F_AMOS_SyncTime" data-type="datetime" data-req="是"><td><code>F_AMOS_SyncTime</code></td><td>同步时间</td><td>建议明细</td><td>最近一次同步时间</td><td><select><option>纳入</option><option>待定</option><option>不纳入</option></select></td></tr>
+        <tr data-field-row data-path="F_AMOS_RecordPid" data-type="string" data-req="否"><td><code>F_AMOS_RecordPid</code></td><td>AMOS通知编号</td><td>建议明细</td><td>返回 recordPid，不是询价单号</td><td><select><option>纳入</option><option>待定</option><option>不纳入</option></select></td></tr>
+        <tr data-field-row data-path="F_AMOS_InquiryNo" data-type="string" data-req="否"><td><code>F_AMOS_InquiryNo</code></td><td>AMOS询价编号</td><td>待定</td><td>CSV 提到编号；若 AMOS 另有业务编号需对方提供回写接口/字段</td><td><select><option>待定</option><option>纳入</option><option>不纳入</option></select></td></tr>
+        <tr data-field-row data-path="F_AMOS_SyncError" data-type="string" data-req="否"><td><code>F_AMOS_SyncError</code></td><td>同步错误</td><td>建议明细</td><td>失败原因摘要</td><td><select><option>纳入</option><option>待定</option><option>不纳入</option></select></td></tr>
+        <tr data-field-row data-path="F_AMOS_EventId" data-type="string" data-req="否"><td><code>F_AMOS_EventId</code></td><td>最近通知id</td><td>建议明细</td><td>便于对日志、报文</td><td><select><option>待定</option><option>纳入</option><option>不纳入</option></select></td></tr>
+        <tr data-field-row data-path="F_AMOS_Exists" data-type="bool" data-req="否"><td><code>F_AMOS_Exists</code></td><td>AMOS已存在</td><td>可选</td><td>对标 MES「已存在」列；是否需要请会议定</td><td><select><option>待定</option><option>纳入</option><option>不纳入</option></select></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tip warn" style="margin-top:12px">注意：本期第三方文档写明「不要求金蝶轮询或接收回调」。若「询价编号」要回写，需双方另定 GET/回调方案，本页标为待定。</div>
+  <div class="confirm-bar">
+    <div class="sum">覆盖 CSV：同步状态回写（申请单）。</div>
+    <button class="btn p" type="button" onclick="act('导出会议确认')">导出会议确认</button>
+  </div>
+</div>
+<script src="_ui.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JSON vs 读账套</title>
+<link rel="stylesheet" href="common.css">
+</head>
+<body >
+<div class="page">
+<div class="tip">两套通道: JSON vs AMOS 读账套</div><div class="tip warn"><b>「AMOS 读账套」是什么意思？要不要我们把这些字段写进 JSON?</b><br><b>不需要。</b>金蝶调第三方时，事件 JSON <b>只传身份</b>（如 FID、明细 EntryId、title）。<br>物料、数量、状态、供应商等业务字段，由 <b>AMOS 用事先配置好的金蝶连接</b>（WebAPI/账套账号）自己去金蝶里读最新单据。<br>因此下表分两色：<span class="tag sys">写入事件 JSON</span>=我们要组的报文；<span class="tag on">AMOS 读金蝶账套</span>=双方要对齐的金蝶字段，金蝶不用塞进 POST JSON</div><div class="section-title">通道对比</div><div class="panel"><table class="grid"><thead><tr><th>通道</th><th>谁做</th><th>传什么</th><th>例子</th></tr></thead><tbody><tr><td><span class="tag sys">JSON</span></td><td>金蝶 POST</td><td>身份</td><td><code>FID</code>/<code>FEntryID</code>/<code>orderIds</code></td></tr><tr><td><span class="tag on">AMOS 读账套</span></td><td>AMOS</td><td>业务字段</td><td><code>FBillNo</code>/<code>FDocumentStatus</code>/物料数量</td></tr></tbody></table></div><div class="confirm-bar"><div class="sum">业务字段映射请到申请/订单页</div><button class="btn" type="button" onclick="parent.postMessage({mod:'req',page:'同步字段 A-003'},'*')">申请映射</button><button class="btn" type="button" onclick="parent.postMessage({mod:'po',page:'同步字段 A-007'},'*')">订单映射</button></div>
+</div>
+<script src="_ui.js"></script>
+</body>
+</html>

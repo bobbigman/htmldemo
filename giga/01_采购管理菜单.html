@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>采购管理</title>
+<link rel="stylesheet" href="common.css">
+<style>
+.menu-page{
+  padding:18px 28px 48px;background:#fff;min-height:100%;color:#333
+}
+.g{margin:0 0 18px}
+.g h3{
+  font-size:13px;font-weight:600;color:#333;margin:0 0 8px;padding:0 0 6px;
+  border-bottom:1px solid #e8ebf0
+}
+.g .row{
+  display:flex;flex-wrap:wrap;gap:4px 0;padding:2px 0 4px
+}
+.g a,.g span.dead{
+  display:inline-block;min-width:160px;padding:6px 12px 6px 4px;
+  font-size:13px;line-height:1.4;text-decoration:none;color:#333;
+  position:relative;box-sizing:border-box
+}
+.g a:hover{color:#2d5afe}
+.g span.dead{color:#333;cursor:default;opacity:.85}
+.g a.menu-hot{
+  color:#c62828;font-weight:600;padding:8px 14px;margin:2px 8px 2px 0;
+  border-radius:999px
+}
+.g a.menu-hot::after{
+  content:"";position:absolute;inset:0;border:2px solid #e53935;border-radius:999px;
+  pointer-events:none;box-shadow:0 0 0 1px rgba(229,57,53,.18)
+}
+.g a.menu-hot:hover{color:#b71c1c}
+.g.internal h3{color:#8a94a0;font-weight:500;border-color:#eef0f4}
+.g.internal a{color:#666}
+</style>
+</head>
+<body>
+<div class="menu-page">
+  <div class="g">
+    <h3>采购工作台</h3>
+    <div class="row">
+      <span class="dead">采购初始化指引工作台</span>
+      <span class="dead">采购工作台</span>
+    </div>
+  </div>
+  <div class="g">
+    <h3>采购快速下单</h3>
+    <div class="row">
+      <span class="dead">采购快速下单</span>
+    </div>
+  </div>
+  <div class="g">
+    <h3>采购申请</h3>
+    <div class="row">
+      <span class="dead">采购申请单</span>
+      <a class="menu-hot" href="javascript:;" onclick="go('采购申请单列表')">采购申请单列表</a>
+      <span class="dead">配套材料采购申请</span>
+      <span class="dead">采购计划方案列表</span>
+      <a class="menu-hot" href="javascript:;" onclick="go('AMOS连接配置')">AMOS连接配置</a>
+      <a class="menu-hot" href="javascript:;" onclick="go('同步日志')">同步日志</a>
+    </div>
+  </div>
+  <div class="g">
+    <h3>智能采购</h3>
+    <div class="row">
+      <span class="dead">定时智能采购</span>
+    </div>
+  </div>
+  <div class="g">
+    <h3>合同管理</h3>
+    <div class="row">
+      <span class="dead">采购合同</span>
+      <span class="dead">采购合同列表</span>
+      <span class="dead">采购合同变更单列表</span>
+    </div>
+  </div>
+  <div class="g">
+    <h3>订单处理</h3>
+    <div class="row">
+      <span class="dead">采购订单</span>
+      <a class="menu-hot" href="javascript:;" onclick="go('采购订单列表')">采购订单列表</a>
+      <a class="menu-hot" href="javascript:;" onclick="go('采购订单变更单列表')">采购订单变更单</a>
+      <span class="dead">采购订单变更单列表</span>
+      <span class="dead">采购订单新变更单列表</span>
+      <span class="dead">配额下单</span>
+    </div>
+  </div>
+  <div class="g">
+    <h3>收料处理</h3>
+    <div class="row">
+      <span class="dead">收料通知单</span>
+      <span class="dead">收料通知单列表</span>
+      <span class="dead">采购入库单</span>
+      <span class="dead">采购入库单列表</span>
+    </div>
+  </div>
+  <div class="g">
+    <h3>退料处理</h3>
+    <div class="row">
+      <span class="dead">退料申请单</span>
+      <span class="dead">退料申请单列表</span>
+      <span class="dead">采购退料单</span>
+      <span class="dead">采购退料单列表</span>
+    </div>
+  </div>
+  <div class="g">
+    <h3>VMI业务</h3>
+    <div class="row">
+      <span class="dead">批量创建消耗汇总</span>
+      <span class="dead">消耗汇总表</span>
+      <span class="dead">物权转移单</span>
+      <span class="dead">VMI物料消耗结算明细表</span>
+      <span class="dead">VMI物料消耗明细表</span>
+      <span class="dead">VMI物料出入库明细表</span>
+      <span class="dead">VMI物料出入库汇总表</span>
+      <span class="dead">定时创建消耗汇总</span>
+    </div>
+  </div>
+  <div class="g">
+    <h3>报表分析</h3>
+    <div class="row">
+      <span class="dead">采购订单执行明细表</span>
+      <span class="dead">采购订单执行汇总表</span>
+      <span class="dead">采购业务汇总表</span>
+      <span class="dead">采购入库结算汇总表</span>
+      <span class="dead">预计供应量查询</span>
+      <span class="dead">供应商到货及时率</span>
+      <span class="dead">订单到货及时率</span>
+      <span class="dead">采购合同执行明细表</span>
+      <span class="dead">采购合同执行汇总表</span>
+      <span class="dead">采购价格分析表</span>
+      <span class="dead">采购申请执行明细表</span>
+      <span class="dead">采购申请执行汇总表</span>
+      <span class="dead">采购追料交货报表</span>
+      <span class="dead">收料待检库存查询</span>
+    </div>
+  </div>
+  <div class="g">
+    <h3>供应商评估</h3>
+    <div class="row">
+      <span class="dead">采购评估等级</span>
+      <span class="dead">采购评估等级列表</span>
+      <span class="dead">采购评估指标</span>
+      <span class="dead">采购评估指标列表</span>
+      <span class="dead">采购评估方案</span>
+      <span class="dead">采购评估方案列表</span>
+      <span class="dead">创建供应商评分表</span>
+      <span class="dead">供应商评分列表</span>
+    </div>
+  </div>
+  <div class="g">
+    <h3>采购云巡检</h3>
+    <div class="row">
+      <span class="dead">采购云巡检</span>
+      <span class="dead">采购云巡检报告</span>
+    </div>
+  </div>
+  <div class="g">
+    <h3>货源与价格管理</h3>
+    <div class="row">
+      <span class="dead">供应商</span>
+      <span class="dead">供应商列表</span>
+      <span class="dead">货源清单</span>
+      <span class="dead">货源清单列表</span>
+      <span class="dead">货源清单（基础资料）</span>
+      <span class="dead">采购价目表</span>
+      <span class="dead">采购价目表列表</span>
+      <span class="dead">采购调价表</span>
+      <span class="dead">采购调价表列表</span>
+      <span class="dead">采购折扣表</span>
+      <span class="dead">采购折扣表列表</span>
+      <span class="dead">货源统计服务</span>
+      <span class="dead">材料监控方案列表</span>
+      <span class="dead">采购价目表分发方案列表</span>
+    </div>
+  </div>
+  <div class="g">
+    <h3>基础资料</h3>
+    <div class="row">
+      <span class="dead">采购条款列表</span>
+    </div>
+  </div>
+  <div class="g">
+    <h3>参数设置</h3>
+    <div class="row">
+      <span class="dead">采购管理系统参数</span>
+    </div>
+  </div>
+  <div class="g">
+    <h3>初始化</h3>
+    <div class="row">
+      <span class="dead">期初采购入库单</span>
+      <span class="dead">期初采购入库单列表</span>
+      <span class="dead">期初采购退料单</span>
+      <span class="dead">期初采购退料单列表</span>
+    </div>
+  </div>
+  <div class="g">
+    <h3>采购对账管理</h3>
+    <div class="row">
+      <span class="dead">采购对账方案</span>
+      <span class="dead">采购对账方案列表</span>
+      <span class="dead">采购对账单列表</span>
+    </div>
+  </div>
+  <div class="g internal">
+    <h3>字段分析</h3>
+    <div class="row">
+      <a href="javascript:;" onclick="go('字段分析')">字段分析</a>
+    </div>
+  </div>
+</div>
+<script>
+function go(page) {
+  if (window.parent && window.parent !== window) window.parent.postMessage({ page: page }, '*');
+  else location.href = page;
+}
+</script>
+</body>
+</html>

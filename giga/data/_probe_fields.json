@@ -1,0 +1,2196 @@
+[
+  {
+    "form": "PUR_Requisition",
+    "fields": [
+      {
+        "ek": "BillHead",
+        "key": "FDocumentStatus",
+        "name": "单据状态",
+        "elem": "BillStatusField(继承)",
+        "fn": "FDOCUMENTSTATUS"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FBillNo",
+        "name": "单据编号",
+        "elem": "BillNoField(继承)",
+        "fn": "FBILLNO"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FID",
+        "name": "单据内码",
+        "elem": "IntegerField(继承)",
+        "fn": "FID"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FACCTYPE",
+        "name": "验收方式",
+        "elem": "ComboField",
+        "fn": "FACCTYPE"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FApplicantId",
+        "name": "申请人",
+        "elem": "BaseDataField",
+        "fn": "FAPPLICANTID"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FApplicationDate",
+        "name": "申请日期",
+        "elem": "DateField",
+        "fn": "FAPPLICATIONDATE"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FApplicationDeptId",
+        "name": "申请部门",
+        "elem": "BaseDataField",
+        "fn": "FAPPLICATIONDEPTID"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FApplicationOrgId",
+        "name": "申请组织",
+        "elem": "OrgField",
+        "fn": "FAPPLICATIONORGID"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FApproveDate",
+        "name": "审核日期",
+        "elem": "DateField",
+        "fn": "FAPPROVEDATE"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FApproverId",
+        "name": "审核人",
+        "elem": "UserField",
+        "fn": "FAPPROVERID"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FBillTypeID",
+        "name": "单据类型",
+        "elem": "BillTypeField",
+        "fn": "FBILLTYPEID"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FCancelDate",
+        "name": "作废日期",
+        "elem": "DateField",
+        "fn": "FCANCELDATE"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FCancelStatus",
+        "name": "作废状态",
+        "elem": "BillStatusField",
+        "fn": "FCANCELSTATUS"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FCancellerId",
+        "name": "作废人",
+        "elem": "UserField",
+        "fn": "FCANCELLERID"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FCloseDate",
+        "name": "关闭日期",
+        "elem": "DateField",
+        "fn": "FCLOSEDATE"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FCloseReason",
+        "name": "关闭原因",
+        "elem": "TextField",
+        "fn": "FCLOSEREASON"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FCloseStatus",
+        "name": "关闭状态",
+        "elem": "BillStatusField",
+        "fn": "FCLOSESTATUS"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FCloserId",
+        "name": "关闭人",
+        "elem": "UserField",
+        "fn": "FCLOSERID"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FCreateDate",
+        "name": "创建日期",
+        "elem": "CreateDateField",
+        "fn": "FCREATEDATE"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FCreatorId",
+        "name": "创建人",
+        "elem": "CreaterField",
+        "fn": "FCREATORID"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FCurrencyId",
+        "name": "币别",
+        "elem": "BaseDataField",
+        "fn": "FCURRENCYID"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FExchangeTypeId",
+        "name": "汇率类型",
+        "elem": "BaseDataField",
+        "fn": "FEXCHANGETYPEID"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FISPRICEEXCLUDETAX",
+        "name": "价外税",
+        "elem": "CheckBoxField",
+        "fn": "FISPRICEEXCLUDETAX"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FIsConvert",
+        "name": "是否是单据转换",
+        "elem": "CheckBoxField",
+        "fn": "FISCONVERT"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FIsCreateStraightOutIN",
+        "name": "生成直运出入库",
+        "elem": "CheckBoxField",
+        "fn": "FISCREATESTRAIGHTOUTIN"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FIsMergeCancel",
+        "name": "合并作废",
+        "elem": "CheckBoxField",
+        "fn": "FISMERGECANCEL"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FMANUALCLOSE",
+        "name": "手工关闭",
+        "elem": "CheckBoxField",
+        "fn": "FMANUALCLOSE"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FModifyDate",
+        "name": "最后修改日期",
+        "elem": "ModifyDateField",
+        "fn": "FMODIFYDATE"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FNote",
+        "name": "备注",
+        "elem": "TextField",
+        "fn": "FNOTE"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FPublishStatus",
+        "name": "供应商协同发布状态(6.1废弃)",
+        "elem": "BillStatusField",
+        "fn": "FPUBLISHSTATUS"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FRequestType",
+        "name": "申请类型",
+        "elem": "ComboField",
+        "fn": "FREQUESTTYPE"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FSrcType",
+        "name": "来源类型",
+        "elem": "ComboField",
+        "fn": "FSRCTYPE"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FTotalAmount",
+        "name": "含税金额合计",
+        "elem": "AmountField",
+        "fn": "FTOTALAMOUNT"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FASSORTBILLSEQ",
+        "name": "配套单据行号",
+        "elem": "TextField",
+        "fn": "FASSORTBILLSEQ"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FAmount",
+        "name": "金额",
+        "elem": "AmountField",
+        "fn": "FAMOUNT"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FApproveQty",
+        "name": "批准数量",
+        "elem": "QtyField",
+        "fn": "FAPPROVEQTY"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FArrivalDate",
+        "name": "到货日期",
+        "elem": "DateTimeField",
+        "fn": "FARRIVALDATE"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FAssortBillNo",
+        "name": "配套单据编号",
+        "elem": "TextField",
+        "fn": "FASSORTBILLNO"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FAuxpropId",
+        "name": "辅助属性",
+        "elem": "RelatedFlexGroupField",
+        "fn": "FAUXPROPID"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FBOMNoId",
+        "name": "BOM版本",
+        "elem": "BaseDataField",
+        "fn": "FBOMID"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FBaseUnitId",
+        "name": "基本单位",
+        "elem": "UnitField",
+        "fn": "FBASEUNITID"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FChargeProjectID",
+        "name": "费用项目",
+        "elem": "BaseDataField",
+        "fn": "FCHARGEPROJECTID"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FContractNo",
+        "name": "合同号",
+        "elem": "TextField",
+        "fn": "FCONTRACTNO"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FDEMANDBILLENTRYID",
+        "name": "需求单据分录内码",
+        "elem": "IntegerField",
+        "fn": "FDEMANDBILLENTRYID"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FDEMANDBILLENTRYSEQ",
+        "name": "需求单据行号",
+        "elem": "IntegerField",
+        "fn": "FDEMANDBILLENTRYSEQ"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FDEMANDBILLNO",
+        "name": "需求单据编号",
+        "elem": "TextField",
+        "fn": "FDEMANDBILLNO"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FDEMANDTYPE",
+        "name": "需求来源",
+        "elem": "ComboField",
+        "fn": "FDEMANDTYPE"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FDownPrice",
+        "name": "价格下限",
+        "elem": "PriceField",
+        "fn": "FDOWNPRICE"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FEntryNote",
+        "name": "备注",
+        "elem": "TextField",
+        "fn": "FENTRYNOTE"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FEvaluatePrice",
+        "name": "单价",
+        "elem": "PriceField",
+        "fn": "FEVALUATEPRICE"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FHASPUBLISH",
+        "name": "1688发布状态",
+        "elem": "BillStatusField",
+        "fn": "FHASPUBLISH"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FInquiryJoinQty",
+        "name": "关联询价数量",
+        "elem": "QtyField",
+        "fn": "FINQUIRYJOINQTY"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FIsSplitCancel",
+        "name": "拆分作废",
+        "elem": "CheckBoxField",
+        "fn": "FISSPLITCANCEL"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FIsVmiBusiness",
+        "name": "VMI业务",
+        "elem": "CheckBoxField",
+        "fn": "FISVMIBUSINESS"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FLeadTime",
+        "name": "提前期",
+        "elem": "IntegerField",
+        "fn": "FLEADTIME"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FMRPCloseStatus",
+        "name": "业务关闭",
+        "elem": "BillStatusField",
+        "fn": "FMRPCLOSESTATUS"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FMRPTerminateStatus",
+        "name": "业务终止",
+        "elem": "BillStatusField",
+        "fn": "FMRPTERMINATESTATUS"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FMaterialId",
+        "name": "物料编码",
+        "elem": "BaseDataField",
+        "fn": "FMATERIALID"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FMaterialModel",
+        "name": "规格型号",
+        "elem": "BasePropertyField",
+        "fn": ""
+      },
+      {
+        "ek": "FEntity",
+        "key": "FMaterialName",
+        "name": "物料名称",
+        "elem": "BasePropertyField",
+        "fn": ""
+      },
+      {
+        "ek": "FEntity",
+        "key": "FMaterialType",
+        "name": "物料类别",
+        "elem": "BasePropertyField",
+        "fn": ""
+      },
+      {
+        "ek": "FEntity",
+        "key": "FMtoNo",
+        "name": "计划跟踪号",
+        "elem": "TextField",
+        "fn": "FMTONO"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FOrderJoinQty",
+        "name": "订单关联数量",
+        "elem": "QtyField",
+        "fn": "FORDERJOINQTY"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FOrderQty",
+        "name": "订单数量",
+        "elem": "QtyField",
+        "fn": "FORDERQTY"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FPRILSTENTRYID",
+        "name": "价目表分录id",
+        "elem": "IntegerField",
+        "fn": "FPRILSTENTRYID"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FPURBASENUM",
+        "name": "采购基本分子",
+        "elem": "DecimalField",
+        "fn": "FPURBASENUM"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FParentBomId",
+        "name": "父项BOM版本",
+        "elem": "BaseDataField",
+        "fn": "FPARENTBOMID"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FParentMaterialId",
+        "name": "父项产品",
+        "elem": "BaseDataField",
+        "fn": "FPARENTMATERIALID"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FParentRowId",
+        "name": "父产品行主键",
+        "elem": "TextField",
+        "fn": "FPARENTROWID"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FPlanConfirm",
+        "name": "计划确认",
+        "elem": "CheckBoxField",
+        "fn": "FPLANCONFIRM"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FPriceListEntry",
+        "name": "价目表",
+        "elem": "BaseDataField",
+        "fn": "FPRICELISTENTRY"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FPriceUnitId",
+        "name": "计价单位",
+        "elem": "UnitField",
+        "fn": "FPRICEUNITID"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FPriceUnitQty",
+        "name": "计价数量",
+        "elem": "QtyField",
+        "fn": "FPRICEUNITQTY"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FProviderId",
+        "name": "供货地点",
+        "elem": "BaseDataField",
+        "fn": "FPROVIDERID"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FPurchaseDeptId",
+        "name": "采购部门",
+        "elem": "BaseDataField",
+        "fn": "FPURCHASEDEPTID"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FPurchaseGroupId",
+        "name": "采购组",
+        "elem": "BaseDataField",
+        "fn": "FPURCHASEGROUPID"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FPurchaseOrgId",
+        "name": "采购组织",
+        "elem": "OrgField",
+        "fn": "FPURCHASEORGID"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FPurchaserId",
+        "name": "采购员",
+        "elem": "BaseDataField",
+        "fn": "FPURCHASERID"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FQueryPriceId",
+        "name": "1688询价单ID",
+        "elem": "IntegerField",
+        "fn": "FQUERYPRICEID"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FREQSTOCKQTY",
+        "name": "库存单位数量",
+        "elem": "QtyField",
+        "fn": "FREQSTOCKQTY"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FREQSTOCKUNITID",
+        "name": "库存单位",
+        "elem": "UnitField",
+        "fn": "FREQSTOCKUNITID"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FReceiveAddress",
+        "name": "交货地址",
+        "elem": "TextField",
+        "fn": "FRECEIVEADDRESS"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FReceiveDeptId",
+        "name": "收料部门",
+        "elem": "BaseDataField",
+        "fn": "FRECEIVEDEPTID"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FReceiveOrgId",
+        "name": "收料组织",
+        "elem": "OrgField",
+        "fn": "FRECEIVEORGID"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FReceiveQty",
+        "name": "收料数量",
+        "elem": "QtyField",
+        "fn": "FRECEIVEQTY"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FRemainQty",
+        "name": "剩余数量",
+        "elem": "QtyField",
+        "fn": "FREMAINQTY"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FReqAmount",
+        "name": "含税金额",
+        "elem": "AmountField",
+        "fn": "FREQAMOUNT"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FReqQty",
+        "name": "申请数量",
+        "elem": "QtyField",
+        "fn": "FREQQTY"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FReqTraceNo",
+        "name": "需求跟踪号",
+        "elem": "TextField",
+        "fn": "FREQTRACENO"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FRequireDeptId",
+        "name": "需求部门",
+        "elem": "BaseDataField",
+        "fn": "FREQUIREDEPTID"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FRequireOrgId",
+        "name": "需求组织",
+        "elem": "OrgField",
+        "fn": "FREQUIREORGID"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FRowPublishStatus",
+        "name": "供应商协同行发布状态(6.1废弃)",
+        "elem": "BillStatusField",
+        "fn": "FROWPUBLISHSTATUS"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FRowType",
+        "name": "产品类型",
+        "elem": "ComboField",
+        "fn": "FROWTYPE"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FSRCBIZUNITID",
+        "name": "携带的主业务单位",
+        "elem": "UnitField",
+        "fn": "FSRCBIZUNITID"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FSTOCKBASEDEN",
+        "name": "库存基本分母",
+        "elem": "DecimalField",
+        "fn": "FSTOCKBASEDEN"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FSalQty",
+        "name": "销售数量",
+        "elem": "QtyField",
+        "fn": "FSALQTY"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FSalUnitID",
+        "name": "销售单位",
+        "elem": "UnitField",
+        "fn": "FSALUNITID"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FSrcReqMergeEntryIds",
+        "name": "申请单合并前分录内码",
+        "elem": "TextField",
+        "fn": "FSRCREQMERGEENTRYIDS"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FSrcReqSplitEntryId",
+        "name": "申请单拆单前分录内码",
+        "elem": "IntegerField",
+        "fn": "FSRCREQSPLITENTRYID"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FStockId",
+        "name": "仓库",
+        "elem": "BaseDataField",
+        "fn": "FSTOCKID"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FStockQty",
+        "name": "入库数量",
+        "elem": "QtyField",
+        "fn": "FSTOCKQTY"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FSuggestPurDate",
+        "name": "建议采购日期",
+        "elem": "DateTimeField",
+        "fn": "FSUGGESTPURDATE"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FSuggestSupplierId",
+        "name": "建议供应商",
+        "elem": "BaseDataField",
+        "fn": "FSUGGESTSUPPLIERID"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FSupMatId",
+        "name": "供应商物料编码",
+        "elem": "TextField",
+        "fn": "FSUPMATID"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FSupMatName",
+        "name": "供应商物料名称",
+        "elem": "TextField",
+        "fn": "FSUPMATNAME"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FSupplierId",
+        "name": "指定供应商(6.0作废)",
+        "elem": "BaseDataField",
+        "fn": "FSUPPLIERID"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FTAXPRICE",
+        "name": "含税单价",
+        "elem": "PriceField",
+        "fn": "FTAXPRICE"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FTAXRATE",
+        "name": "税率%",
+        "elem": "DecimalField",
+        "fn": "FTAXRATE"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FTerminateDate",
+        "name": "终止日期",
+        "elem": "DateField",
+        "fn": "FTERMINATEDATE"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FTerminaterId",
+        "name": "终止人",
+        "elem": "UserField",
+        "fn": "FTERMINATERID"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FUnitId",
+        "name": "申请单位",
+        "elem": "UnitField",
+        "fn": "FUNITID"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FUpPrice",
+        "name": "价格上限",
+        "elem": "PriceField",
+        "fn": "FUPPRICE"
+      },
+      {
+        "ek": "FEntity",
+        "key": "FEntryID",
+        "name": "分录内码",
+        "elem": "IntegerField(系统)",
+        "fn": "FENTRYID"
+      }
+    ]
+  },
+  {
+    "form": "PUR_PurchaseOrder",
+    "fields": [
+      {
+        "ek": "BillHead",
+        "key": "FDate",
+        "name": "采购日期",
+        "elem": "DateField(继承)",
+        "fn": "FDATE"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FDocumentStatus",
+        "name": "单据状态",
+        "elem": "BillStatusField(继承)",
+        "fn": "FDOCUMENTSTATUS"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FBillNo",
+        "name": "单据编号",
+        "elem": "BillNoField(继承)",
+        "fn": "FBILLNO"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FID",
+        "name": "单据内码",
+        "elem": "IntegerField(继承)",
+        "fn": "FID"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FACCTYPE",
+        "name": "验收方式",
+        "elem": "ComboField",
+        "fn": "FACCTYPE"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FApproveDate",
+        "name": "审核日期",
+        "elem": "DateField",
+        "fn": "FAPPROVEDATE"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FApproverId",
+        "name": "审核人",
+        "elem": "UserField",
+        "fn": "FAPPROVERID"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FAssignSupplierId",
+        "name": "指定供应商",
+        "elem": "BaseDataField",
+        "fn": "FASSIGNSUPPLIERID"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FBillTypeID",
+        "name": "单据类型",
+        "elem": "BillTypeField",
+        "fn": "FBILLTYPEID"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FBusinessType",
+        "name": "业务类型",
+        "elem": "ComboField",
+        "fn": "FBUSINESSTYPE"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FCancelDate",
+        "name": "作废日期",
+        "elem": "DateField",
+        "fn": "FCANCELDATE"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FCancelStatus",
+        "name": "作废状态",
+        "elem": "BillStatusField",
+        "fn": "FCANCELSTATUS"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FCancellerId",
+        "name": "作废人",
+        "elem": "UserField",
+        "fn": "FCANCELLERID"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FChangeDate",
+        "name": "变更日期",
+        "elem": "DateField",
+        "fn": "FCHANGEDATE"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FChangeReason",
+        "name": "变更原因",
+        "elem": "TextField",
+        "fn": "FCHANGEREASON"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FChangerId",
+        "name": "变更人",
+        "elem": "UserField",
+        "fn": "FCHANGERID"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FChargeId",
+        "name": "收款方",
+        "elem": "BaseDataField",
+        "fn": "FCHARGEID"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FCloseDate",
+        "name": "关闭日期",
+        "elem": "DateField",
+        "fn": "FCLOSEDATE"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FCloseReason",
+        "name": "关闭原因",
+        "elem": "TextField",
+        "fn": "FCLOSEREASON"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FCloseStatus",
+        "name": "关闭状态",
+        "elem": "BillStatusField",
+        "fn": "FCLOSESTATUS"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FCloserId",
+        "name": "关闭人",
+        "elem": "UserField",
+        "fn": "FCLOSERID"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FComputeMode",
+        "name": "计算方式",
+        "elem": "ComboField",
+        "fn": "FCOMPUTEMODE"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FConfirmDate",
+        "name": "确认日期",
+        "elem": "DateField",
+        "fn": "FCONFIRMDATE"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FConfirmStatus",
+        "name": "确认状态",
+        "elem": "BillStatusField",
+        "fn": "FCONFIRMSTATUS"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FConfirmerId",
+        "name": "确认人",
+        "elem": "UserField",
+        "fn": "FCONFIRMERID"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FContractType",
+        "name": "合同类型",
+        "elem": "ComboField",
+        "fn": "FCONTRACTTYPE"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FCorrespondOrgId",
+        "name": "对应组织",
+        "elem": "OrgField",
+        "fn": "FCORRESPONDORGID"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FCreateDate",
+        "name": "创建日期",
+        "elem": "CreateDateField",
+        "fn": "FCREATEDATE"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FCreatorId",
+        "name": "创建人",
+        "elem": "CreaterField",
+        "fn": "FCREATORID"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FDescription",
+        "name": "折扣描述",
+        "elem": "TextField",
+        "fn": "FDESCRIPTION"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FDiscComputeMode",
+        "name": "计算方式",
+        "elem": "ComboField",
+        "fn": "FCOMPUTEMODE"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FDiscDescription",
+        "name": "折扣描述",
+        "elem": "TextField",
+        "fn": "FDESCRIPTION"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FDiscDiscount",
+        "name": "折扣额",
+        "elem": "AmountField",
+        "fn": "FDISCOUNT"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FDiscDiscountRate",
+        "name": "折扣率",
+        "elem": "DecimalField",
+        "fn": "FDISCOUNTRATE"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FDiscDiscountType",
+        "name": "折扣类型",
+        "elem": "ComboField",
+        "fn": "FDISCOUNTTYPE"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FDiscEndAmount",
+        "name": "折扣后金额",
+        "elem": "AmountField",
+        "fn": "FENDAMOUNT"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FDiscSeq",
+        "name": "序号",
+        "elem": "IntegerField",
+        "fn": "FSEQ"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FDiscount",
+        "name": "折扣额",
+        "elem": "AmountField",
+        "fn": "FDISCOUNT"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FDiscountAccording",
+        "name": "折扣依据",
+        "elem": "ComboField",
+        "fn": "FDiscountAccording"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FDiscountDirection",
+        "name": "折扣方向",
+        "elem": "ComboField",
+        "fn": "FDiscountDirection"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FDiscountEntryId",
+        "name": "折扣表明细id",
+        "elem": "IntegerField",
+        "fn": "FDISCOUNTENTRYID"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FDiscountItem",
+        "name": "折扣项目",
+        "elem": "TextField",
+        "fn": "FDiscountItem"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FDiscountRate",
+        "name": "折扣率（%）",
+        "elem": "DecimalField",
+        "fn": "FDISCOUNTRATE"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FDiscountType",
+        "name": "折扣类型",
+        "elem": "ComboField",
+        "fn": "FDISCOUNTTYPE"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FEndAmount",
+        "name": "折后金额",
+        "elem": "AmountField",
+        "fn": "FENDAMOUNT"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FIsCreateStraightOutIN",
+        "name": "生成直运出入库",
+        "elem": "CheckBoxField",
+        "fn": "FISCREATESTRAIGHTOUTIN"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FIsMobBill",
+        "name": "移动单据",
+        "elem": "CheckBoxField",
+        "fn": "FISMOBBILL"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FIsModificationOperator",
+        "name": "修改变更操作",
+        "elem": "CheckBoxField",
+        "fn": ""
+      },
+      {
+        "ek": "BillHead",
+        "key": "FIsUseDrpSalePOPush",
+        "name": "分销销售订单生成",
+        "elem": "CheckBoxField",
+        "fn": "FISUSEDRPSALEPOPUSH"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FMANUALCLOSE",
+        "name": "手工关闭",
+        "elem": "CheckBoxField",
+        "fn": "FMANUALCLOSE"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FModifyDate",
+        "name": "最后修改日期",
+        "elem": "ModifyDateField",
+        "fn": "FMODIFYDATE"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FNetOrderBillId",
+        "name": "供应商协同平台订单ID(6.1废弃)",
+        "elem": "IntegerField",
+        "fn": "FNETORDERBILLID"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FNetOrderBillNo",
+        "name": "供应商协同平台订单编号(6.1废弃)",
+        "elem": "TextField",
+        "fn": "FNETORDERBILLNO"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FProviderAddress",
+        "name": "供货方地址",
+        "elem": "TextField",
+        "fn": "FPROVIDERADDRESS"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FProviderContact",
+        "name": "供货方联系人(旧)",
+        "elem": "TextField",
+        "fn": "FPROVIDERCONTACT"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FProviderContactId",
+        "name": "供货方联系人",
+        "elem": "BaseDataField",
+        "fn": "FPROVIDERCONTACTID"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FProviderEMail",
+        "name": "邮箱",
+        "elem": "TextField",
+        "fn": "FPROVIDEREMAIL"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FProviderId",
+        "name": "供货方",
+        "elem": "BaseDataField",
+        "fn": "FPROVIDERID"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FProviderJob",
+        "name": "职务",
+        "elem": "BasePropertyField",
+        "fn": ""
+      },
+      {
+        "ek": "BillHead",
+        "key": "FProviderPhone",
+        "name": "手机",
+        "elem": "BasePropertyField",
+        "fn": ""
+      },
+      {
+        "ek": "BillHead",
+        "key": "FPurchaseDeptId",
+        "name": "采购部门",
+        "elem": "BaseDataField",
+        "fn": "FPURCHASEDEPTID"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FPurchaserGroupId",
+        "name": "采购组",
+        "elem": "BaseDataField",
+        "fn": "FPURCHASERGROUPID"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FPurchaserId",
+        "name": "采购员",
+        "elem": "BaseDataField",
+        "fn": "FPURCHASERID"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FRelReqStatus",
+        "name": "释放采购申请",
+        "elem": "BillStatusField",
+        "fn": "FRELREQSTATUS"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FSeq",
+        "name": "序号",
+        "elem": "IntegerField",
+        "fn": "FSEQ"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FSettleId",
+        "name": "结算方",
+        "elem": "BaseDataField",
+        "fn": "FSETTLEID"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FSupplierId",
+        "name": "供应商",
+        "elem": "BaseDataField",
+        "fn": "FSUPPLIERID"
+      },
+      {
+        "ek": "BillHead",
+        "key": "FVersionNo",
+        "name": "版本号",
+        "elem": "TextField",
+        "fn": "FVERSIONNO"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FAPJoinAmount",
+        "name": "关联应付金额",
+        "elem": "AmountField",
+        "fn": "FAPJOINAMOUNT"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FAllAmount",
+        "name": "价税合计",
+        "elem": "AmountField",
+        "fn": "FALLAMOUNT"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FAllAmountExceptDisCount",
+        "name": "价税合计（折前）",
+        "elem": "AmountField",
+        "fn": "FALLAMOUNTEXCEPTDISCOUNT"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FAllAmount_LC",
+        "name": "价税合计(本位币)",
+        "elem": "AmountField",
+        "fn": "FALLAMOUNT_LC"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FAmount_LC",
+        "name": "金额(本位币)",
+        "elem": "AmountField",
+        "fn": "FAMOUNT_LC"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FAuxPropId",
+        "name": "辅助属性",
+        "elem": "RelatedFlexGroupField",
+        "fn": "FAUXPROPID"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FBarcode",
+        "name": "零售条形码",
+        "elem": "TextField",
+        "fn": "FBARCODE"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FBaseUnitId",
+        "name": "基本单位",
+        "elem": "UnitField",
+        "fn": "FBASEUNITID"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FBillDisApportion",
+        "name": "整单折扣分摊",
+        "elem": "AmountField",
+        "fn": "FBILLDISAPPORTION"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FBomId",
+        "name": "BOM版本",
+        "elem": "BaseDataField",
+        "fn": "FBOMID"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FBranchId",
+        "name": "收货门店",
+        "elem": "BaseDataField",
+        "fn": "FBRANCHID"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FCHECKRETQTY",
+        "name": "收料可退数量",
+        "elem": "QtyField",
+        "fn": "FCHECKRETQTY"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FCOPYENTRYID",
+        "name": "联副产品分录id",
+        "elem": "IntegerField",
+        "fn": "FCOPYENTRYID"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FCentSettleOrgId",
+        "name": "集中结算组织(6.0废弃)",
+        "elem": "OrgField",
+        "fn": "FCENTSETTLEORGID"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FChangeFlag",
+        "name": "变更标志",
+        "elem": "ComboField",
+        "fn": "FCHANGEFLAG"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FChargeProjectID",
+        "name": "费用项目",
+        "elem": "BaseDataField",
+        "fn": "FCHARGEPROJECTID"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FConsumeSumQty",
+        "name": "消耗汇总数量",
+        "elem": "QtyField",
+        "fn": "FCONSUMESUMQTY"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FContractNo",
+        "name": "合同单号",
+        "elem": "TextField",
+        "fn": "FCONTRACTNO"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FDEMANDBILLENTRYID",
+        "name": "需求单据分录内码",
+        "elem": "IntegerField",
+        "fn": "FDEMANDBILLENTRYID"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FDEMANDBILLENTRYSEQ",
+        "name": "需求单据行号",
+        "elem": "IntegerField",
+        "fn": "FDEMANDBILLENTRYSEQ"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FDEMANDBILLNO",
+        "name": "需求单据编号",
+        "elem": "TextField",
+        "fn": "FDEMANDBILLNO"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FDEMANDTYPE",
+        "name": "需求来源",
+        "elem": "ComboField",
+        "fn": "FDEMANDTYPE"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FDeliveryBeforeDays",
+        "name": "交货提前天数",
+        "elem": "IntegerField",
+        "fn": "FDELIVERYBEFOREDAYS"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FDeliveryControl",
+        "name": "控制交货数量",
+        "elem": "CheckBoxField",
+        "fn": "FDELIVERYCONTROL"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FDeliveryDate",
+        "name": "交货日期",
+        "elem": "DateTimeField",
+        "fn": "FDELIVERYDATE"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FDeliveryDelayDays",
+        "name": "交货延迟天数",
+        "elem": "IntegerField",
+        "fn": "FDELIVERYDELAYDAYS"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FDeliveryEarlyDate",
+        "name": "最早交货日期",
+        "elem": "DateTimeField",
+        "fn": "FDELIVERYEARLYDATE"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FDeliveryLastDate",
+        "name": "最晚交货日期",
+        "elem": "DateTimeField",
+        "fn": "FDELIVERYLASTDATE"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FDeliveryMaxQty",
+        "name": "交货上限",
+        "elem": "QtyField",
+        "fn": "FDELIVERYMAXQTY"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FDeliveryMinQty",
+        "name": "交货下限",
+        "elem": "QtyField",
+        "fn": "FDELIVERYMINQTY"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FDeliveryStockStatus",
+        "name": "交货库存状态",
+        "elem": "BaseDataField",
+        "fn": "FDELIVERYSTOCKSTATUS"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FDispSettleOrgId",
+        "name": "分散结算组织(6.0废弃)",
+        "elem": "OrgField",
+        "fn": "FDISPSETTLEORGID"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FDownPrice",
+        "name": "价格下限",
+        "elem": "PriceField",
+        "fn": "FDOWNPRICE"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FEntryAmount",
+        "name": "金额",
+        "elem": "AmountField",
+        "fn": "FAMOUNT"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FEntryDiscountRate",
+        "name": "折扣率%",
+        "elem": "DecimalField",
+        "fn": "FDISCOUNTRATE"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FEntryNote",
+        "name": "备注",
+        "elem": "TextField",
+        "fn": "FNOTE"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FEntryPayOrgId",
+        "name": "付款组织",
+        "elem": "OrgField",
+        "fn": "FPAYORGID"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FEntrySettleModeId",
+        "name": "结算方式",
+        "elem": "BaseDataField",
+        "fn": "FSETTLETYPEID"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FEntrySettleOrgId",
+        "name": "结算组织",
+        "elem": "OrgField",
+        "fn": "FSETTLEORGID"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FEntryTaxAmount",
+        "name": "税额",
+        "elem": "AmountField",
+        "fn": "FTAXAMOUNT"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FEntryTaxRate",
+        "name": "税率%",
+        "elem": "DecimalField",
+        "fn": "FTAXRATE"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FFreezeDate",
+        "name": "冻结日期",
+        "elem": "DateField",
+        "fn": "FFREEZEDATE"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FFreezerId",
+        "name": "冻结人",
+        "elem": "UserField",
+        "fn": "FFREEZERID"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FGiveAway",
+        "name": "是否赠品",
+        "elem": "CheckBoxField",
+        "fn": "FGIVEAWAY"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FGroup",
+        "name": "组别",
+        "elem": "IntegerField",
+        "fn": "FGROUP"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FInqueryGetId",
+        "name": "询价报价采纳分录id",
+        "elem": "IntegerField",
+        "fn": "FINQUERYGETID"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FInventoryQty",
+        "name": "当前库存",
+        "elem": "QtyField",
+        "fn": ""
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FInvoiceAmount",
+        "name": "应付金额",
+        "elem": "AmountField",
+        "fn": "FINVOICEAMOUNT"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FInvoiceQty",
+        "name": "应付数量",
+        "elem": "QtyField",
+        "fn": "FINVOICEQTY"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FIsInventory",
+        "name": "允许库存",
+        "elem": "BasePropertyField",
+        "fn": ""
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FIsQuota",
+        "name": "配额生成",
+        "elem": "CheckBoxField",
+        "fn": "FISQUOTA"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FIsRepMaterial",
+        "name": "是否替代料采购",
+        "elem": "CheckBoxField",
+        "fn": "FISREPMATERIAL"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FIsStock",
+        "name": "是否可库存",
+        "elem": "CheckBoxField",
+        "fn": "FISSTOCK"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FJOINQTY",
+        "name": "关联数量",
+        "elem": "QtyField",
+        "fn": "FJOINQTY"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FLocation",
+        "name": "交货地点",
+        "elem": "TextField",
+        "fn": "FLOCATION"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FLocationAddress",
+        "name": "交货地址",
+        "elem": "TextField",
+        "fn": "FLOCATIONADDRESS"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FLocationId",
+        "name": "交货地点",
+        "elem": "BaseDataField",
+        "fn": "FLOCATIONID"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FLot",
+        "name": "批号",
+        "elem": "LotField",
+        "fn": "FLOT"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FMRPCloseStatus",
+        "name": "业务关闭",
+        "elem": "BillStatusField",
+        "fn": "FMRPCLOSESTATUS"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FMRPFreezeStatus",
+        "name": "业务冻结",
+        "elem": "BillStatusField",
+        "fn": "FMRPFREEZESTATUS"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FMRPTerminateStatus",
+        "name": "业务终止",
+        "elem": "BillStatusField",
+        "fn": "FMRPTERMINATESTATUS"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FMaterialId",
+        "name": "物料编码",
+        "elem": "BaseDataField",
+        "fn": "FMATERIALID"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FMaterialName",
+        "name": "物料名称",
+        "elem": "BasePropertyField",
+        "fn": ""
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FMaterialType",
+        "name": "物料类别",
+        "elem": "BasePropertyField",
+        "fn": ""
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FMaterialVersion",
+        "name": "物料版本",
+        "elem": "BasePropertyField",
+        "fn": ""
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FMaxPrice",
+        "name": "最高报价(6.1废弃)",
+        "elem": "PriceField",
+        "fn": "FMAXPRICE"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FMinPrice",
+        "name": "最低报价(6.1废弃)",
+        "elem": "PriceField",
+        "fn": "FMINPRICE"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FModel",
+        "name": "规格型号",
+        "elem": "BasePropertyField",
+        "fn": ""
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FMrbQty",
+        "name": "累计退料数量",
+        "elem": "QtyField",
+        "fn": "FMRBQTY"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FMtoNo",
+        "name": "计划跟踪号",
+        "elem": "TextField",
+        "fn": "FMTONO"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FNetOrderEntryId",
+        "name": "供应商协同平台订单分录ID(6.1废弃)",
+        "elem": "IntegerField",
+        "fn": "FNETORDERENTRYID"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FPARENTBOMID",
+        "name": "父项BOM版本",
+        "elem": "BaseDataField",
+        "fn": "FPARENTBOMID"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FPARENTMATID",
+        "name": "父项产品",
+        "elem": "BaseDataField",
+        "fn": "FPARENTMATID"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FPRILSTENTRYID",
+        "name": "价目表分录id",
+        "elem": "IntegerField",
+        "fn": "FPRILSTENTRYID"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FParentRowId",
+        "name": "父产品行主键",
+        "elem": "TextField",
+        "fn": "FPARENTROWID"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FPayAmount",
+        "name": "累计付款金额(已废弃)",
+        "elem": "AmountField",
+        "fn": "FPAYAMOUNT"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FPlanConfirm",
+        "name": "计划确认",
+        "elem": "CheckBoxField",
+        "fn": "FPLANCONFIRM"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FPrice",
+        "name": "单价",
+        "elem": "PriceField",
+        "fn": "FPRICE"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FPriceCoefficient",
+        "name": "价格系数",
+        "elem": "DecimalField",
+        "fn": "FPRICECOEFFICIENT"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FPriceListEntry",
+        "name": "分录价目表",
+        "elem": "BaseDataField",
+        "fn": "FPRICELISTENTRY"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FPriceUnitId",
+        "name": "计价单位",
+        "elem": "UnitField",
+        "fn": "FPRICEUNITID"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FPriceUnitQty",
+        "name": "计价数量",
+        "elem": "QtyField",
+        "fn": "FPRICEUNITQTY"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FProcesser",
+        "name": "加工商",
+        "elem": "BaseDataField",
+        "fn": "FPROCESSER"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FProductType",
+        "name": "委外产品类型",
+        "elem": "ComboField",
+        "fn": "FPRODUCTTYPE"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FPurBaseNum",
+        "name": "采购基本分子",
+        "elem": "DecimalField",
+        "fn": "FPURBASENUM"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FQty",
+        "name": "采购数量",
+        "elem": "QtyField",
+        "fn": "FQTY"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FReceiveDeptId",
+        "name": "收料部门",
+        "elem": "BaseDataField",
+        "fn": "FRECEIVEDEPTID"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FReceiveOrgId",
+        "name": "收料组织",
+        "elem": "OrgField",
+        "fn": "FRECEIVEORGID"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FReceiveQty",
+        "name": "累计收料数量",
+        "elem": "QtyField",
+        "fn": "FRECEIVEQTY"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FRemainReceiveQty",
+        "name": "剩余收料数量",
+        "elem": "QtyField",
+        "fn": "FREMAINRECEIVEQTY"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FRemainStockINQty",
+        "name": "剩余入库数量",
+        "elem": "QtyField",
+        "fn": "FREMAINSTOCKINQTY"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FRepOldMaterialNumber",
+        "name": "替代物料原编码",
+        "elem": "TextField",
+        "fn": "FREPOLDMATERIALNUMBER"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FReqTraceNo",
+        "name": "需求跟踪号",
+        "elem": "TextField",
+        "fn": "FREQTRACENO"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FRequireDeptId",
+        "name": "需求部门",
+        "elem": "BaseDataField",
+        "fn": "FREQUIREDEPTID"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FRequireOrgId",
+        "name": "需求组织",
+        "elem": "OrgField",
+        "fn": "FREQUIREORGID"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FRequireStaffId",
+        "name": "需求人",
+        "elem": "BaseDataField",
+        "fn": "FREQUIRESTAFFID"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FRowCost",
+        "name": "行费用",
+        "elem": "AmountField",
+        "fn": "FROWCOST"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FRowId",
+        "name": "产品行主键",
+        "elem": "TextField",
+        "fn": "FROWID"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FRowType",
+        "name": "产品类型",
+        "elem": "ComboField",
+        "fn": "FROWTYPE"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FSRCBIZUNITID",
+        "name": "携带的主业务单位",
+        "elem": "UnitField",
+        "fn": "FSRCBIZUNITID"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FSTOCKRETQTY",
+        "name": "库存可退数量",
+        "elem": "QtyField",
+        "fn": "FSTOCKRETQTY"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FSUBREQBILLNO",
+        "name": "委外订单编号",
+        "elem": "TextField",
+        "fn": "FSUBREQBILLNO"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FSUBREQBILLSEQ",
+        "name": "委外订单行号",
+        "elem": "IntegerField",
+        "fn": "FSUBREQBILLSEQ"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FSUBREQENTRYID",
+        "name": "委外订单分录内码",
+        "elem": "IntegerField",
+        "fn": "FSUBREQENTRYID"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FSUMACCALLAMOUNT",
+        "name": "累计验收金额",
+        "elem": "AmountField",
+        "fn": "FSUMACCALLAMOUNT"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FSUMACCRATE",
+        "name": "累计验收比例%",
+        "elem": "DecimalField",
+        "fn": "FSUMACCRATE"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FSalJoinQty",
+        "name": "销售订单关联数量（采购）",
+        "elem": "QtyField",
+        "fn": "FSALJOINQTY"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FSalQty",
+        "name": "销售数量",
+        "elem": "QtyField",
+        "fn": "FSALQTY"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FSalUnitID",
+        "name": "销售单位",
+        "elem": "UnitField",
+        "fn": "FSALUNITID"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FSetPriceUnitID",
+        "name": "定价单位",
+        "elem": "UnitField",
+        "fn": "FSETPRICEUNITID"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FStockBaseDen",
+        "name": "库存基本分母",
+        "elem": "DecimalField",
+        "fn": "FSTOCKBASEDEN"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FStockInQty",
+        "name": "累计入库数量",
+        "elem": "QtyField",
+        "fn": "FSTOCKINQTY"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FStockQty",
+        "name": "库存单位数量",
+        "elem": "QtyField",
+        "fn": "FSTOCKQTY"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FStockUnitID",
+        "name": "库存单位",
+        "elem": "UnitField",
+        "fn": "FSTOCKUNITID"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FSubOrgId",
+        "name": "委外组织",
+        "elem": "OrgField",
+        "fn": "FSUBORGID"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FSupMatId",
+        "name": "供应商物料编码",
+        "elem": "TextField",
+        "fn": "FSUPMATID"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FSupMatName",
+        "name": "供应商物料名称",
+        "elem": "TextField",
+        "fn": "FSUPMATNAME"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FSupplierLot",
+        "name": "供应商批号",
+        "elem": "TextField",
+        "fn": "FSUPPLIERLOT"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FSysPrice",
+        "name": "系统定价",
+        "elem": "PriceField",
+        "fn": "FSYSPRICE"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FTailDiffFlag",
+        "name": "尾差处理标识",
+        "elem": "CheckBoxField",
+        "fn": "FTAILDIFFFLAG"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FTaxAmount_LC",
+        "name": "税额(本位币)",
+        "elem": "AmountField",
+        "fn": "FTAXAMOUNT_LC"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FTaxCombination",
+        "name": "税组合",
+        "elem": "TaxCombinationField",
+        "fn": "FTAXCOMBINATION"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FTaxNetPrice",
+        "name": "净价",
+        "elem": "PriceField",
+        "fn": "FTAXNETPRICE"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FTaxPrice",
+        "name": "含税单价",
+        "elem": "PriceField",
+        "fn": "FTAXPRICE"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FTerminateDate",
+        "name": "终止日期",
+        "elem": "DateField",
+        "fn": "FTERMINATEDATE"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FTerminaterId",
+        "name": "终止人",
+        "elem": "UserField",
+        "fn": "FTERMINATERID"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FTimeControl",
+        "name": "控制交货时间",
+        "elem": "CheckBoxField",
+        "fn": "FTIMECONTROL"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FUnitId",
+        "name": "采购单位",
+        "elem": "UnitField",
+        "fn": "FUNITID"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FUpPrice",
+        "name": "价格上限",
+        "elem": "PriceField",
+        "fn": "FUPPRICE"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FWWPickMtlQty",
+        "name": "委外领料套数",
+        "elem": "QtyField",
+        "fn": "FWWPICKMTLQTY"
+      },
+      {
+        "ek": "FPOOrderEntry",
+        "key": "FEntryID",
+        "name": "分录内码",
+        "elem": "IntegerField(系统)",
+        "fn": "FENTRYID"
+      }
+    ]
+  }
+]

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>采购订单删除字段 A-PO-DEL</title>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<div class="page">
+  <div class="tip">接口 <b>A-PO-DEL</b> · <code>order.deleted</code>。删除成功后通知；已发货/入库/对账场景按 CSV 转人工核查（业务规则，不增加接口字段）。</div>
+  <div class="panel">
+    <table class="grid">
+      <thead><tr><th>字段</th><th>类型</th><th>必填</th><th>说明与约束</th><th>会议结论</th></tr></thead>
+      <tbody>
+        <tr data-field-row data-path="subject.pid" data-type="string" data-req="是"><td><code>subject.pid</code></td><td>string</td><td>是</td><td>原订单 FID，与 data.orderId 相同</td><td><select><option>纳入</option><option>待定</option><option>不纳入</option></select></td></tr>
+        <tr data-field-row data-path="sequence" data-type="integer" data-req="是"><td><code>sequence</code></td><td>integer</td><td>是</td><td>与 data.sourceVersion 数值相同</td><td><select><option>纳入</option><option>待定</option><option>不纳入</option></select></td></tr>
+        <tr data-field-row data-path="data.formId" data-type="string" data-req="是"><td><code>data.formId</code></td><td>string</td><td>是</td><td>固定 PUR_PurchaseOrder</td><td><select><option>纳入</option><option>待定</option><option>不纳入</option></select></td></tr>
+        <tr data-field-row data-path="data.orderId" data-type="string" data-req="是"><td><code>data.orderId</code></td><td>string</td><td>是</td><td>原采购订单 FID</td><td><select><option>纳入</option><option>待定</option><option>不纳入</option></select></td></tr>
+        <tr data-field-row data-path="data.deletionScope" data-type="string" data-req="是"><td><code>data.deletionScope</code></td><td>string</td><td>是</td><td>document / entries</td><td><select><option>纳入</option><option>待定</option><option>不纳入</option></select></td></tr>
+        <tr data-field-row data-path="data.entryIds" data-type="string[]" data-req="条件"><td><code>data.entryIds</code></td><td>string[]</td><td>条件</td><td>entries 时为原 FPOOrderEntry_FEntryID</td><td><select><option>纳入</option><option>待定</option><option>不纳入</option></select></td></tr>
+        <tr data-field-row data-path="data.sourceVersion" data-type="string" data-req="是"><td><code>data.sourceVersion</code></td><td>string</td><td>是</td><td>持久递增删除版本</td><td><select><option>纳入</option><option>待定</option><option>不纳入</option></select></td></tr>
+        <tr data-field-row data-path="data.deletedAt" data-type="string" data-req="是"><td><code>data.deletedAt</code></td><td>string</td><td>是</td><td>删除业务时间 ISO8601</td><td><select><option>纳入</option><option>待定</option><option>不纳入</option></select></td></tr>
+        <tr data-field-row data-path="data.operationId" data-type="string" data-req="是"><td><code>data.operationId</code></td><td>string</td><td>是</td><td>删除操作稳定编号</td><td><select><option>纳入</option><option>待定</option><option>不纳入</option></select></td></tr>
+        <tr data-field-row data-path="data.billNo" data-type="string" data-req="否"><td><code>data.billNo</code></td><td>string</td><td>否</td><td>原订单号</td><td><select><option>待定</option><option>纳入</option><option>不纳入</option></select></td></tr>
+        <tr data-field-row data-path="data.reason" data-type="string" data-req="否"><td><code>data.reason</code></td><td>string</td><td>否</td><td>删除原因</td><td><select><option>待定</option><option>纳入</option><option>不纳入</option></select></td></tr>
+        <tr data-field-row data-path="data.operator.*" data-type="object" data-req="否"><td><code>data.operator.*</code></td><td>object</td><td>否</td><td>sourceUserId / displayName，同申请删除</td><td><select><option>待定</option><option>纳入</option><option>不纳入</option></select></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="confirm-bar">
+    <div class="sum">覆盖 CSV：订单整单/部分明细删除后同步。</div>
+    <button class="btn p" type="button" onclick="act('导出会议确认')">导出会议确认</button>
+  </div>
+</div>
+<script src="_ui.js"></script>
+</body>
+</html>

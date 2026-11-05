@@ -1,0 +1,27 @@
+{
+  "PUR_Requisition": {
+    "file": "采购申请单.xml",
+    "fieldCount": 171,
+    "byEntity": {
+      "BillHead": 87,
+      "FEntity": 80,
+      "FMobBillHead": 4
+    }
+  },
+  "PUR_PurchaseOrder": {
+    "file": "采购订单.xml",
+    "fieldCount": 381,
+    "byEntity": {
+      "BillHead": 140,
+      "FEntryDeliveryPlan": 14,
+      "FIinstallment": 27,
+      "FOrderActualPaySubEntity": 10,
+      "FPOOrderClause": 5,
+      "FPOOrderEntry": 131,
+      "FPOOrderFinance": 31,
+      "FPOOrderPay": 8,
+      "FPaymentEntry": 7,
+      "FTaxDetailSubEntity": 8
+    }
+  }
+}
