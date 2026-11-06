@@ -151,6 +151,8 @@ table.grid th{
 table.grid th .gear{opacity:.35;margin-left:4px;font-size:11px}
 table.grid tr:hover td{background:#f7faff}
 table.grid tr.selected td{background:var(--kd-blue-row)}
+table.grid td.hl{background:#fff3e0;color:var(--warn);font-weight:600}
+table.grid tr:hover td.hl{background:#ffe8cc}
 table.grid td.num{text-align:right;font-variant-numeric:tabular-nums}
 table.grid a.bill{color:var(--kd-link)}
 table.grid a.bill:hover{text-decoration:underline}
