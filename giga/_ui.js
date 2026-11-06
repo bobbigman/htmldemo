@@ -115,7 +115,7 @@
     });
   }
 
-  /** 审核成功条接力：新增同步 / 修改同步 → 同一接口（演示说明，不写进用户正文） */
+  /** 新增 / 修改怎么同步：本期不做审核自动同步，统一手工点「同步到AMOS」（演示说明） */
   function openAuditSameApiDrawer() {
     ensureStyle();
     closeDrawer();
@@ -129,13 +129,13 @@
     dr.innerHTML =
       '<div class="xy-drawer-hd"><b>新增与修改怎么同步</b><span class="xy-x" data-close>×</span></div>' +
       '<div class="xy-drawer-bd">' +
-      '<div class="xy-tip warn">这是给会议/演示看的说明，正式产品里用户只会看到「审核成功」，不会弹这段话。</div>' +
-      '<div class="xy-tip">表上常把「新增后同步」和「修改后同步」写成两行；对 AMOS 仍是<strong>同一套' + syncName + '</strong>，不另开接口，也不另做「改单同步」按钮。</div>' +
-      '<div style="margin-bottom:8px">说的是本列表里的' + billName + '。</div>' +
+      '<div class="xy-tip warn">这是给会议/演示看的说明；正式产品里审核只提示「审核成功」，不会自动同步。</div>' +
+      '<div class="xy-tip">表上常把「新增后同步」和「修改后同步」写成两行；对 AMOS 仍是<strong>同一套' + syncName + '</strong>，不另开接口。触发方式统一为手工点「同步到AMOS」。</div>' +
+      '<div style="margin-bottom:8px">说的是本列表里的' + billName + '（含订单变更单）。</div>' +
       '<ol class="xy-steps">' +
-      '<li><strong>新增后同步</strong>：单据审核通过，系统自动通知 AMOS 来取。</li>' +
-      '<li><strong>修改后同步</strong>：反审核改完再审（订单含变更后再审），还是同一套通知，AMOS 按单号重取最新内容。</li>' +
-      '<li>界面只保留<strong>审核</strong>；点审核看到「已同步到AMOS」，这两种场景都已经覆盖到了。</li>' +
+      '<li><strong>审核</strong>：只改单据状态，不通知 AMOS。</li>' +
+      '<li><strong>新增后 / 修改后再同步</strong>：勾选单据或明细，点工具栏<strong>同步到AMOS</strong>；AMOS 按身份重取最新内容。</li>' +
+      '<li>不另做「改单同步」按钮；申请/订单/变更单都走同一组合菜单。</li>' +
       '</ol>' +
       '<div class="xy-tip" style="margin-top:14px">细字段对照可到左轨「字段分析」，或申请/订单下的同步字段页。</div>' +
       '</div>' +
@@ -512,54 +512,19 @@
     kdPrompt(billNosPhrase(rows) + '，同步到AMOS成功！');
   }
 
-  /** 工具栏「审核」：不弹确认，直接审核成功并同步 AMOS */
-  function auditThenAutoSync() {
+  /** 工具栏「审核」：只审核，不自动同步 AMOS */
+  function auditOnly() {
     var rows = selectedRows();
     if (!rows.length) {
       toast('请先勾选要审核的单据');
       return;
     }
-    var apiHint = document.body.getAttribute('data-api') || 'A-003';
-    runAutoSyncAfterAudit(apiHint, rows);
-  }
-
-  function runAutoSyncAfterAudit(apiHint, rows) {
-    var skipped = [];
-    var synced = [];
-    rows.forEach(function (tr) {
-      if (apiHint === 'A-003') {
-        var q = remainQtyOf(tr);
-        if (q != null && q <= 0) skipped.push(tr);
-        else synced.push(tr);
-      } else {
-        synced.push(tr);
-      }
-    });
-
-    if (synced.length) markSync('成功', '-', synced);
-    skipped.forEach(function (tr) {
-      var er = tr.querySelector('[data-sync-err]');
-      if (er) er.textContent = '自动略过：剩余数量≤0';
-    });
-
-    var sameApiLink = {
+    kdPrompt(billNosPhrase(rows) + '，审核成功！', {
+      detail: '未同步到 AMOS。需要同步时请点工具栏「同步到AMOS」。',
       linkText: '新增与修改怎么同步',
-      linkHint: '同一接口，无新按钮',
+      linkHint: '手工同步，同一接口',
       onLink: function () { openAuditSameApiDrawer(); }
-    };
-
-    if (!synced.length && skipped.length) {
-      kdPrompt(billNosPhrase(rows) + '，审核成功！', Object.assign({
-        detail: '没有可同步到 AMOS 的明细（剩余数量均为 0，已略过）。'
-      }, sameApiLink));
-      return;
-    }
-
-    var msg = billNosPhrase(synced.length ? synced : rows) + '，审核成功！已同步到AMOS。';
-    var detail = skipped.length
-      ? '另有 ' + skipped.length + ' 行剩余数量为 0，已略过，未同步到 AMOS。'
-      : '';
-    kdPrompt(msg, Object.assign({ detail: detail || undefined }, sameApiLink));
+    });
   }
 
   function delFieldMeta(delApi) {
@@ -735,7 +700,7 @@
     if (text === '同步到AMOS') return syncToAmos();
     if (text === '取消同步标记') return clearSyncFlag();
     if (text === '同步报文') return showPayload(el);
-    if (text === '审核' || text === '审核 ▾') return auditThenAutoSync();
+    if (text === '审核' || text === '审核 ▾') return auditOnly();
     if (text === '删除') return deleteThenSyncAmos();
     if (text === '打开组合菜单') {
       var btn = document.querySelector('.combo > .btn, .combo > .mi');

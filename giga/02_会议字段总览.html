@@ -10,7 +10,7 @@
 <div class="page">
   <div class="tip">来源：<code>docs/采购模块同步功能.csv</code>。下表把功能点映射到接口与字段确认页，会议时逐条勾结论。</div>
   <div class="tip warn"><b>先看报文怎么传：</b><a href="javascript:;" onclick="parent.postMessage({page:'报文字段对照'},'*')">报文字段对照</a> —— 左金蝶字段、右 AMOS 路径，四接口一页齐。物料/数量等业务字段不进 JSON，由 AMOS 读账套；细表仍在各「同步字段」页。</div>
-  <div class="tip"><b>方案口径（无需新按钮）：</b>CSV 虽拆成「新增同步 / 修改同步」，对第三方仍是同一套 POST——申请改单 = <b>A-003</b>，订单改单/变更单 = <b>A-007</b>。界面只保留审核、删除、组合菜单；改单场景写进备注与本表「同套」列即可。</div>
+  <div class="tip"><b>方案口径（无需新按钮）：</b>CSV 虽拆成「新增同步 / 修改同步」，对第三方仍是同一套 POST——申请改单 = <b>A-003</b>，订单改单/变更单 = <b>A-007</b>。本期<strong>不做审核自动同步</strong>；审核只管状态，通知 AMOS 统一点「同步到AMOS」。界面保留审核、删除、组合菜单；改单场景写进备注与本表「同套」列即可。</div>
   <div class="panel">
     <table class="grid">
       <thead>
@@ -40,35 +40,35 @@
         <tr>
           <td>新增同步</td>
           <td>采购申请单发起AMOS询价（POST）</td>
-          <td>列表勾选或单据内勾选明细，一键发送；重复发送拦截。条件：剩余数量&gt;0；自动审核略过≤0；手工点拦截提示</td>
+          <td>列表勾选或单据内勾选明细，点「同步到AMOS」发送；重复发送拦截。条件：剩余数量&gt;0；≤0 时拦截提示</td>
           <td>A-003</td>
           <td><a href="javascript:;" onclick="parent.postMessage({page:'同步字段 A-003'},'*')">申请同步字段</a></td>
         </tr>
         <tr>
           <td>新增同步</td>
-          <td>采购订单审核后自动同步（POST）</td>
-          <td>审核通过自动通知；反审核后再审不重复生成</td>
+          <td>采购订单同步到AMOS（POST）</td>
+          <td>勾选后点「同步到AMOS」通知；重复同步拦截；审核本身不同步</td>
           <td>A-007</td>
           <td><a href="javascript:;" onclick="parent.postMessage({page:'同步字段 A-007'},'*')">订单同步字段</a></td>
         </tr>
         <tr>
           <td>修改同步</td>
           <td>采购申请单变更后同步（POST）</td>
-          <td>已同步申请修改保存后通知 AMOS 重取；与首次询价同一 POST，无新按钮</td>
+          <td>已同步申请修改后，再点「同步到AMOS」通知重取；与首次询价同一 POST，无新按钮</td>
           <td>A-003（同套）</td>
           <td><a href="javascript:;" onclick="parent.postMessage({page:'同步字段 A-003'},'*')">申请同步字段</a></td>
         </tr>
         <tr>
           <td>修改同步</td>
           <td>采购订单反审核改单后同步（POST）</td>
-          <td>反审核改单后保存/再审通知 AMOS；与首次审核同步同一 POST，无新按钮</td>
+          <td>反审核改单后，再点「同步到AMOS」通知重取；与首次同步同一 POST，无新按钮</td>
           <td>A-007（同套）</td>
           <td><a href="javascript:;" onclick="parent.postMessage({page:'同步字段 A-007'},'*')">订单同步字段</a></td>
         </tr>
         <tr>
           <td>修改同步</td>
-          <td>采购订单变更单审核后同步（POST）</td>
-          <td>变更单审核后自动同步；也可手工点「同步到AMOS」；仍走 A-007，无新接口、无删除同步</td>
+          <td>采购订单变更单同步到AMOS（POST）</td>
+          <td>变更单审核后仍须手工点「同步到AMOS」；仍走 A-007，无新接口、无删除同步</td>
           <td>A-007（同套）</td>
           <td><a href="javascript:;" onclick="parent.postMessage({page:'采购订单变更单列表'},'*')">变更单列表</a> · <a href="javascript:;" onclick="parent.postMessage({page:'同步字段 A-007'},'*')">订单同步字段</a></td>
         </tr>
@@ -89,7 +89,7 @@
       </tbody>
     </table>
   </div>
-  <div class="tip warn" style="margin-top:12px">界面菜单统一说法：组合菜单「同步到AMOS」→ 子项「同步到AMOS / 取消同步标记 / 同步报文」。不说「推送/上报」。<br>申请询价门槛：界面须展示「剩余数量 &gt; 0」；自动审核略过，手工同步拦截提示（见采购申请列表演示）。</div>
+  <div class="tip warn" style="margin-top:12px">界面菜单统一说法：组合菜单「同步到AMOS」→ 子项「同步到AMOS / 取消同步标记 / 同步报文」。不说「推送/上报」。本期不做审核自动同步。<br>申请询价门槛：界面须展示「剩余数量 &gt; 0」；手工同步时 ≤0 拦截提示（见采购申请列表演示）。</div>
 </div>
 <script src="_ui.js"></script>
 </body>
