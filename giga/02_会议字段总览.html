@@ -9,6 +9,7 @@
 <body>
 <div class="page">
   <div class="tip">来源：<code>docs/采购模块同步功能.csv</code>。下表把功能点映射到接口与字段确认页，会议时逐条勾结论。</div>
+  <div class="tip warn"><b>先看报文怎么传：</b><a href="javascript:;" onclick="parent.postMessage({page:'报文字段对照'},'*')">报文字段对照</a> —— 左金蝶字段、右 AMOS 路径，四接口一页齐。物料/数量等业务字段不进 JSON，由 AMOS 读账套；细表仍在各「同步字段」页。</div>
   <div class="tip"><b>方案口径（无需新按钮）：</b>CSV 虽拆成「新增同步 / 修改同步」，对第三方仍是同一套 POST——申请改单 = <b>A-003</b>，订单改单/变更单 = <b>A-007</b>。界面只保留审核、删除、组合菜单；改单场景写进备注与本表「同套」列即可。</div>
   <div class="panel">
     <table class="grid">

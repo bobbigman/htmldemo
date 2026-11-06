@@ -6,7 +6,7 @@
 <title>同步日志</title>
 <link rel="stylesheet" href="common.css">
 </head>
-<body data-api="A-REQ-DEL">
+<body>
 <div class="page">
   <div class="toolbar">
     <input type="text" id="qBill" placeholder="单据编号/FID" value="">
@@ -25,6 +25,7 @@
     <button class="btn p" type="button" onclick="act('查询日志')">查询</button>
     <button class="btn" type="button" onclick="act('手工重发')">手工重发</button>
     <button class="btn" type="button" onclick="act('同步报文')">同步报文</button>
+    <button class="btn" type="button" onclick="parent.postMessage({page:'报文字段对照'},'*')">字段对照</button>
     <button class="btn" type="button" onclick="act('落库字段')">落库字段（内部）▸</button>
   </div>
 
@@ -47,7 +48,7 @@
       </thead>
       <tbody>
         <!-- 采购申请 ×3：审核 / 删除 / 手工同步到AMOS -->
-        <tr data-scene="audit" data-bill-type="req">
+        <tr data-scene="audit" data-bill-type="req" data-api="A-003" data-bill="CGSQ2611050001" data-fid="101" data-event-id="kd-req-audit-001" data-record-pid="REC-91001">
           <td><input type="checkbox"></td>
           <td>2026-11-05 09:12:18</td>
           <td>采购申请</td>
@@ -58,9 +59,9 @@
           <td><code>kd-req-audit-001</code></td>
           <td><span class="tag on">成功</span></td>
           <td><code>REC-91001</code></td>
-          <td class="ops"><a href="javascript:;" onclick="act('同步报文')">报文</a></td>
+          <td class="ops"><a href="javascript:;" onclick="act('同步报文', this)">报文</a></td>
         </tr>
-        <tr class="selected" data-scene="after-del" data-del-fail="1" data-bill-type="req">
+        <tr class="selected" data-scene="after-del" data-del-fail="1" data-bill-type="req" data-api="A-REQ-DEL" data-bill="CGSQ000088" data-fid="88" data-entry="21" data-event-id="kd-del-op-req-001" data-op-id="kd-del-op-req-001">
           <td><input type="checkbox" checked></td>
           <td>2026-11-05 15:42:08</td>
           <td>采购申请</td>
@@ -73,10 +74,10 @@
           <td>-</td>
           <td class="ops">
             <a href="javascript:;" onclick="act('手工重发')">重发</a>
-            <a href="javascript:;" onclick="act('同步报文')">报文</a>
+            <a href="javascript:;" onclick="act('同步报文', this)">报文</a>
           </td>
         </tr>
-        <tr data-scene="manual" data-bill-type="req">
+        <tr data-scene="manual" data-bill-type="req" data-api="A-003" data-bill="CGSQ000120" data-fid="120" data-entry="31" data-event-id="kd-req-manual-001" data-record-pid="REC-91020">
           <td><input type="checkbox"></td>
           <td>2026-11-05 11:05:44</td>
           <td>采购申请</td>
@@ -87,11 +88,11 @@
           <td><code>kd-req-manual-001</code></td>
           <td><span class="tag on">成功</span></td>
           <td><code>REC-91020</code></td>
-          <td class="ops"><a href="javascript:;" onclick="act('同步报文')">报文</a></td>
+          <td class="ops"><a href="javascript:;" onclick="act('同步报文', this)">报文</a></td>
         </tr>
 
         <!-- 采购订单 ×3：审核 / 删除 / 手工同步到AMOS -->
-        <tr data-scene="audit" data-bill-type="po">
+        <tr data-scene="audit" data-bill-type="po" data-api="A-007" data-bill="CGDD300001" data-fid="300001" data-event-id="kd-po-audit-001" data-record-pid="REC-93001">
           <td><input type="checkbox"></td>
           <td>2026-11-05 10:20:05</td>
           <td>采购订单</td>
@@ -102,9 +103,9 @@
           <td><code>kd-po-audit-001</code></td>
           <td><span class="tag on">成功</span></td>
           <td><code>REC-93001</code></td>
-          <td class="ops"><a href="javascript:;" onclick="act('同步报文')">报文</a></td>
+          <td class="ops"><a href="javascript:;" onclick="act('同步报文', this)">报文</a></td>
         </tr>
-        <tr data-scene="after-del" data-bill-type="po">
+        <tr data-scene="after-del" data-bill-type="po" data-api="A-PO-DEL" data-bill="CGDD300088" data-fid="300088" data-event-id="kd-del-op-po-001" data-op-id="kd-del-op-po-001" data-record-pid="REC-93088">
           <td><input type="checkbox"></td>
           <td>2026-11-05 14:20:33</td>
           <td>采购订单</td>
@@ -115,9 +116,9 @@
           <td><code>kd-del-op-po-001</code></td>
           <td><span class="tag on">成功</span></td>
           <td><code>REC-93088</code></td>
-          <td class="ops"><a href="javascript:;" onclick="act('同步报文')">报文</a></td>
+          <td class="ops"><a href="javascript:;" onclick="act('同步报文', this)">报文</a></td>
         </tr>
-        <tr data-scene="manual" data-bill-type="po">
+        <tr data-scene="manual" data-bill-type="po" data-api="A-007" data-bill="CGDD300099" data-fid="300099" data-event-id="kd-po-manual-001" data-record-pid="REC-93099">
           <td><input type="checkbox"></td>
           <td>2026-11-05 13:18:27</td>
           <td>采购订单</td>
@@ -128,11 +129,11 @@
           <td><code>kd-po-manual-001</code></td>
           <td><span class="tag on">成功</span></td>
           <td><code>REC-93099</code></td>
-          <td class="ops"><a href="javascript:;" onclick="act('同步报文')">报文</a></td>
+          <td class="ops"><a href="javascript:;" onclick="act('同步报文', this)">报文</a></td>
         </tr>
 
         <!-- 采购订单变更单 ×2：审核 / 手工同步到AMOS（同 A-007） -->
-        <tr data-scene="audit" data-bill-type="po-change">
+        <tr data-scene="audit" data-bill-type="po-change" data-api="A-007" data-bill="CGDDX2611050001" data-fid="501001" data-event-id="kd-pox-audit-001" data-record-pid="REC-95001">
           <td><input type="checkbox"></td>
           <td>2026-11-05 16:08:11</td>
           <td>采购订单变更单</td>
@@ -143,9 +144,9 @@
           <td><code>kd-pox-audit-001</code></td>
           <td><span class="tag on">成功</span></td>
           <td><code>REC-95001</code></td>
-          <td class="ops"><a href="javascript:;" onclick="act('同步报文')">报文</a></td>
+          <td class="ops"><a href="javascript:;" onclick="act('同步报文', this)">报文</a></td>
         </tr>
-        <tr data-scene="manual" data-bill-type="po-change">
+        <tr data-scene="manual" data-bill-type="po-change" data-api="A-007" data-bill="CGDDX2611030008" data-fid="501008" data-event-id="kd-pox-manual-001" data-record-pid="REC-95008">
           <td><input type="checkbox"></td>
           <td>2026-11-05 16:22:40</td>
           <td>采购订单变更单</td>
@@ -156,7 +157,7 @@
           <td><code>kd-pox-manual-001</code></td>
           <td><span class="tag on">成功</span></td>
           <td><code>REC-95008</code></td>
-          <td class="ops"><a href="javascript:;" onclick="act('同步报文')">报文</a></td>
+          <td class="ops"><a href="javascript:;" onclick="act('同步报文', this)">报文</a></td>
         </tr>
       </tbody>
     </table>

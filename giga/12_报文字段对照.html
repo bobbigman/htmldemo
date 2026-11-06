@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>报文字段对照</title>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<div class="page">
+  <div class="tip">一页看清：<b>金蝶字段 → AMOS 字段</b>，报文里到底传什么。物料/数量/供应商等业务字段<strong>不进 JSON</strong>，由 AMOS 按身份去金蝶账套自取；要对齐业务字段请到各「同步字段」细表。</div>
+  <div class="tip warn">四接口共用外层信封：<code>id</code> / <code>type</code> / <code>schemaVersion</code> / <code>occurredAt</code> / <code>subject</code> / <code>sequence</code> / <code>data</code>。下表只列「金蝶有对应来源」或「金蝶要拼出来」的关键行。</div>
+
+  <div class="toolbar">
+    <button class="btn p" type="button" onclick="jump('a003')">A-003 申请</button>
+    <button class="btn" type="button" onclick="jump('a007')">A-007 订单</button>
+    <button class="btn" type="button" onclick="jump('areq')">A-REQ-DEL 申请删</button>
+    <button class="btn" type="button" onclick="jump('apo')">A-PO-DEL 订单删</button>
+    <button class="btn" type="button" onclick="act('同步报文')">看报文样例</button>
+  </div>
+
+  <div class="section-title" id="a003">A-003 · 采购申请同步 · <code>inquiry.requested</code></div>
+  <div class="panel" style="margin-bottom:14px">
+    <table class="grid">
+      <thead>
+        <tr>
+          <th style="width:28%">金蝶侧</th>
+          <th style="width:28%">AMOS 报文路径</th>
+          <th style="width:10%">必填</th>
+          <th>怎么传</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>单据头 <code>BillHead.FID</code><br><span style="color:#666">单据内码</span></td>
+          <td><code>subject.pid</code><br><code>data.selected[].requisitionId</code></td>
+          <td>是</td>
+          <td>写入 JSON。身份，不是单号。</td>
+        </tr>
+        <tr>
+          <td>明细 <code>FEntity.FEntryID</code><br><span style="color:#666">分录内码</span></td>
+          <td><code>data.selected[].entryId</code></td>
+          <td>是</td>
+          <td>写入 JSON。勾选哪些明细就传哪些。</td>
+        </tr>
+        <tr>
+          <td>（金蝶拼，非 XML 字段）</td>
+          <td><code>data.title</code></td>
+          <td>是</td>
+          <td>写入 JSON。询价标题，按业务规则拼。</td>
+        </tr>
+        <tr>
+          <td>单据头 <code>BillHead.FBillNo</code> 等业务字段</td>
+          <td>—（不进本报文）</td>
+          <td>—</td>
+          <td><span class="tag on">AMOS 读账套</span> 用上面 FID/EntryId 自取。细表见 <a href="javascript:;" onclick="go('同步字段 A-003')">申请同步字段</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-title" id="a007">A-007 · 采购订单同步 · <code>order.published</code></div>
+  <div class="panel" style="margin-bottom:14px">
+    <table class="grid">
+      <thead>
+        <tr>
+          <th style="width:28%">金蝶侧</th>
+          <th style="width:28%">AMOS 报文路径</th>
+          <th style="width:10%">必填</th>
+          <th>怎么传</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>单据头 <code>BillHead.FID</code><br><span style="color:#666">单据内码</span></td>
+          <td><code>subject.pid</code><br><code>data.orderIds[]</code></td>
+          <td>是</td>
+          <td>写入 JSON。可一批多个订单 FID。</td>
+        </tr>
+        <tr>
+          <td>（可选，建议省略）</td>
+          <td><code>data.requestId</code></td>
+          <td>否</td>
+          <td>一般不传；幂等靠请求头 <code>Idempotency-Key</code>。</td>
+        </tr>
+        <tr>
+          <td>单据头 <code>FBillNo</code> / 供应商 / 明细物料等</td>
+          <td>—（不进本报文）</td>
+          <td>—</td>
+          <td><span class="tag on">AMOS 读账套</span> 细表见 <a href="javascript:;" onclick="go('同步字段 A-007')">订单同步字段</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-title" id="areq">A-REQ-DEL · 采购申请删除 · <code>requisition.deleted</code></div>
+  <div class="panel" style="margin-bottom:14px">
+    <table class="grid">
+      <thead>
+        <tr>
+          <th style="width:28%">金蝶侧</th>
+          <th style="width:28%">AMOS 报文路径</th>
+          <th style="width:10%">必填</th>
+          <th>怎么传</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>原单 <code>BillHead.FID</code>（删前留存）</td>
+          <td><code>subject.pid</code><br><code>data.requisitionId</code></td>
+          <td>是</td>
+          <td>写入 JSON。删掉以后也要还能对上原单。</td>
+        </tr>
+        <tr>
+          <td>固定值 <code>PUR_Requisition</code></td>
+          <td><code>data.formId</code></td>
+          <td>是</td>
+          <td>写入 JSON。表单标识。</td>
+        </tr>
+        <tr>
+          <td>删除范围（整单 / 勾选明细）</td>
+          <td><code>data.deletionScope</code></td>
+          <td>是</td>
+          <td><code>document</code>=整单；<code>entries</code>=部分明细。</td>
+        </tr>
+        <tr>
+          <td>明细 <code>FEntity.FEntryID</code>（删前留存）</td>
+          <td><code>data.entryIds[]</code></td>
+          <td>条件</td>
+          <td>仅 <code>entries</code> 时传；整单时禁止传。</td>
+        </tr>
+        <tr>
+          <td>金蝶侧删除版本（持久递增）</td>
+          <td><code>data.sourceVersion</code> / <code>sequence</code></td>
+          <td>是</td>
+          <td>同一 FID 递增；不可用随机数。两处数值相同。</td>
+        </tr>
+        <tr>
+          <td>删除业务时间</td>
+          <td><code>data.deletedAt</code></td>
+          <td>是</td>
+          <td>ISO8601 含时区；不得晚于 <code>occurredAt</code>。</td>
+        </tr>
+        <tr>
+          <td>本次删除操作稳定编号</td>
+          <td><code>data.operationId</code></td>
+          <td>是</td>
+          <td>重发不换号；同步日志靠它补发。</td>
+        </tr>
+        <tr>
+          <td>原单 <code>BillHead.FBillNo</code></td>
+          <td><code>data.billNo</code></td>
+          <td>否</td>
+          <td>可选，方便按单号查日志。</td>
+        </tr>
+        <tr>
+          <td>当前操作用户</td>
+          <td><code>data.operator.sourceUserId</code><br><code>data.operator.displayName</code></td>
+          <td>条件/否</td>
+          <td>有 operator 对象时 sourceUserId 必填。</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="tip" style="margin:10px 12px 12px">细约束与会议勾选见 <a href="javascript:;" onclick="go('删除字段 A-REQ-DEL')">申请删除字段</a></div>
+  </div>
+
+  <div class="section-title" id="apo">A-PO-DEL · 采购订单删除 · <code>order.deleted</code></div>
+  <div class="panel" style="margin-bottom:14px">
+    <table class="grid">
+      <thead>
+        <tr>
+          <th style="width:28%">金蝶侧</th>
+          <th style="width:28%">AMOS 报文路径</th>
+          <th style="width:10%">必填</th>
+          <th>怎么传</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>原单 <code>BillHead.FID</code>（删前留存）</td>
+          <td><code>subject.pid</code><br><code>data.orderId</code></td>
+          <td>是</td>
+          <td>写入 JSON。订单身份。</td>
+        </tr>
+        <tr>
+          <td>固定值 <code>PUR_PurchaseOrder</code></td>
+          <td><code>data.formId</code></td>
+          <td>是</td>
+          <td>写入 JSON。</td>
+        </tr>
+        <tr>
+          <td>删除范围（整单 / 勾选明细）</td>
+          <td><code>data.deletionScope</code></td>
+          <td>是</td>
+          <td><code>document</code> / <code>entries</code>。</td>
+        </tr>
+        <tr>
+          <td>明细 <code>FPOOrderEntry.FEntryID</code>（删前留存）</td>
+          <td><code>data.entryIds[]</code></td>
+          <td>条件</td>
+          <td>仅部分明细删除时传。</td>
+        </tr>
+        <tr>
+          <td>金蝶侧删除版本（持久递增）</td>
+          <td><code>data.sourceVersion</code> / <code>sequence</code></td>
+          <td>是</td>
+          <td>同申请删除规则。</td>
+        </tr>
+        <tr>
+          <td>删除业务时间</td>
+          <td><code>data.deletedAt</code></td>
+          <td>是</td>
+          <td>ISO8601。</td>
+        </tr>
+        <tr>
+          <td>本次删除操作稳定编号</td>
+          <td><code>data.operationId</code></td>
+          <td>是</td>
+          <td>重发不换号。</td>
+        </tr>
+        <tr>
+          <td>原单 <code>BillHead.FBillNo</code></td>
+          <td><code>data.billNo</code></td>
+          <td>否</td>
+          <td>可选追踪。</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="tip" style="margin:10px 12px 12px">细约束见 <a href="javascript:;" onclick="go('删除字段 A-PO-DEL')">订单删除字段</a></div>
+  </div>
+
+  <div class="section-title">公共信封（四接口都有）</div>
+  <div class="panel" style="margin-bottom:14px">
+    <table class="grid">
+      <thead>
+        <tr>
+          <th style="width:28%">金蝶侧怎么来</th>
+          <th style="width:28%">AMOS 报文路径</th>
+          <th style="width:10%">必填</th>
+          <th>怎么传</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>金蝶生成的通知编号</td>
+          <td><code>id</code></td>
+          <td>是</td>
+          <td>稳定；重发沿用同一 id。</td>
+        </tr>
+        <tr>
+          <td>按接口固定</td>
+          <td><code>type</code></td>
+          <td>是</td>
+          <td><code>inquiry.requested</code> / <code>order.published</code> / <code>requisition.deleted</code> / <code>order.deleted</code></td>
+        </tr>
+        <tr>
+          <td>固定</td>
+          <td><code>schemaVersion</code></td>
+          <td>是</td>
+          <td>当前为 <code>1</code>。</td>
+        </tr>
+        <tr>
+          <td>发送时刻</td>
+          <td><code>occurredAt</code></td>
+          <td>是</td>
+          <td>ISO8601。</td>
+        </tr>
+        <tr>
+          <td>单据类型 + FID</td>
+          <td><code>subject.type</code> / <code>subject.pid</code></td>
+          <td>是</td>
+          <td>申请=<code>purchase-requisition</code>；订单=<code>purchase-order</code>。</td>
+        </tr>
+        <tr>
+          <td>请求头令牌 / 幂等键</td>
+          <td>Header <code>Authorization</code><br>Header <code>Idempotency-Key</code></td>
+          <td>是</td>
+          <td>不在 JSON 体内；连接配置页维护令牌。</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="confirm-bar">
+    <div class="sum">业务字段（物料、数量、状态…）对照 → 各「同步字段」细表；本页只管<strong>报文怎么组</strong>。</div>
+    <button class="btn" type="button" onclick="go('字段分析')">字段分析总览</button>
+    <button class="btn p" type="button" onclick="act('同步报文')">看报文样例</button>
+  </div>
+</div>
+<script src="_ui.js"></script>
+<script>
+function go(page) {
+  if (window.parent && window.parent !== window) window.parent.postMessage({ page: page }, '*');
+  else location.href = page;
+}
+function jump(id) {
+  var el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+// 本页默认用 A-003 样例；点各段「看报文」可先切 data-api
+document.querySelectorAll('.toolbar .btn').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var t = btn.textContent || '';
+    if (t.indexOf('A-003') === 0) document.body.setAttribute('data-api', 'A-003');
+    if (t.indexOf('A-007') === 0) document.body.setAttribute('data-api', 'A-007');
+    if (t.indexOf('A-REQ-DEL') === 0) document.body.setAttribute('data-api', 'A-REQ-DEL');
+    if (t.indexOf('A-PO-DEL') === 0) document.body.setAttribute('data-api', 'A-PO-DEL');
+  });
+});
+document.body.setAttribute('data-api', 'A-003');
+</script>
+</body>
+</html>

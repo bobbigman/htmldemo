@@ -371,13 +371,16 @@
     var first = rows[0];
     var fid = first ? (first.getAttribute('data-fid') || '101') : '101';
     var bill = first ? (first.getAttribute('data-bill') || '') : '';
+    var eventId = first ? (first.getAttribute('data-event-id') || '') : '';
+    var opId = first ? (first.getAttribute('data-op-id') || '') : '';
+    var recordPid = first ? (first.getAttribute('data-record-pid') || '') : '';
     var entries = rows.map(function (tr) {
       return tr.getAttribute('data-entry');
     }).filter(Boolean);
 
     if (kind === 'A-003') {
       return {
-        id: 'kd-inquiry-demo-001',
+        id: eventId || 'kd-inquiry-demo-001',
         type: 'inquiry.requested',
         schemaVersion: 1,
         occurredAt: '2026-11-05T04:00:00Z',
@@ -396,7 +399,7 @@
     }
     if (kind === 'A-007') {
       return {
-        id: 'kd-order-sync-demo-001',
+        id: eventId || 'kd-order-sync-demo-001',
         type: 'order.published',
         schemaVersion: 1,
         occurredAt: '2026-11-05T04:10:00Z',
@@ -406,15 +409,11 @@
       };
     }
     if (kind === 'A-REQ-DEL') {
-      var scope = entries.length && entries.length < rows.length + 1 && entries.length > 0
-        ? (rows.length === 1 || new Set(rows.map(function (r) { return r.getAttribute('data-fid'); })).size === 1 && entries.length
-          ? 'entries' : 'document')
-        : 'document';
-      // 同 FID 多行勾选 → entries；整单唯一 FID 且用户意图整单 → 简化：勾选行带 entry 则 entries
+      // 同 FID 多行勾选 → entries；勾选行带 entry 则 entries
       var sameFid = rows.every(function (tr) { return (tr.getAttribute('data-fid') || '') === fid; });
-      scope = (sameFid && entries.length) ? 'entries' : 'document';
+      var scope = (sameFid && entries.length) ? 'entries' : 'document';
       var body = {
-        id: 'kd-req-del-demo-001',
+        id: eventId || 'kd-req-del-demo-001',
         type: 'requisition.deleted',
         schemaVersion: 1,
         occurredAt: '2026-11-05T04:20:00Z',
@@ -426,7 +425,7 @@
           deletionScope: scope,
           sourceVersion: '3',
           deletedAt: '2026-11-05T04:19:58+08:00',
-          operationId: 'kd-del-op-req-001',
+          operationId: opId || 'kd-del-op-req-001',
           billNo: bill || undefined,
           reason: '用户在列表删除（演示）',
           operator: { sourceUserId: 'demo', displayName: 'demo' }
@@ -437,7 +436,7 @@
     }
     if (kind === 'A-PO-DEL') {
       return {
-        id: 'kd-po-del-demo-001',
+        id: eventId || 'kd-po-del-demo-001',
         type: 'order.deleted',
         schemaVersion: 1,
         occurredAt: '2026-11-05T04:25:00Z',
@@ -449,15 +448,15 @@
           deletionScope: 'document',
           sourceVersion: '2',
           deletedAt: '2026-11-05T04:24:58+08:00',
-          operationId: 'kd-del-op-po-001',
+          operationId: opId || 'kd-del-op-po-001',
           billNo: bill || undefined,
           reason: '用户在列表删除（演示）'
         }
       };
     }
     return {
-      eventId: 'kd-inquiry-demo-001',
-      recordPid: 'AMOS_NOTIFICATION_RECORD_ID',
+      eventId: eventId || 'kd-inquiry-demo-001',
+      recordPid: recordPid || 'AMOS_NOTIFICATION_RECORD_ID',
       duplicate: false
     };
   }
@@ -683,13 +682,35 @@
     );
   }
 
-  function showPayload() {
-    var apiHint = document.body.getAttribute('data-api') || 'A-003';
-    var req = samplePayload(apiHint);
-    var resp = samplePayload('resp');
+  function resolvePayloadRows(el) {
+    var fromRow = el && el.closest ? el.closest('tbody tr') : null;
+    if (fromRow) return [fromRow];
+    var rows = selectedRows();
+    if (rows.length) return rows;
+    var highlighted = document.querySelector('table.grid tbody tr.selected');
+    return highlighted ? [highlighted] : [];
+  }
+
+  function showPayload(el) {
+    var rows = resolvePayloadRows(el);
+    var apiHint = (rows[0] && rows[0].getAttribute('data-api'))
+      || document.body.getAttribute('data-api')
+      || 'A-003';
+    // 列表/日志须有选中行；字段对照等说明页可无行，直接按页面 data-api 出样例
+    var needRow = !!document.querySelector('table.grid tbody input[type=checkbox]');
+    if (needRow && !rows.length) {
+      toast('请先勾选一条同步日志或单据');
+      return;
+    }
+    var bill = rows[0] ? (rows[0].getAttribute('data-bill') || '') : '';
+    var req = samplePayload(apiHint, rows);
+    var resp = samplePayload('resp', rows);
+    var where = bill
+      ? '当前行：' + bill + ' · 接口 <b>' + apiHint + '</b>。'
+      : '接口 <b>' + apiHint + '</b>。';
     dlg(
       '同步报文',
-      '<div class="xy-tip">展示最近一次请求与返回（演示数据）。正式环境从同步日志读取。</div>' +
+      '<div class="xy-tip">' + where + '演示数据；正式环境从同步日志读取。</div>' +
       '<b>请求</b><div class="xy-mono">' + JSON.stringify(req, null, 2) + '</div>' +
       '<div style="height:10px"></div><b>返回（HTTP 202）</b><div class="xy-mono">' + JSON.stringify(resp, null, 2) + '</div>',
       { wide: true }
@@ -710,10 +731,10 @@
     }
   });
 
-  window.act = function (text) {
+  window.act = function (text, el) {
     if (text === '同步到AMOS') return syncToAmos();
     if (text === '取消同步标记') return clearSyncFlag();
-    if (text === '同步报文') return showPayload();
+    if (text === '同步报文') return showPayload(el);
     if (text === '审核' || text === '审核 ▾') return auditThenAutoSync();
     if (text === '删除') return deleteThenSyncAmos();
     if (text === '打开组合菜单') {
@@ -798,6 +819,34 @@
 
   window.xyToast = toast;
   window.toggleCombo = toggleCombo;
+
+  /** 同步日志：点行/勾选改为单选，避免换行后仍带着默认删除行 */
+  (function bindLogGridExclusiveSelect() {
+    var grid = document.getElementById('logGrid');
+    if (!grid) return;
+
+    function selectOnly(tr) {
+      grid.querySelectorAll('tbody tr').forEach(function (r) {
+        var on = r === tr;
+        r.classList.toggle('selected', on);
+        var ck = r.querySelector('input[type=checkbox]');
+        if (ck) ck.checked = on;
+      });
+    }
+
+    grid.addEventListener('click', function (e) {
+      if (e.target.closest('a, button, thead')) return;
+      if (e.target.closest('thead input[type=checkbox]')) return;
+      var tr = e.target.closest('tbody tr');
+      if (!tr) return;
+      if (e.target.type === 'checkbox') {
+        if (e.target.checked) selectOnly(tr);
+        else tr.classList.remove('selected');
+        return;
+      }
+      selectOnly(tr);
+    });
+  })();
 
   window.addEventListener('message', function () {});
 })();
