@@ -73,21 +73,21 @@
           <th style="width:100px">物料名称<span class="gear">⚙</span></th>
           <th style="width:80px">申请数量<span class="gear">⚙</span></th>
           <th style="width:72px">剩余数量<span class="gear">⚙</span></th>
-          <th style="width:72px">同步状态<span class="gear">⚙</span></th>
+          <th style="width:72px">通知状态<span class="gear">⚙</span></th>
           <th style="width:120px">同步错误<span class="gear">⚙</span></th>
           <th style="width:70px">FID</th>
           <th style="width:70px">EntryId</th>
         </tr>
       </thead>
       <tbody>
-        <tr class="selected" data-remain-qty="350" data-bill="CGSQ2611050001" data-fid="101" data-entry="11" data-bill-status="已审核" data-synced="0">
+        <tr class="selected" data-remain-qty="350" data-bill="CGSQ000101" data-fid="101" data-entry="11" data-bill-status="已审核" data-synced="0">
           <td class="chkcol"><input type="checkbox" checked></td>
-          <td>批量采购申请</td>
-          <td><a class="bill" href="javascript:;">CGSQ2611050001</a></td>
+          <td>标准采购申请</td>
+          <td><a class="bill" href="javascript:;">CGSQ000101</a></td>
           <td>已审核</td>
           <td>未关闭</td>
           <td>捷嘉智造-2026-09新系统</td>
-          <td>2026/11/5</td>
+          <td>2026/11/3</td>
           <td><a class="bill" href="javascript:;">D510000354500</a></td>
           <td>贴片电容</td>
           <td class="num">350</td>
@@ -114,7 +114,7 @@
           <td><code>101</code></td>
           <td><code>12</code></td>
         </tr>
-        <tr data-remain-qty="0" data-bill="CGSQ000101" data-fid="101" data-entry="13" data-bill-status="已审核" data-synced="0">
+        <tr data-remain-qty="0" data-bill="CGSQ000101" data-fid="101" data-entry="13" data-bill-status="已审核" data-synced="1">
           <td class="chkcol"><input type="checkbox"></td>
           <td>标准采购申请</td>
           <td><a class="bill" href="javascript:;">CGSQ000101</a></td>
@@ -144,7 +144,7 @@
           <td class="num">50</td>
           <td class="num"><b>50</b></td>
           <td><span class="tag err" data-sync-status>失败</span></td>
-          <td data-sync-err>401 令牌失效</td>
+          <td data-sync-err>连接验证失败，请检查AMOS连接配置</td>
           <td><code>88</code></td>
           <td><code>21</code></td>
         </tr>
@@ -160,7 +160,7 @@
           <td>垫片 M8</td>
           <td class="num">80</td>
           <td class="num"><b>80</b></td>
-          <td><span class="tag on" data-sync-status>成功</span></td>
+          <td><span class="tag on" data-sync-status>已同步过</span></td>
           <td data-sync-err>-</td>
           <td><code>120</code></td>
           <td><code>31</code></td>
@@ -169,14 +169,7 @@
     </table>
   </div>
 
-  <div class="demo-notes discuss-detail-del">
-    <div class="discuss-title">明细删了怎么传？（待与 AMOS 确认）</div>
-    <div class="discuss-body">
-      <p>改单再审请按<strong>整单现状</strong>同步（A-003），<strong>不单独报「删了哪行」</strong>——保存时常连改带删，你们按单号重取最新即可。</p>
-      <p>删除通知仅用于单已删、读不到时；若每次删行都报删除，易漏修改、还容易重复。</p>
-      <p class="discuss-ask">请确认：按整单重取可行，还是必须另传「删除了哪几行」？</p>
-    </div>
-  </div>
+  <div class="demo-notes"><div class="tip">首次同步：勾选需要询价的明细，点击“同步到AMOS”。之后修改内容或更改状态，也需要同步。没有勾选的明细不会被删除。</div></div>
   <div class="statusbar">
     <span>已选 <b id="selCount">1</b> 行</span>
     <div class="pager">
@@ -192,7 +185,7 @@
   </div>
 
   <div class="demo-notes">
-    <div class="tip warn"><b>创建询价条件：</b>仅<strong>剩余数量 &gt; 0</strong> 的明细可发起询价。点「同步到AMOS」时，剩余数量 ≤ 0 的行会提示拦截。</div>
+    <div class="tip warn"><b>创建询价条件：</b>首次同步须已审核，且剩余数量大于0。已经同步过的明细，即使剩余数量变为0，或发生反审核、关闭、作废、恢复，也要把变化通知AMOS。所选明细有不符合要求的，本次全部不发送。</div>
   </div>
 </div>
 <script src="_ui.js"></script>
@@ -200,7 +193,7 @@
 function pickScheme(el) {
   document.querySelectorAll('.scheme').forEach(function (s) { s.classList.remove('on'); });
   el.classList.add('on');
-  if (window.xyToast) xyToast('已切换方案：' + el.textContent.trim() + '（演示）');
+  if (window.xyKdPrompt) xyKdPrompt('已切换方案：' + el.textContent.trim() + '。');
 }
 function toggleAll(master) {
   document.querySelectorAll('#reqGrid tbody input[type=checkbox]').forEach(function (c) {
@@ -234,5 +227,6 @@ document.querySelectorAll('#reqGrid tbody tr').forEach(function (tr) {
 });
 updateSel();
 </script>
+<script src="scripts/requisition-1108.js"></script>
 </body>
 </html>

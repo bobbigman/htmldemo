@@ -6,7 +6,7 @@
 <title>采购订单变更单列表</title>
 <link rel="stylesheet" href="common.css">
 </head>
-<body data-api="A-007" data-bill-kind="po-change">
+<body data-api="A-PO-CHANGE" data-bill-kind="po-change">
 <div class="page kd-list">
   <div class="menubar">
     <button class="mi" type="button" onclick="act('过滤')">过滤</button>
@@ -76,7 +76,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="selected" data-bill="CGDDX2611050001" data-fid="501001" data-bill-status="已审核" data-synced="0" data-src-po="CGDD300001">
+        <tr class="selected" data-bill="CGDDX2611050001" data-fid="501001" data-bill-status="已审核" data-synced="0" data-src-po="CGDD300001" data-order-id="300001" data-effective="1">
           <td class="chkcol"><input type="checkbox" checked></td>
           <td><a class="bill" href="javascript:;">CGDDX2611050001</a></td>
           <td>宁波某某精密</td>
@@ -94,7 +94,7 @@
           <td data-sync-err>-</td>
           <td><code>501001</code></td>
         </tr>
-        <tr data-bill="CGDDX2611040003" data-fid="501003" data-bill-status="创建" data-synced="0" data-src-po="CGDD300088">
+        <tr data-bill="CGDDX2611040003" data-fid="501003" data-bill-status="创建" data-synced="0" data-src-po="CGDD300088" data-order-id="300088" data-effective="0">
           <td class="chkcol"><input type="checkbox"></td>
           <td><a class="bill" href="javascript:;">CGDDX2611040003</a></td>
           <td>上海某某电子</td>
@@ -112,7 +112,7 @@
           <td data-sync-err>-</td>
           <td><code>501003</code></td>
         </tr>
-        <tr data-bill="CGDDX2611030008" data-fid="501008" data-bill-status="已审核" data-synced="1" data-src-po="CGDD300099">
+        <tr data-bill="CGDDX2611030008" data-fid="501008" data-bill-status="已审核" data-synced="1" data-src-po="CGDD300099" data-order-id="300099" data-effective="1">
           <td class="chkcol"><input type="checkbox"></td>
           <td><a class="bill" href="javascript:;">CGDDX2611030008</a></td>
           <td>苏州某某五金</td>
@@ -134,10 +134,6 @@
     </table>
   </div>
 
-  <div class="demo-notes amos-pending">
-    <div class="amos-pending-banner">AMOS接口待提供</div>
-    <div class="amos-pending-sub">变更单审核 / 同步到AMOS 的接口尚未提供，演示仅展示菜单与流程。</div>
-  </div>
   <div class="statusbar">
     <span>已选 <b id="selCount">1</b> 行</span>
     <div class="pager">
@@ -150,8 +146,6 @@
     </div>
   </div>
 
-    <div class="amos-pending-sub">变更单审核 / 同步到AMOS 的接口尚未提供，演示仅展示菜单与流程。</div>
-  </div>
 </div>
 <script src="_ui.js"></script>
 <script>
@@ -191,5 +185,6 @@ document.querySelectorAll('#chgGrid tbody tr').forEach(function (tr) {
 });
 updateSel();
 </script>
+<script src="scripts/order-change-1108.js"></script>
 </body>
 </html>

@@ -97,11 +97,29 @@
   </div>
 
   <div class="demo-notes discuss-detail-del">
-    <div class="discuss-title">明细删了怎么传？（待与 AMOS 确认）</div>
-    <div class="discuss-body">
-      <p>改单再审请按<strong>整单现状</strong>同步（A-007），<strong>不单独报「删了哪行」</strong>——保存时常连改带删，你们按单号重取最新即可。</p>
-      <p>删除通知仅用于单已删、读不到时；若每次删行都报删除，易漏修改、还容易重复。</p>
-      <p class="discuss-ask">请确认：按整单重取可行，还是必须另传「删除了哪几行」？</p>
+    <div class="discuss-title" style="color:#333">订单同步与删除说明</div>
+    <div class="discuss-body" style="max-width:1100px;width:100%;overflow-x:auto">
+      <table class="grid" style="width:100%;table-layout:fixed;white-space:normal">
+        <thead><tr><th style="width:50%">AMOS文档</th><th style="width:50%">金蝶建议</th></tr></thead>
+        <tbody>
+          <tr>
+            <td style="white-space:normal;vertical-align:top;line-height:1.85">首次同步：订单须由AMOS采购流程创建并已审核，金蝶发送完整订单内容。金蝶单独新增且未与AMOS关联的订单不在本次自动同步范围。</td>
+            <td style="white-space:normal;vertical-align:top;line-height:1.85">本项暂无调整建议。</td>
+          </tr>
+          <tr>
+            <td style="white-space:normal;vertical-align:top;line-height:1.85">反审核、关闭、作废及恢复，与首次发布订单共用A-007，发送相应状态。</td>
+            <td style="white-space:normal;vertical-align:top;line-height:1.85;color:#c62828">待确认：状态变化与首次发布订单共用接口，容易混淆。建议单独提供状态通知接口，明确各类状态的处理规则。</td>
+          </tr>
+          <tr>
+            <td style="white-space:normal;vertical-align:top;line-height:1.85">审核后修改数量、价格、交期或地址，须在变更审核生效后，通过订单变更通知同步；AMOS保留已有发货记录，显示修改内容。</td>
+            <td style="white-space:normal;vertical-align:top;line-height:1.85;color:#c62828">待确认：这是业务流程，需要用户确认。</td>
+          </tr>
+          <tr>
+            <td style="white-space:normal;vertical-align:top;line-height:1.85">订单变更时，金蝶发送修改后的完整订单，并单独列出已删除的明细行。</td>
+            <td style="white-space:normal;vertical-align:top;line-height:1.85;color:#c62828">待确认：金蝶保存修改后，原来的明细已被更新，不方便再逐条找出删了哪些行；AMOS中保留着修改前的记录。建议金蝶发送修改后的全部明细，由AMOS对照原记录识别删除的行，这样双方处理起来更顺畅。<a href="javascript:;" onclick="showPoChangeExample()">示例说明</a></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
   <div class="statusbar">
@@ -125,6 +143,24 @@ function pickScheme(el) {
   document.querySelectorAll('.scheme').forEach(function (s) { s.classList.remove('on'); });
   el.classList.add('on');
   if (window.xyToast) xyToast('已切换方案：' + el.textContent.trim() + '（演示）');
+}
+function showPoChangeExample() {
+  var html =
+    '<p style="margin:0 0 10px;line-height:1.7">同一笔小单：删 A1；原 A2 改为物料 A5、数量 50；A3 只改数量为 30；增 A4。修改后顺序号仍从 1 递增，已删行在「修改后」为空。</p>' +
+    '<table class="grid" style="width:100%;margin-bottom:12px">' +
+    '<thead>' +
+    '<tr><th rowspan="2" style="width:56px">变更</th><th colspan="3">修改前</th><th colspan="3">修改后</th></tr>' +
+    '<tr><th style="width:64px">顺序号</th><th>物料</th><th>数量</th><th style="width:64px">顺序号</th><th>物料</th><th>数量</th></tr>' +
+    '</thead>' +
+    '<tbody>' +
+    '<tr><td>删除</td><td>1</td><td>A1</td><td>100 个</td><td>—</td><td>—</td><td>—</td></tr>' +
+    '<tr><td>修改</td><td>2</td><td>A2</td><td>200 个</td><td>1</td><td>A5</td><td>50 个</td></tr>' +
+    '<tr><td>修改</td><td>3</td><td>A3</td><td>300 个</td><td>2</td><td>A3</td><td>30 个</td></tr>' +
+    '<tr><td>新增</td><td>—</td><td>—</td><td>—</td><td>3</td><td>A4</td><td>40 个</td></tr>' +
+    '</tbody></table>' +
+    '<p style="margin:0;line-height:1.7;color:#555">对照上表：删行只有「修改前」；增行只有「修改后」；改行两侧都有（可改物料、可只改数量）。若只发修改后三行、不点名删除，对方只能靠历史单去猜，顺序号重排后更对不上。</p>';
+  if (window.xyKdInlinePayload) window.xyKdInlinePayload('订单变更 · 示例说明', html);
+  else if (window.xyKdPrompt) window.xyKdPrompt('订单变更 · 示例说明', { detail: html.replace(/<[^>]+>/g, ' ') });
 }
 function updateSel() {
   var checked = document.querySelectorAll('#poGrid tbody input[type=checkbox]:checked').length;

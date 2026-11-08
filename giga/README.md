@@ -11,6 +11,16 @@
 
 ## 打开方式
 
+本地固定端口预览（兼容浏览器缓存的无 `.html` 地址）：在项目根目录运行
+
+```bash
+python demo/scripts/preview.py
+```
+
+然后打开 http://localhost:5177/ 。
+
+也可使用：
+
 ```bash
 cd demo
 npx --yes serve .

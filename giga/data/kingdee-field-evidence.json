@@ -1,0 +1,4199 @@
+{
+  "req": {
+    "FBillTypeID": {
+      "name": "单据类型",
+      "property": "BillTypeID",
+      "column": "FBILLTYPEID",
+      "reference": null,
+      "line": 2652
+    },
+    "FApplicationOrgId": {
+      "name": "申请组织",
+      "property": "ApplicationOrgId",
+      "column": "FAPPLICATIONORGID",
+      "reference": "3f8da3f4-fe84-4456-9548-7c2c38b7c57f",
+      "line": 2676
+    },
+    "FApplicationDeptId": {
+      "name": "申请部门",
+      "property": "ApplicationDeptId",
+      "column": "FAPPLICATIONDEPTID",
+      "reference": "5b43df86-906c-4b59-95bc-884f05e2533c",
+      "line": 2689
+    },
+    "FApplicantId": {
+      "name": "申请人",
+      "property": "ApplicantId",
+      "column": "FAPPLICANTID",
+      "reference": "0c8913c3-64db-420b-9273-0510c14a6b30",
+      "line": 2720
+    },
+    "FCurrencyId": {
+      "name": "币别",
+      "property": "CurrencyId",
+      "column": "FCURRENCYID",
+      "reference": "e406d5f5-2eab-4285-8fca-6b2bca1484a4",
+      "line": 2754
+    },
+    "FTotalAmount": {
+      "name": "含税金额合计",
+      "property": "TotalAmount",
+      "column": "FTOTALAMOUNT",
+      "reference": null,
+      "line": 2775
+    },
+    "FCancellerId": {
+      "name": "作废人",
+      "property": "CancellerId",
+      "column": "FCANCELLERID",
+      "reference": "d629d494-b3a3-489d-97a1-bb79d64171b1",
+      "line": 2787
+    },
+    "FCloseStatus": {
+      "name": "关闭状态",
+      "property": "CloseStatus",
+      "column": "FCLOSESTATUS",
+      "reference": null,
+      "line": 2823
+    },
+    "FCloserId": {
+      "name": "关闭人",
+      "property": "CloserId",
+      "column": "FCLOSERID",
+      "reference": "d629d494-b3a3-489d-97a1-bb79d64171b1",
+      "line": 2835
+    },
+    "FCreatorId": {
+      "name": "创建人",
+      "property": "CreatorId",
+      "column": "FCREATORID",
+      "reference": "d629d494-b3a3-489d-97a1-bb79d64171b1",
+      "line": 2847
+    },
+    "FCloseDate": {
+      "name": "关闭日期",
+      "property": "CloseDate",
+      "column": "FCLOSEDATE",
+      "reference": null,
+      "line": 2857
+    },
+    "FCancelDate": {
+      "name": "作废日期",
+      "property": "CancelDate",
+      "column": "FCANCELDATE",
+      "reference": null,
+      "line": 2867
+    },
+    "FApproverId": {
+      "name": "审核人",
+      "property": "ApproverId",
+      "column": "FAPPROVERID",
+      "reference": "d629d494-b3a3-489d-97a1-bb79d64171b1",
+      "line": 2879
+    },
+    "FModifierId": {
+      "name": "最后修改人",
+      "property": "ModifierId",
+      "column": "FMODIFIERID",
+      "reference": "d629d494-b3a3-489d-97a1-bb79d64171b1",
+      "line": 2891
+    },
+    "FCreateDate": {
+      "name": "创建日期",
+      "property": "CreateDate",
+      "column": "FCREATEDATE",
+      "reference": null,
+      "line": 2901
+    },
+    "FCancelStatus": {
+      "name": "作废状态",
+      "property": "CancelStatus",
+      "column": "FCANCELSTATUS",
+      "reference": null,
+      "line": 3010
+    },
+    "FModifyDate": {
+      "name": "最后修改日期",
+      "property": "ModifyDate",
+      "column": "FMODIFYDATE",
+      "reference": null,
+      "line": 3020
+    },
+    "FApproveDate": {
+      "name": "审核日期",
+      "property": "ApproveDate",
+      "column": "FAPPROVEDATE",
+      "reference": null,
+      "line": 3030
+    },
+    "FMaterialName": {
+      "name": "物料名称",
+      "property": "MaterialName",
+      "column": null,
+      "reference": null,
+      "line": 3042
+    },
+    "FMaterialModel": {
+      "name": "规格型号",
+      "property": "MaterialModel",
+      "column": null,
+      "reference": null,
+      "line": 3054
+    },
+    "FMaterialType": {
+      "name": "物料类别",
+      "property": "MaterialType",
+      "column": null,
+      "reference": null,
+      "line": 3066
+    },
+    "FReqQty": {
+      "name": "申请数量",
+      "property": "ReqQty",
+      "column": "FREQQTY",
+      "reference": null,
+      "line": 3111
+    },
+    "FApproveQty": {
+      "name": "批准数量",
+      "property": "ApproveQty",
+      "column": "FAPPROVEQTY",
+      "reference": null,
+      "line": 3319
+    },
+    "FSuggestSupplierId": {
+      "name": "建议供应商",
+      "property": "SuggestSupplierId",
+      "column": "FSUGGESTSUPPLIERID",
+      "reference": "6099b796-9e56-434e-895e-a1628d12d4c2",
+      "line": 3384
+    },
+    "FLeadTime": {
+      "name": "提前期",
+      "property": "LeadTime",
+      "column": "FLEADTIME",
+      "reference": null,
+      "line": 3414
+    },
+    "FReqAmount": {
+      "name": "含税金额",
+      "property": "ReqAmount",
+      "column": "FREQAMOUNT",
+      "reference": null,
+      "line": 3492
+    },
+    "FPDMaterialId": {
+      "name": "物料编码",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 3500
+    },
+    "FPDMaterialName": {
+      "name": "物料名称",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 3508
+    },
+    "FPurchaseOrgId": {
+      "name": "采购组织",
+      "property": "PurchaseOrgId",
+      "column": "FPURCHASEORGID",
+      "reference": "3f8da3f4-fe84-4456-9548-7c2c38b7c57f",
+      "line": 3550
+    },
+    "FPurchaseGroupId": {
+      "name": "采购组",
+      "property": "PurchaseGroupId",
+      "column": "FPURCHASEGROUPID",
+      "reference": "6a49026a-35dd-4dde-8cb6-b4e57536b3dc",
+      "line": 3565
+    },
+    "FReceiveOrgId": {
+      "name": "收料组织",
+      "property": "ReceiveOrgId",
+      "column": "FRECEIVEORGID",
+      "reference": "3f8da3f4-fe84-4456-9548-7c2c38b7c57f",
+      "line": 3582
+    },
+    "FStockId": {
+      "name": "仓库",
+      "property": "StockId",
+      "column": "FSTOCKID",
+      "reference": "6c2607c8-efed-4047-b463-a10b4f054a7a",
+      "line": 3596
+    },
+    "FPDPurchaseOrgId": {
+      "name": "采购组织",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 3604
+    },
+    "FPDReceiveOrgId": {
+      "name": "收料组织",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 3612
+    },
+    "FPDStockId": {
+      "name": "仓库",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 3620
+    },
+    "FPDSupplierId": {
+      "name": "指定供应商",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 3628
+    },
+    "FOrderQty": {
+      "name": "订单数量",
+      "property": "OrderQty",
+      "column": "FORDERQTY",
+      "reference": null,
+      "line": 3645
+    },
+    "FRemainQty": {
+      "name": "剩余数量",
+      "property": "RemainQty",
+      "column": "FREMAINQTY",
+      "reference": null,
+      "line": 3662
+    },
+    "FContractNo": {
+      "name": "合同号",
+      "property": "ContractNo",
+      "column": "FCONTRACTNO",
+      "reference": null,
+      "line": 3675
+    },
+    "FReqTraceNo": {
+      "name": "需求跟踪号",
+      "property": "REQTRACENO",
+      "column": "FREQTRACENO",
+      "reference": null,
+      "line": 3688
+    },
+    "FPDRequirementTraceNo": {
+      "name": "需求跟踪号",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 3696
+    },
+    "FPDRemainQty": {
+      "name": "剩余数量",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 3704
+    },
+    "FPDSrcBillTypeId": {
+      "name": "源单类型",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 3712
+    },
+    "FPDRowNo": {
+      "name": "行号",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 3720
+    },
+    "FPDOrderQty": {
+      "name": "订单数量",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 3728
+    },
+    "FPDContractNo": {
+      "name": "合同号",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 3735
+    },
+    "FPDSrcBillNo": {
+      "name": "源单单号",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 3743
+    },
+    "FMRPTerminateStatus": {
+      "name": "业务终止",
+      "property": "MRPTerminateStatus",
+      "column": "FMRPTERMINATESTATUS",
+      "reference": null,
+      "line": 3780
+    },
+    "FTerminaterId": {
+      "name": "终止人",
+      "property": "TerminaterId",
+      "column": "FTERMINATERID",
+      "reference": "d629d494-b3a3-489d-97a1-bb79d64171b1",
+      "line": 3793
+    },
+    "FTerminateDate": {
+      "name": "终止日期",
+      "property": "TerminateDate",
+      "column": "FTERMINATEDATE",
+      "reference": null,
+      "line": 3804
+    },
+    "FMRPCloseStatus": {
+      "name": "业务关闭",
+      "property": "MRPCloseStatus",
+      "column": "FMRPCLOSESTATUS",
+      "reference": null,
+      "line": 3835
+    },
+    "FPlanConfirm": {
+      "name": "计划确认",
+      "property": "PlanConfirm",
+      "column": "FPLANCONFIRM",
+      "reference": null,
+      "line": 3852
+    },
+    "FPDMRPTerminateStatus": {
+      "name": "业务终止",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 3860
+    },
+    "FPDTerminaterId": {
+      "name": "终止人",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 3868
+    },
+    "FPDTerminateDate": {
+      "name": "终止日期",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 3876
+    },
+    "FPDMRPCloseStatus": {
+      "name": "业务关闭",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 3884
+    },
+    "FPDPlanConfirm": {
+      "name": "计划确认",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 3892
+    },
+    "FPDSupplierAddress": {
+      "name": "供货地点",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 3900
+    },
+    "FExchangeTypeId": {
+      "name": "汇率类型",
+      "property": "ExchangeTypeId",
+      "column": "FEXCHANGETYPEID",
+      "reference": "6b2390f8-bbb9-4a29-9119-19db5dafcb6a",
+      "line": 3911
+    },
+    "FPDBOMNoId": {
+      "name": "BOM版本",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 3919
+    },
+    "FSupplierId": {
+      "name": "指定供应商(6.0作废)",
+      "property": "SupplierId",
+      "column": "FSUPPLIERID",
+      "reference": "6099b796-9e56-434e-895e-a1628d12d4c2",
+      "line": 3975
+    },
+    "FNote": {
+      "name": "备注",
+      "property": "Note",
+      "column": "FNOTE",
+      "reference": null,
+      "line": 3987
+    },
+    "FMaterialId": {
+      "name": "物料编码",
+      "property": "MaterialId",
+      "column": "FMATERIALID",
+      "reference": "624b39cf-5504-42e0-9124-7d75e64a05f1",
+      "line": 1181
+    },
+    "FPriceUnitQty": {
+      "name": "计价数量",
+      "property": "PriceUnitQty",
+      "column": "FPRICEUNITQTY",
+      "reference": null,
+      "line": 4312
+    },
+    "FPurchaseDeptId": {
+      "name": "采购部门",
+      "property": "PurchaseDeptId",
+      "column": "FPURCHASEDEPTID",
+      "reference": "5b43df86-906c-4b59-95bc-884f05e2533c",
+      "line": 4326
+    },
+    "FPDRelatingQty": {
+      "name": "关联数量",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 4334
+    },
+    "FPDReceiveAddress": {
+      "name": "交货地址",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 4342
+    },
+    "FReceiveAddress": {
+      "name": "交货地址",
+      "property": "ReceiveAddress",
+      "column": "FRECEIVEADDRESS",
+      "reference": null,
+      "line": 4360
+    },
+    "FEntryNote": {
+      "name": "备注",
+      "property": "EntryNote",
+      "column": "FENTRYNOTE",
+      "reference": null,
+      "line": 4378
+    },
+    "FOrderJNBaseQty": {
+      "name": "订单关联数量（基本单位）",
+      "property": "OrderJNBaseQty",
+      "column": "FORDERJNBASEQTY",
+      "reference": null,
+      "line": 4394
+    },
+    "FOrderBaseQty": {
+      "name": "订单数量（基本单位）",
+      "property": "OrderBaseQty",
+      "column": "FORDERBASEQTY",
+      "reference": null,
+      "line": 4410
+    },
+    "FBaseUnitId": {
+      "name": "基本单位",
+      "property": "BaseUnitId",
+      "column": "FBASEUNITID",
+      "reference": "e6213815-6b93-4cff-83bf-f26f807b7f4d",
+      "line": 4023
+    },
+    "FPriceUnitId": {
+      "name": "计价单位",
+      "property": "PriceUnitId",
+      "column": "FPRICEUNITID",
+      "reference": "e6213815-6b93-4cff-83bf-f26f807b7f4d",
+      "line": 4463
+    },
+    "FUnitId": {
+      "name": "申请单位",
+      "property": "UnitID",
+      "column": "FUNITID",
+      "reference": "e6213815-6b93-4cff-83bf-f26f807b7f4d",
+      "line": 4490
+    },
+    "FOrderJoinQty": {
+      "name": "订单关联数量",
+      "property": "OrderJoinQty",
+      "column": "FORDERJOINQTY",
+      "reference": null,
+      "line": 4507
+    },
+    "FBaseUnitQty": {
+      "name": "批准数量(基本单位)",
+      "property": "FBaseUnitQty",
+      "column": "FBASEUNITQTY",
+      "reference": null,
+      "line": 4524
+    },
+    "FAuxpropId": {
+      "name": "辅助属性",
+      "property": "AuxpropId",
+      "column": "FAUXPROPID",
+      "reference": null,
+      "line": 4562
+    },
+    "FBOMNoId": {
+      "name": "BOM版本",
+      "property": "BOMNoId",
+      "column": "FBOMID",
+      "reference": "bb4cbb8c-414d-4f60-b725-2f3dbee21c04",
+      "line": 4577
+    },
+    "FProxyField": {
+      "name": "建议采购日期",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 4585
+    },
+    "FProxyField3": {
+      "name": "提前期",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 4593
+    },
+    "FPFArrivalDate": {
+      "name": "到货日期",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 4601
+    },
+    "FIsConvert": {
+      "name": "是否是单据转换",
+      "property": "IsConvert",
+      "column": "FISCONVERT",
+      "reference": null,
+      "line": 4611
+    },
+    "FRequestType": {
+      "name": "申请类型",
+      "property": "RequestType",
+      "column": "FREQUESTTYPE",
+      "reference": null,
+      "line": 4629
+    },
+    "FSrcBillTypeId": {
+      "name": "源单类型",
+      "property": "SrcBillTypeId",
+      "column": "FSRCBILLTYPEID",
+      "reference": null,
+      "line": 4644
+    },
+    "FSrcBillNo": {
+      "name": "源单编号",
+      "property": "SrcBillNo",
+      "column": "FSRCBILLNO",
+      "reference": null,
+      "line": 4657
+    },
+    "FMaterialDesc": {
+      "name": "物料说明",
+      "property": "MaterialDesc",
+      "column": "FMATERIALDESC",
+      "reference": null,
+      "line": 4669
+    },
+    "FSuggestPurDate": {
+      "name": "建议采购日期",
+      "property": "SuggestPurDate",
+      "column": "FSUGGESTPURDATE",
+      "reference": null,
+      "line": 4723
+    },
+    "FArrivalDate": {
+      "name": "到货日期",
+      "property": "ArrivalDate",
+      "column": "FARRIVALDATE",
+      "reference": null,
+      "line": 4756
+    },
+    "FApplicationDate": {
+      "name": "申请日期",
+      "property": "ApplicationDate",
+      "column": "FAPPLICATIONDATE",
+      "reference": null,
+      "line": 4774
+    },
+    "FBaseStockQty": {
+      "name": "入库数量(基本单位)",
+      "property": "BaseStockQty",
+      "column": "FBASESTOCKQTY",
+      "reference": null,
+      "line": 4790
+    },
+    "FBaseReceiveQty": {
+      "name": "收料数量(基本单位)",
+      "property": "BaseReceiveQty",
+      "column": "FBASERECEIVEQTY",
+      "reference": null,
+      "line": 4806
+    },
+    "FStockQty": {
+      "name": "入库数量",
+      "property": "StockQty",
+      "column": "FSTOCKQTY",
+      "reference": null,
+      "line": 4823
+    },
+    "FReceiveQty": {
+      "name": "收料数量",
+      "property": "ReceiveQty",
+      "column": "FRECEIVEQTY",
+      "reference": null,
+      "line": 4840
+    },
+    "FPDReceiveQty": {
+      "name": "收料数量",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 4848
+    },
+    "FPDStockQty": {
+      "name": "入库数量",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 4856
+    },
+    "FBFLowId": {
+      "name": "业务流程",
+      "property": "FBFLowId",
+      "column": "FBFLOWID",
+      "reference": "b189e718-fedb-490f-97dd-0bedbba1729a",
+      "line": 4877
+    },
+    "FPBFLowID": {
+      "name": "业务流程",
+      "property": "FProxyField4",
+      "column": null,
+      "reference": null,
+      "line": 4884
+    },
+    "FProviderId": {
+      "name": "供货地点",
+      "property": "ProviderId",
+      "column": "FPROVIDERID",
+      "reference": "23adb940-af98-4d37-adb3-d53c3333b705",
+      "line": 3342
+    },
+    "FPSuggestSup": {
+      "name": "建议供应商",
+      "property": "FProxyField1",
+      "column": null,
+      "reference": null,
+      "line": 4904
+    },
+    "FIsMergeCancel": {
+      "name": "合并作废",
+      "property": "IsMergeCancel",
+      "column": "FISMERGECANCEL",
+      "reference": null,
+      "line": 4921
+    },
+    "FIsSplitCancel": {
+      "name": "拆分作废",
+      "property": "IsSplitCancel",
+      "column": "FISSPLITCANCEL",
+      "reference": null,
+      "line": 4939
+    },
+    "FPIsSplitCancel": {
+      "name": "拆分作废",
+      "property": "FProxyField1",
+      "column": null,
+      "reference": null,
+      "line": 4946
+    },
+    "FPOMaterialId": {
+      "name": "物料编码",
+      "property": "FProxyField1",
+      "column": null,
+      "reference": null,
+      "line": 4953
+    },
+    "FPOMaterialName": {
+      "name": "物料名称",
+      "property": "FProxyField2",
+      "column": null,
+      "reference": null,
+      "line": 4960
+    },
+    "FMtoNo": {
+      "name": "计划跟踪号",
+      "property": "MtoNo",
+      "column": "FMTONO",
+      "reference": null,
+      "line": 4971
+    },
+    "FPDMtoNo": {
+      "name": "计划跟踪号",
+      "property": "FProxyField1",
+      "column": null,
+      "reference": null,
+      "line": 4978
+    },
+    "FRequireOrgId": {
+      "name": "需求组织",
+      "property": "RequireOrgId",
+      "column": "FREQUIREORGID",
+      "reference": "3f8da3f4-fe84-4456-9548-7c2c38b7c57f",
+      "line": 5025
+    },
+    "FPDRequireOrgId": {
+      "name": "需求组织",
+      "property": "FProxyField1",
+      "column": null,
+      "reference": null,
+      "line": 5032
+    },
+    "FSrcType": {
+      "name": "来源类型",
+      "property": "SrcType",
+      "column": "FSRCTYPE",
+      "reference": null,
+      "line": 5045
+    },
+    "FPurchaserId": {
+      "name": "采购员",
+      "property": "PurchaserId",
+      "column": "FPURCHASERID",
+      "reference": "9b9fea24-ef81-4d52-b5cf-f825dc578701",
+      "line": 55
+    },
+    "FPDPurchaserId": {
+      "name": "采购员",
+      "property": "FProxyField1",
+      "column": null,
+      "reference": null,
+      "line": 5068
+    },
+    "FBaseReqQty": {
+      "name": "申请数量(基本单位)",
+      "property": "BaseReqQty",
+      "column": "FBASEREQQTY",
+      "reference": null,
+      "line": 5082
+    },
+    "FReceiveDeptId": {
+      "name": "收料部门",
+      "property": "ReceiveDeptId",
+      "column": "FRECEIVEDEPTID",
+      "reference": "5b43df86-906c-4b59-95bc-884f05e2533c",
+      "line": 5097
+    },
+    "FPDReceiveDeptId": {
+      "name": "收料部门",
+      "property": "FProxyField1",
+      "column": null,
+      "reference": null,
+      "line": 5104
+    },
+    "FRequireDeptId": {
+      "name": "需求部门",
+      "property": "RequireDeptId",
+      "column": "FREQUIREDEPTID",
+      "reference": "5b43df86-906c-4b59-95bc-884f05e2533c",
+      "line": 5119
+    },
+    "FChargeProjectID": {
+      "name": "费用项目",
+      "property": "ChargeProjectID",
+      "column": "FCHARGEPROJECTID",
+      "reference": "9d521fa8-cce9-481d-bb25-e1c05fb3cc69",
+      "line": 5133
+    },
+    "FPDRequireDeptId": {
+      "name": "需求部门",
+      "property": "FProxyField1",
+      "column": null,
+      "reference": null,
+      "line": 5140
+    },
+    "FEvaluatePrice": {
+      "name": "单价",
+      "property": "EvaluatePrice",
+      "column": "FEVALUATEPRICE",
+      "reference": null,
+      "line": 5201
+    },
+    "FQueryPriceId": {
+      "name": "1688询价单ID",
+      "property": "QueryPriceId",
+      "column": "FQUERYPRICEID",
+      "reference": null,
+      "line": 5213
+    },
+    "FRowPublishStatus": {
+      "name": "供应商协同行发布状态(6.1废弃)",
+      "property": "RowPublishStatus",
+      "column": "FROWPUBLISHSTATUS",
+      "reference": null,
+      "line": 5246
+    },
+    "FPublishStatus": {
+      "name": "供应商协同发布状态(6.1废弃)",
+      "property": "PublishStatus",
+      "column": "FPUBLISHSTATUS",
+      "reference": null,
+      "line": 5273
+    },
+    "FSalUnitID": {
+      "name": "销售单位",
+      "property": "SalUnitID",
+      "column": "FSALUNITID",
+      "reference": "e6213815-6b93-4cff-83bf-f26f807b7f4d",
+      "line": 5299
+    },
+    "FSalQty": {
+      "name": "销售数量",
+      "property": "SalQty",
+      "column": "FSALQTY",
+      "reference": null,
+      "line": 5375
+    },
+    "FSalBaseQty": {
+      "name": "销售基本数量",
+      "property": "SalBaseQty",
+      "column": "FSALBASEQTY",
+      "reference": null,
+      "line": 5390
+    },
+    "FTAXPRICE": {
+      "name": "含税单价",
+      "property": "TAXPRICE",
+      "column": "FTAXPRICE",
+      "reference": null,
+      "line": 5465
+    },
+    "FHASPUBLISH": {
+      "name": "1688发布状态",
+      "property": "HASPUBLISH",
+      "column": "FHASPUBLISH",
+      "reference": null,
+      "line": 5498
+    },
+    "FREQSTOCKUNITID": {
+      "name": "库存单位",
+      "property": "REQSTOCKUNITID",
+      "column": "FREQSTOCKUNITID",
+      "reference": "e6213815-6b93-4cff-83bf-f26f807b7f4d",
+      "line": 5535
+    },
+    "FREQSTOCKQTY": {
+      "name": "库存单位数量",
+      "property": "REQSTOCKQTY",
+      "column": "FREQSTOCKQTY",
+      "reference": null,
+      "line": 5612
+    },
+    "FREQSTOCKBASEQTY": {
+      "name": "库存基本数量",
+      "property": "REQSTOCKBASEQTY",
+      "column": "FREQSTOCKBASEQTY",
+      "reference": null,
+      "line": 5627
+    },
+    "FORDERSTOCKJNBASEQTY": {
+      "name": "订单库存关联数量(基本单位)",
+      "property": "ORDERSTOCKJNBASEQTY",
+      "column": "FORDERSTOCKJNBASEQTY",
+      "reference": null,
+      "line": 5643
+    },
+    "FPRICEBASEQTY": {
+      "name": "计价基本数量",
+      "property": "PRICEBASEQTY",
+      "column": "FPRICEBASEQTY",
+      "reference": null,
+      "line": 5658
+    },
+    "FSRCBIZUNITID": {
+      "name": "携带的主业务单位",
+      "property": "SRCBIZUNITID",
+      "column": "FSRCBIZUNITID",
+      "reference": "e6213815-6b93-4cff-83bf-f26f807b7f4d",
+      "line": 5674
+    },
+    "FPURBASENUM": {
+      "name": "采购基本分子",
+      "property": "PURBASENUM",
+      "column": "FPURBASENUM",
+      "reference": null,
+      "line": 5688
+    },
+    "FSTOCKBASEDEN": {
+      "name": "库存基本分母",
+      "property": "STOCKBASEDEN",
+      "column": "FSTOCKBASEDEN",
+      "reference": null,
+      "line": 5702
+    },
+    "FIsVmiBusiness": {
+      "name": "VMI业务",
+      "property": "IsVmiBusiness",
+      "column": "FISVMIBUSINESS",
+      "reference": null,
+      "line": 4068
+    },
+    "FPDIsVMI": {
+      "name": "VMI业务",
+      "property": "FProxyField11",
+      "column": null,
+      "reference": null,
+      "line": 5723
+    },
+    "FTAXRATE": {
+      "name": "税率%",
+      "property": "TAXRATE",
+      "column": "FTAXRATE",
+      "reference": null,
+      "line": 5782
+    },
+    "FAmount": {
+      "name": "金额",
+      "property": "Amount",
+      "column": "FAMOUNT",
+      "reference": null,
+      "line": 5859
+    },
+    "FPriceListEntry": {
+      "name": "价目表",
+      "property": "PriceListEntry",
+      "column": "FPRICELISTENTRY",
+      "reference": "36fbe0c0-77ac-44bd-89c3-fd9a64a57460",
+      "line": 5880
+    },
+    "FInquiryJoinQty": {
+      "name": "关联询价数量",
+      "property": "InquiryJoinQty",
+      "column": "FINQUIRYJOINQTY",
+      "reference": null,
+      "line": 5897
+    },
+    "FInquiryJoinBaseQty": {
+      "name": "关联询价数量（基本单位）",
+      "property": "InquiryJoinBaseQty",
+      "column": "FINQUIRYJOINBASEQTY",
+      "reference": null,
+      "line": 5913
+    },
+    "FProxyField1": {
+      "name": "关联询价数量",
+      "property": "FProxyField112",
+      "column": null,
+      "reference": null,
+      "line": 5921
+    },
+    "FProxyField2": {
+      "name": "物料编码",
+      "property": "FProxyField21",
+      "column": null,
+      "reference": null,
+      "line": 5929
+    },
+    "FProxyField4": {
+      "name": "物料名称",
+      "property": "FProxyField41",
+      "column": null,
+      "reference": null,
+      "line": 5937
+    },
+    "FProxyField5": {
+      "name": "计价数量",
+      "property": "FProxyField5",
+      "column": null,
+      "reference": null,
+      "line": 5945
+    },
+    "FProxyField6": {
+      "name": "计价单位",
+      "property": "FProxyField6",
+      "column": null,
+      "reference": null,
+      "line": 5953
+    },
+    "FProxyField7": {
+      "name": "金额",
+      "property": "FProxyField7",
+      "column": null,
+      "reference": null,
+      "line": 5961
+    },
+    "FProxyField8": {
+      "name": "含税金额",
+      "property": "FProxyField8",
+      "column": null,
+      "reference": null,
+      "line": 5969
+    },
+    "FProxyField9": {
+      "name": "单价",
+      "property": "FProxyField9",
+      "column": null,
+      "reference": null,
+      "line": 5977
+    },
+    "FProxyField10": {
+      "name": "含税单价",
+      "property": "FProxyField10",
+      "column": null,
+      "reference": null,
+      "line": 5985
+    },
+    "FProxyField11": {
+      "name": "税率%",
+      "property": "FProxyField111",
+      "column": null,
+      "reference": null,
+      "line": 5993
+    },
+    "FProxyField12": {
+      "name": "价目表",
+      "property": "FProxyField12",
+      "column": null,
+      "reference": null,
+      "line": 6001
+    },
+    "FDownPrice": {
+      "name": "价格下限",
+      "property": "DownPrice",
+      "column": "FDOWNPRICE",
+      "reference": null,
+      "line": 6017
+    },
+    "FUpPrice": {
+      "name": "价格上限",
+      "property": "UpPrice",
+      "column": "FUPPRICE",
+      "reference": null,
+      "line": 6033
+    },
+    "FPDDownPrice": {
+      "name": "价格下限",
+      "property": "F_PAEZ_ProxyField",
+      "column": null,
+      "reference": null,
+      "line": 6041
+    },
+    "FPDUpPrice": {
+      "name": "价格上限",
+      "property": "F_PAEZ_ProxyField1",
+      "column": null,
+      "reference": null,
+      "line": 6049
+    },
+    "FISPRICEEXCLUDETAX": {
+      "name": "价外税",
+      "property": "FISPRICEEXCLUDETAX",
+      "column": "FISPRICEEXCLUDETAX",
+      "reference": null,
+      "line": 6108
+    },
+    "FDEMANDTYPE": {
+      "name": "需求来源",
+      "property": "DEMANDTYPE",
+      "column": "FDEMANDTYPE",
+      "reference": null,
+      "line": 6125
+    },
+    "FDEMANDBILLNO": {
+      "name": "需求单据编号",
+      "property": "DEMANDBILLNO",
+      "column": "FDEMANDBILLNO",
+      "reference": null,
+      "line": 6139
+    },
+    "FDEMANDBILLENTRYSEQ": {
+      "name": "需求单据行号",
+      "property": "DEMANDBILLENTRYSEQ",
+      "column": "FDEMANDBILLENTRYSEQ",
+      "reference": null,
+      "line": 6152
+    },
+    "FDEMANDBILLENTRYID": {
+      "name": "需求单据分录内码",
+      "property": "DEMANDBILLENTRYID",
+      "column": "FDEMANDBILLENTRYID",
+      "reference": null,
+      "line": 6165
+    },
+    "FPDDEMANDBILLNO": {
+      "name": "需求单据编号",
+      "property": "FProxyField13",
+      "column": null,
+      "reference": null,
+      "line": 6173
+    },
+    "FPDDEMANDBILLENTRYSEQ": {
+      "name": "需求单据行号",
+      "property": "FProxyField14",
+      "column": null,
+      "reference": null,
+      "line": 6181
+    },
+    "FPDDEMANDTYPE": {
+      "name": "需求来源",
+      "property": "FProxyField15",
+      "column": null,
+      "reference": null,
+      "line": 6189
+    },
+    "FRowType": {
+      "name": "产品类型",
+      "property": "RowType",
+      "column": "FROWTYPE",
+      "reference": null,
+      "line": 6211
+    },
+    "FParentMaterialId": {
+      "name": "父项产品",
+      "property": "ParentMaterialId",
+      "column": "FPARENTMATERIALID",
+      "reference": "624b39cf-5504-42e0-9124-7d75e64a05f1",
+      "line": 6236
+    },
+    "FParentBomId": {
+      "name": "父项BOM版本",
+      "property": "ParentBomId",
+      "column": "FPARENTBOMID",
+      "reference": "bb4cbb8c-414d-4f60-b725-2f3dbee21c04",
+      "line": 6253
+    },
+    "FParentRowId": {
+      "name": "父产品行主键",
+      "property": "ParentRowId",
+      "column": "FPARENTROWID",
+      "reference": null,
+      "line": 6266
+    },
+    "FSrcReqSplitEntryId": {
+      "name": "申请单拆单前分录内码",
+      "property": "SrcReqSplitEntryId",
+      "column": "FSRCREQSPLITENTRYID",
+      "reference": null,
+      "line": 6279
+    },
+    "FSrcReqMergeEntryIds": {
+      "name": "申请单合并前分录内码",
+      "property": "SrcReqMergeEntryIds",
+      "column": "FSRCREQMERGEENTRYIDS",
+      "reference": null,
+      "line": 6291
+    },
+    "FExtendField": {
+      "name": "扩展字段",
+      "property": "ExtendField",
+      "column": "FEXTENDFIELD",
+      "reference": null,
+      "line": 6302
+    },
+    "FOrderName": {
+      "name": "订单名称",
+      "property": "OrderName",
+      "column": "FORDERNAME",
+      "reference": null,
+      "line": 6312
+    },
+    "FIsMobBill": {
+      "name": "移动单据",
+      "property": "IsMobBill",
+      "column": "FISMOBBILL",
+      "reference": null,
+      "line": 6324
+    },
+    "FMobIsPending": {
+      "name": "是否挂单",
+      "property": "MobIsPending",
+      "column": "FMOBISPENDING",
+      "reference": null,
+      "line": 6336
+    },
+    "FPRILSTENTRYID": {
+      "name": "价目表分录id",
+      "property": "PRILSTENTRYID",
+      "column": "FPRILSTENTRYID",
+      "reference": null,
+      "line": 6349
+    },
+    "FAssortBillNo": {
+      "name": "配套单据编号",
+      "property": "AssortBillNo",
+      "column": "FASSORTBILLNO",
+      "reference": null,
+      "line": 6361
+    },
+    "FACCTYPE": {
+      "name": "验收方式",
+      "property": "FACCTYPE",
+      "column": "FACCTYPE",
+      "reference": null,
+      "line": 6379
+    },
+    "FMANUALCLOSE": {
+      "name": "手工关闭",
+      "property": "MANUALCLOSE",
+      "column": "FMANUALCLOSE",
+      "reference": null,
+      "line": 6397
+    },
+    "FASSORTBILLSEQ": {
+      "name": "配套单据行号",
+      "property": "ASSORTBILLSEQ",
+      "column": "FASSORTBILLSEQ",
+      "reference": null,
+      "line": 6411
+    },
+    "FCloseReason": {
+      "name": "关闭原因",
+      "property": "CloseReason",
+      "column": "FCLOSEREASON",
+      "reference": null,
+      "line": 6422
+    },
+    "FSupMatId": {
+      "name": "供应商物料编码",
+      "property": "SupMatId",
+      "column": "FSUPMATID",
+      "reference": null,
+      "line": 6434
+    },
+    "FSupMatName": {
+      "name": "供应商物料名称",
+      "property": "SupMatName",
+      "column": "FSUPMATNAME",
+      "reference": null,
+      "line": 6445
+    },
+    "FIsCreateStraightOutIN": {
+      "name": "生成直运出入库",
+      "property": "IsCreateStraightOutIN",
+      "column": "FISCREATESTRAIGHTOUTIN",
+      "reference": null,
+      "line": 6456
+    }
+  },
+  "po": {
+    "FSupplierId": {
+      "name": "供应商",
+      "property": "SupplierId",
+      "column": "FSUPPLIERID",
+      "reference": "6099b796-9e56-434e-895e-a1628d12d4c2",
+      "line": 65
+    },
+    "FPurchaserGroupId": {
+      "name": "采购组",
+      "property": "PurchaserGroupId",
+      "column": "FPURCHASERGROUPID",
+      "reference": "6a49026a-35dd-4dde-8cb6-b4e57536b3dc",
+      "line": 5420
+    },
+    "FPurchaseDeptId": {
+      "name": "采购部门",
+      "property": "PurchaseDeptId",
+      "column": "FPURCHASEDEPTID",
+      "reference": "5b43df86-906c-4b59-95bc-884f05e2533c",
+      "line": 5433
+    },
+    "FCreatorId": {
+      "name": "创建人",
+      "property": "CreatorId",
+      "column": "FCREATORID",
+      "reference": "d629d494-b3a3-489d-97a1-bb79d64171b1",
+      "line": 5446
+    },
+    "FCreateDate": {
+      "name": "创建日期",
+      "property": "CreateDate",
+      "column": "FCREATEDATE",
+      "reference": null,
+      "line": 5457
+    },
+    "FModifierId": {
+      "name": "最后修改人",
+      "property": "ModifierId",
+      "column": "FMODIFIERID",
+      "reference": "d629d494-b3a3-489d-97a1-bb79d64171b1",
+      "line": 5470
+    },
+    "FModifyDate": {
+      "name": "最后修改日期",
+      "property": "ModifyDate",
+      "column": "FMODIFYDATE",
+      "reference": null,
+      "line": 5481
+    },
+    "FApproverId": {
+      "name": "审核人",
+      "property": "ApproverId",
+      "column": "FAPPROVERID",
+      "reference": "d629d494-b3a3-489d-97a1-bb79d64171b1",
+      "line": 5494
+    },
+    "FApproveDate": {
+      "name": "审核日期",
+      "property": "ApproveDate",
+      "column": "FAPPROVEDATE",
+      "reference": null,
+      "line": 5505
+    },
+    "FClauseDesc": {
+      "name": "描述",
+      "property": "ClauseDesc",
+      "column": "FCLAUSEDESC",
+      "reference": null,
+      "line": 5517
+    },
+    "FBillCost": {
+      "name": "整单费用",
+      "property": "BillCost",
+      "column": "FBILLCOST",
+      "reference": null,
+      "line": 5533
+    },
+    "FBillAmount": {
+      "name": "金额",
+      "property": "BillAmount",
+      "column": "FBILLAMOUNT",
+      "reference": null,
+      "line": 5549
+    },
+    "FBillAllAmount": {
+      "name": "价税合计",
+      "property": "BillAllAmount",
+      "column": "FBILLALLAMOUNT",
+      "reference": null,
+      "line": 5566
+    },
+    "FPriceListId": {
+      "name": "价目表",
+      "property": "PriceListtId",
+      "column": "FPRICELISTID",
+      "reference": "36fbe0c0-77ac-44bd-89c3-fd9a64a57460",
+      "line": 5683
+    },
+    "FDiscountListId": {
+      "name": "折扣表",
+      "property": "DiscountListId",
+      "column": "FDISCOUNTLISTID",
+      "reference": "2d695c3e-63f6-4815-aec1-bb18384a5c0f",
+      "line": 5261
+    },
+    "FSettleCurrId": {
+      "name": "结算币别",
+      "property": "SettleCurrId",
+      "column": "FSETTLECURRID",
+      "reference": "e406d5f5-2eab-4285-8fca-6b2bca1484a4",
+      "line": 5758
+    },
+    "FMaterialId": {
+      "name": "物料编码",
+      "property": "MaterialId",
+      "column": "FMATERIALID",
+      "reference": "624b39cf-5504-42e0-9124-7d75e64a05f1",
+      "line": 70
+    },
+    "FQty": {
+      "name": "采购数量",
+      "property": "Qty",
+      "column": "FQTY",
+      "reference": null,
+      "line": 1465
+    },
+    "FPrice": {
+      "name": "单价",
+      "property": "Price",
+      "column": "FPRICE",
+      "reference": null,
+      "line": 6757
+    },
+    "FEntryDiscountRate": {
+      "name": "折扣率%",
+      "property": "DiscountRate",
+      "column": "FDISCOUNTRATE",
+      "reference": null,
+      "line": 7007
+    },
+    "FEntryTaxRate": {
+      "name": "税率%",
+      "property": "TaxRate",
+      "column": "FTAXRATE",
+      "reference": null,
+      "line": 7225
+    },
+    "FTaxNetPrice": {
+      "name": "净价",
+      "property": "TaxNetPrice",
+      "column": "FTAXNETPRICE",
+      "reference": null,
+      "line": 7242
+    },
+    "FEntryAmount": {
+      "name": "金额",
+      "property": "Amount",
+      "column": "FAMOUNT",
+      "reference": null,
+      "line": 7392
+    },
+    "FAllAmount": {
+      "name": "价税合计",
+      "property": "AllAmount",
+      "column": "FALLAMOUNT",
+      "reference": null,
+      "line": 7422
+    },
+    "FEntryDiscount": {
+      "name": "折扣额",
+      "property": "Discount",
+      "column": "FDISCOUNT",
+      "reference": null,
+      "line": 7714
+    },
+    "FSeq": {
+      "name": "序号",
+      "property": "Seq",
+      "column": "FSEQ",
+      "reference": null,
+      "line": 7436
+    },
+    "FDiscountRate": {
+      "name": "折扣率（%）",
+      "property": "DiscountRate",
+      "column": "FDISCOUNTRATE",
+      "reference": null,
+      "line": 7446
+    },
+    "FDiscount": {
+      "name": "折扣额",
+      "property": "Discount",
+      "column": "FDISCOUNT",
+      "reference": null,
+      "line": 7456
+    },
+    "FEndAmount": {
+      "name": "折后金额",
+      "property": "EndAmount",
+      "column": "FENDAMOUNT",
+      "reference": null,
+      "line": 7466
+    },
+    "FDiscountType": {
+      "name": "折扣类型",
+      "property": "DiscountType",
+      "column": "FDISCOUNTTYPE",
+      "reference": null,
+      "line": 7475
+    },
+    "FComputeMode": {
+      "name": "计算方式",
+      "property": "ComputeMode",
+      "column": "FCOMPUTEMODE",
+      "reference": null,
+      "line": 7484
+    },
+    "FDescription": {
+      "name": "折扣描述",
+      "property": "Description",
+      "column": "FDESCRIPTION",
+      "reference": null,
+      "line": 7492
+    },
+    "FDiscountEntryId": {
+      "name": "折扣表明细id",
+      "property": "DiscountEntryId",
+      "column": "FDISCOUNTENTRYID",
+      "reference": null,
+      "line": 7502
+    },
+    "FDiscountAccording": {
+      "name": "折扣依据",
+      "property": "DiscountAccording",
+      "column": "FDiscountAccording",
+      "reference": null,
+      "line": 7511
+    },
+    "FDiscountDirection": {
+      "name": "折扣方向",
+      "property": "DiscountDirection",
+      "column": "FDiscountDirection",
+      "reference": null,
+      "line": 7520
+    },
+    "FDiscountItem": {
+      "name": "折扣项目",
+      "property": "DiscountItem",
+      "column": "FDiscountItem",
+      "reference": null,
+      "line": 7528
+    },
+    "FEntryNote": {
+      "name": "备注",
+      "property": "Note",
+      "column": "FNOTE",
+      "reference": null,
+      "line": 7726
+    },
+    "FReceiveQty": {
+      "name": "累计收料数量",
+      "property": "ReceiveQty",
+      "column": "FRECEIVEQTY",
+      "reference": null,
+      "line": 7755
+    },
+    "FStockInQty": {
+      "name": "累计入库数量",
+      "property": "StockInQty",
+      "column": "FSTOCKINQTY",
+      "reference": null,
+      "line": 7784
+    },
+    "FInvoiceQty": {
+      "name": "应付数量",
+      "property": "InvoiceQty",
+      "column": "FINVOICEQTY",
+      "reference": null,
+      "line": 7802
+    },
+    "FInvoiceAmount": {
+      "name": "应付金额",
+      "property": "InvoiceAmount",
+      "column": "FINVOICEAMOUNT",
+      "reference": null,
+      "line": 7819
+    },
+    "FPayAmount": {
+      "name": "累计付款金额(已废弃)",
+      "property": "PayAmount",
+      "column": "FPAYAMOUNT",
+      "reference": null,
+      "line": 7836
+    },
+    "FPDMaterialId": {
+      "name": "物料编码",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 7844
+    },
+    "FPriceCoefficient": {
+      "name": "价格系数",
+      "property": "PriceCoefficient",
+      "column": "FPRICECOEFFICIENT",
+      "reference": null,
+      "line": 7866
+    },
+    "FPriceUnitQty": {
+      "name": "计价数量",
+      "property": "PriceUnitQty",
+      "column": "FPRICEUNITQTY",
+      "reference": null,
+      "line": 8184
+    },
+    "FRequireDeptId": {
+      "name": "需求部门",
+      "property": "RequireDeptId",
+      "column": "FREQUIREDEPTID",
+      "reference": "5b43df86-906c-4b59-95bc-884f05e2533c",
+      "line": 8199
+    },
+    "FRequireStaffId": {
+      "name": "需求人",
+      "property": "RequireStaffId",
+      "column": "FREQUIRESTAFFID",
+      "reference": "0c8913c3-64db-420b-9273-0510c14a6b30",
+      "line": 8213
+    },
+    "FLocationId": {
+      "name": "交货地点",
+      "property": "FLocationId",
+      "column": "FLOCATIONID",
+      "reference": "23adb940-af98-4d37-adb3-d53c3333b705",
+      "line": 8227
+    },
+    "FLocationAddress": {
+      "name": "交货地址",
+      "property": "LocationAddress",
+      "column": "FLOCATIONADDRESS",
+      "reference": null,
+      "line": 8240
+    },
+    "FDeliveryControl": {
+      "name": "控制交货数量",
+      "property": "DeliveryControl",
+      "column": "FDELIVERYCONTROL",
+      "reference": null,
+      "line": 8254
+    },
+    "FDeliveryBeforeDays": {
+      "name": "交货提前天数",
+      "property": "DeliveryBeforeDays",
+      "column": "FDELIVERYBEFOREDAYS",
+      "reference": null,
+      "line": 8288
+    },
+    "FDeliveryDelayDays": {
+      "name": "交货延迟天数",
+      "property": "DeliveryDelayDays",
+      "column": "FDELIVERYDELAYDAYS",
+      "reference": null,
+      "line": 8322
+    },
+    "FTimeControl": {
+      "name": "控制交货时间",
+      "property": "TimeControl",
+      "column": "FTIMECONTROL",
+      "reference": null,
+      "line": 8335
+    },
+    "FPDMaterialId_DeliCont": {
+      "name": "物料编码",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 8343
+    },
+    "FPDRequireOrgId": {
+      "name": "需求组织",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 8351
+    },
+    "FPDRequireDeptId": {
+      "name": "需求部门",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 8359
+    },
+    "FPDRequireStaffId": {
+      "name": "需求人",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 8367
+    },
+    "FPDLocationId": {
+      "name": "交货地点",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 8375
+    },
+    "FPDLocationAddress": {
+      "name": "交货地址",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 8383
+    },
+    "FPDDeliveryMaxQty": {
+      "name": "交货上限",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 8391
+    },
+    "FPDDeliveryMinQty": {
+      "name": "交货下限",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 8399
+    },
+    "FPDDeliveryControl": {
+      "name": "控制交货数量",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 8407
+    },
+    "FPDDeliveryBeforeDays": {
+      "name": "交货提前天数",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 8415
+    },
+    "FPDDeliveryDelayDays": {
+      "name": "交货延迟天数",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 8423
+    },
+    "FPDTimeControl": {
+      "name": "控制交货时间",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 8431
+    },
+    "FPDDeliveryLastDate": {
+      "name": "最晚交货日期",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 8439
+    },
+    "FPDSettlementOrgId": {
+      "name": "结算组织",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 8447
+    },
+    "FCancellerId": {
+      "name": "作废人",
+      "property": "CancellerId",
+      "column": "FCANCELLERID",
+      "reference": "d629d494-b3a3-489d-97a1-bb79d64171b1",
+      "line": 8460
+    },
+    "FCancelDate": {
+      "name": "作废日期",
+      "property": "CancelDate",
+      "column": "FCANCELDATE",
+      "reference": null,
+      "line": 8471
+    },
+    "FMaterialName": {
+      "name": "物料名称",
+      "property": "MaterialName",
+      "column": null,
+      "reference": null,
+      "line": 8483
+    },
+    "FModel": {
+      "name": "规格型号",
+      "property": "FModel",
+      "column": null,
+      "reference": null,
+      "line": 8495
+    },
+    "FMaterialType": {
+      "name": "物料类别",
+      "property": "FMaterialType",
+      "column": null,
+      "reference": null,
+      "line": 8507
+    },
+    "FMaterialVersion": {
+      "name": "物料版本",
+      "property": "FMaterialVersion",
+      "column": null,
+      "reference": null,
+      "line": 8518
+    },
+    "FDeliCommitQty": {
+      "name": "已交货数量",
+      "property": "DeliCommitQty",
+      "column": "FDELICOMMITQTY",
+      "reference": null,
+      "line": 8535
+    },
+    "FDeliRemainQty": {
+      "name": "剩余数量",
+      "property": "DeliRemainQty",
+      "column": "FDELIREMAINQTY",
+      "reference": null,
+      "line": 8552
+    },
+    "FMRPFreezeStatus": {
+      "name": "业务冻结",
+      "property": "MRPFreezeStatus",
+      "column": "FMRPFREEZESTATUS",
+      "reference": null,
+      "line": 8588
+    },
+    "FMRPTerminateStatus": {
+      "name": "业务终止",
+      "property": "MRPTerminateStatus",
+      "column": "FMRPTERMINATESTATUS",
+      "reference": null,
+      "line": 8624
+    },
+    "FMRPCloseStatus": {
+      "name": "业务关闭",
+      "property": "MRPCloseStatus",
+      "column": "FMRPCLOSESTATUS",
+      "reference": null,
+      "line": 8655
+    },
+    "FSupplierLot": {
+      "name": "供应商批号",
+      "property": "SupplierLot",
+      "column": "FSUPPLIERLOT",
+      "reference": null,
+      "line": 8666
+    },
+    "FPDSupplyLot": {
+      "name": "供应商批号",
+      "property": "FProxyField1",
+      "column": null,
+      "reference": null,
+      "line": 8674
+    },
+    "FPDMRPFreezeStatus": {
+      "name": "业务冻结",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 8682
+    },
+    "FPDMRPTerminateStatus": {
+      "name": "业务终止",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 8690
+    },
+    "FPDMRPCloseStatus": {
+      "name": "业务关闭",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 8698
+    },
+    "FRemainReceiveQty": {
+      "name": "剩余收料数量",
+      "property": "RemainReceiveQty",
+      "column": "FREMAINRECEIVEQTY",
+      "reference": null,
+      "line": 8715
+    },
+    "FRemainStockINQty": {
+      "name": "剩余入库数量",
+      "property": "RemainStockInQty",
+      "column": "FREMAINSTOCKINQTY",
+      "reference": null,
+      "line": 8732
+    },
+    "FPDMaterialId_Other": {
+      "name": "物料编码",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 8740
+    },
+    "FTaxPrice": {
+      "name": "含税单价",
+      "property": "TaxPrice",
+      "column": "FTAXPRICE",
+      "reference": null,
+      "line": 8983
+    },
+    "FEntryTaxAmount": {
+      "name": "税额",
+      "property": "TaxAmount",
+      "column": "FTAXAMOUNT",
+      "reference": null,
+      "line": 9002
+    },
+    "FCancelStatus": {
+      "name": "作废状态",
+      "property": "CancelStatus",
+      "column": "FCANCELSTATUS",
+      "reference": null,
+      "line": 9147
+    },
+    "FCloseStatus": {
+      "name": "关闭状态",
+      "property": "CloseStatus",
+      "column": "FCLOSESTATUS",
+      "reference": null,
+      "line": 9183
+    },
+    "FFreezerId": {
+      "name": "冻结人",
+      "property": "FreezerId",
+      "column": "FFREEZERID",
+      "reference": "d629d494-b3a3-489d-97a1-bb79d64171b1",
+      "line": 9197
+    },
+    "FFreezeDate": {
+      "name": "冻结日期",
+      "property": "FreezeDate",
+      "column": "FFREEZEDATE",
+      "reference": null,
+      "line": 9209
+    },
+    "FTerminaterId": {
+      "name": "终止人",
+      "property": "TerminaterId",
+      "column": "FTERMINATERID",
+      "reference": "d629d494-b3a3-489d-97a1-bb79d64171b1",
+      "line": 9223
+    },
+    "FTerminateDate": {
+      "name": "终止日期",
+      "property": "TerminateDate",
+      "column": "FTERMINATEDATE",
+      "reference": null,
+      "line": 9235
+    },
+    "FPDFreezeID": {
+      "name": "冻结人",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 9243
+    },
+    "FPDFreezeDate": {
+      "name": "冻结日期",
+      "property": "FProxyField1",
+      "column": null,
+      "reference": null,
+      "line": 9251
+    },
+    "FPDTerminaterID": {
+      "name": "终止人",
+      "property": "FProxyField2",
+      "column": null,
+      "reference": null,
+      "line": 9259
+    },
+    "FPDTerminateDate": {
+      "name": "终止日期",
+      "property": "FProxyField3",
+      "column": null,
+      "reference": null,
+      "line": 9267
+    },
+    "FPDMaterialName1": {
+      "name": "物料名称",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 9275
+    },
+    "FPDMaterialName2": {
+      "name": "物料名称",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 9283
+    },
+    "FPDMaterialName5": {
+      "name": "物料名称",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 9291
+    },
+    "FReceiveOrgId": {
+      "name": "收料组织",
+      "property": "ReceiveOrgId",
+      "column": "FRECEIVEORGID",
+      "reference": "3f8da3f4-fe84-4456-9548-7c2c38b7c57f",
+      "line": 9313
+    },
+    "FRequireOrgId": {
+      "name": "需求组织",
+      "property": "RequireOrgId",
+      "column": "FREQUIREORGID",
+      "reference": "3f8da3f4-fe84-4456-9548-7c2c38b7c57f",
+      "line": 9346
+    },
+    "FPlanQty": {
+      "name": "数量",
+      "property": "PlanQty",
+      "column": "FPLANQTY",
+      "reference": null,
+      "line": 9371
+    },
+    "FPDDeliveryEarlyDate": {
+      "name": "最早交货日期",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 9379
+    },
+    "FRowCost": {
+      "name": "行费用",
+      "property": "RowCost",
+      "column": "FROWCOST",
+      "reference": null,
+      "line": 9396
+    },
+    "FPurchaserId": {
+      "name": "采购员",
+      "property": "PurchaserId",
+      "column": "FPURCHASERID",
+      "reference": "9b9fea24-ef81-4d52-b5cf-f825dc578701",
+      "line": 9432
+    },
+    "FEntryPayOrgId": {
+      "name": "付款组织",
+      "property": "PayOrgId",
+      "column": "FPAYORGID",
+      "reference": "3f8da3f4-fe84-4456-9548-7c2c38b7c57f",
+      "line": 9451
+    },
+    "FEntrySettleOrgId": {
+      "name": "结算组织",
+      "property": "SettleOrgId",
+      "column": "FSETTLEORGID",
+      "reference": "3f8da3f4-fe84-4456-9548-7c2c38b7c57f",
+      "line": 9479
+    },
+    "FCloserId": {
+      "name": "关闭人",
+      "property": "CloserId",
+      "column": "FCLOSERID",
+      "reference": "d629d494-b3a3-489d-97a1-bb79d64171b1",
+      "line": 9492
+    },
+    "FCloseDate": {
+      "name": "关闭日期",
+      "property": "CloseDate",
+      "column": "FCLOSEDATE",
+      "reference": null,
+      "line": 9503
+    },
+    "FBillTaxAmount": {
+      "name": "税额",
+      "property": "BillTaxAmount",
+      "column": "FBILLTAXAMOUNT",
+      "reference": null,
+      "line": 9524
+    },
+    "FPDRecOrgId": {
+      "name": "收料组织",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 9532
+    },
+    "FProcesser": {
+      "name": "加工商",
+      "property": "Processer",
+      "column": "FPROCESSER",
+      "reference": "6099b796-9e56-434e-895e-a1628d12d4c2",
+      "line": 9548
+    },
+    "FSysPrice": {
+      "name": "系统定价",
+      "property": "SysPrice",
+      "column": "FSYSPRICE",
+      "reference": null,
+      "line": 9565
+    },
+    "FUpPrice": {
+      "name": "价格上限",
+      "property": "UpPrice",
+      "column": "FUPPRICE",
+      "reference": null,
+      "line": 9582
+    },
+    "FDownPrice": {
+      "name": "价格下限",
+      "property": "DownPrice",
+      "column": "FDOWNPRICE",
+      "reference": null,
+      "line": 9599
+    },
+    "FBillDisApportion": {
+      "name": "整单折扣分摊",
+      "property": "BillDisApportion",
+      "column": "FBILLDISAPPORTION",
+      "reference": null,
+      "line": 9616
+    },
+    "FPDDefaultPrice": {
+      "name": "系统定价",
+      "property": "FProxyField2",
+      "column": null,
+      "reference": null,
+      "line": 9624
+    },
+    "FPDPlanConfirm": {
+      "name": "计划确认",
+      "property": "FProxyField5",
+      "column": null,
+      "reference": null,
+      "line": 9632
+    },
+    "FPlanConfirm": {
+      "name": "计划确认",
+      "property": "PlanConfirm",
+      "column": "FPLANCONFIRM",
+      "reference": null,
+      "line": 9649
+    },
+    "FPDUpperPrice": {
+      "name": "价格上限",
+      "property": "FProxyField2",
+      "column": null,
+      "reference": null,
+      "line": 9657
+    },
+    "FPDLowerPrice": {
+      "name": "价格下限",
+      "property": "FProxyField3",
+      "column": null,
+      "reference": null,
+      "line": 9665
+    },
+    "FClauseId": {
+      "name": "条款编码",
+      "property": "ClauseId",
+      "column": "FCLAUSEID",
+      "reference": "eeea8e31-2b02-4008-85ed-308f2807bf6f",
+      "line": 9684
+    },
+    "FClauseName": {
+      "name": "条款名称",
+      "property": "ClauseName",
+      "column": null,
+      "reference": null,
+      "line": 9696
+    },
+    "FClauseType": {
+      "name": "条款类型",
+      "property": "ClauseType",
+      "column": null,
+      "reference": null,
+      "line": 9708
+    },
+    "FClauseContent": {
+      "name": "条款内容",
+      "property": "ClauseContent",
+      "column": null,
+      "reference": null,
+      "line": 9720
+    },
+    "FPDProcessor": {
+      "name": "加工商",
+      "property": "FProxyField1",
+      "column": null,
+      "reference": null,
+      "line": 9728
+    },
+    "FBillTypeID": {
+      "name": "单据类型",
+      "property": "BillTypeId",
+      "column": "FBILLTYPEID",
+      "reference": null,
+      "line": 9746
+    },
+    "FBomId": {
+      "name": "BOM版本",
+      "property": "BomId",
+      "column": "FBOMID",
+      "reference": "bb4cbb8c-414d-4f60-b725-2f3dbee21c04",
+      "line": 1437
+    },
+    "FPDAuxPropId": {
+      "name": "辅助属性",
+      "property": "FProxyField1",
+      "column": null,
+      "reference": null,
+      "line": 9770
+    },
+    "FPDBomId": {
+      "name": "BOM版本",
+      "property": "FProxyField3",
+      "column": null,
+      "reference": null,
+      "line": 9778
+    },
+    "FPriceTimePoint": {
+      "name": "定价时点",
+      "property": "PriceTimePoint",
+      "column": "FPRICETIMEPOINT",
+      "reference": null,
+      "line": 9810
+    },
+    "FMrbQty": {
+      "name": "累计退料数量",
+      "property": "MrbQty",
+      "column": "FMRBQTY",
+      "reference": null,
+      "line": 9839
+    },
+    "FChangeFlag": {
+      "name": "变更标志",
+      "property": "ChangeFlag",
+      "column": "FCHANGEFLAG",
+      "reference": null,
+      "line": 9859
+    },
+    "FLocalCurrId": {
+      "name": "本位币",
+      "property": "LocalCurrId",
+      "column": "FLOCALCURRID",
+      "reference": "e406d5f5-2eab-4285-8fca-6b2bca1484a4",
+      "line": 9874
+    },
+    "FAmount_LC": {
+      "name": "金额(本位币)",
+      "property": "Amount_LC",
+      "column": "FAMOUNT_LC",
+      "reference": null,
+      "line": 9892
+    },
+    "FAllAmount_LC": {
+      "name": "价税合计(本位币)",
+      "property": "AllAmount_LC",
+      "column": "FALLAMOUNT_LC",
+      "reference": null,
+      "line": 9910
+    },
+    "FTaxAmount_LC": {
+      "name": "税额(本位币)",
+      "property": "TaxAmount_LC",
+      "column": "FTAXAMOUNT_LC",
+      "reference": null,
+      "line": 9928
+    },
+    "FBillAmount_LC": {
+      "name": "金额(本位币)",
+      "property": "BillAmount_LC",
+      "column": "FBILLAMOUNT_LC",
+      "reference": null,
+      "line": 9944
+    },
+    "FBillTaxAmount_LC": {
+      "name": "税额(本位币)",
+      "property": "BillTaxAmount_LC",
+      "column": "FBILLTAXAMOUNT_LC",
+      "reference": null,
+      "line": 9960
+    },
+    "FBillAllAmount_LC": {
+      "name": "价税合计(本位币)",
+      "property": "BillAllAmount_LC",
+      "column": "FBILLALLAMOUNT_LC",
+      "reference": null,
+      "line": 9976
+    },
+    "FSettleId": {
+      "name": "结算方",
+      "property": "SettleId",
+      "column": "FSETTLEID",
+      "reference": "6099b796-9e56-434e-895e-a1628d12d4c2",
+      "line": 5267
+    },
+    "FChargeId": {
+      "name": "收款方",
+      "property": "ChargeId",
+      "column": "FCHARGEID",
+      "reference": "6099b796-9e56-434e-895e-a1628d12d4c2",
+      "line": 5270
+    },
+    "FExchangeTypeId": {
+      "name": "汇率类型",
+      "property": "ExchangeTypeId",
+      "column": "FEXCHANGETYPEID",
+      "reference": "6b2390f8-bbb9-4a29-9119-19db5dafcb6a",
+      "line": 10023
+    },
+    "FExchangeRate": {
+      "name": "汇率",
+      "property": "ExchangeRate",
+      "column": "FEXCHANGERATE",
+      "reference": null,
+      "line": 10041
+    },
+    "FProviderId": {
+      "name": "供货方",
+      "property": "ProviderId",
+      "column": "FPROVIDERID",
+      "reference": "6099b796-9e56-434e-895e-a1628d12d4c2",
+      "line": 5264
+    },
+    "FChangerId": {
+      "name": "变更人",
+      "property": "ChangerId",
+      "column": "FCHANGERID",
+      "reference": "d629d494-b3a3-489d-97a1-bb79d64171b1",
+      "line": 10123
+    },
+    "FVersionNo": {
+      "name": "版本号",
+      "property": "VersionNo",
+      "column": "FVERSIONNO",
+      "reference": null,
+      "line": 10139
+    },
+    "FChangeDate": {
+      "name": "变更日期",
+      "property": "ChangeDate",
+      "column": "FCHANGEDATE",
+      "reference": null,
+      "line": 10150
+    },
+    "FChangeReason": {
+      "name": "变更原因",
+      "property": "ChangeReason",
+      "column": "FCHANGEREASON",
+      "reference": null,
+      "line": 10162
+    },
+    "FBaseAPJoinQty": {
+      "name": "关联应付数量(计价基本)",
+      "property": "BaseAPJoinQty",
+      "column": "FBASEAPJOINQTY",
+      "reference": null,
+      "line": 10180
+    },
+    "FDeliveryStockStatus": {
+      "name": "交货库存状态",
+      "property": "DeliveryStockStatus",
+      "column": "FDELIVERYSTOCKSTATUS",
+      "reference": "35146a03-85d5-479b-8a35-3d3cc24ce966",
+      "line": 10202
+    },
+    "FUnitId": {
+      "name": "采购单位",
+      "property": "UnitId",
+      "column": "FUNITID",
+      "reference": "e6213815-6b93-4cff-83bf-f26f807b7f4d",
+      "line": 1451
+    },
+    "FPriceUnitId": {
+      "name": "计价单位",
+      "property": "PriceUnitId",
+      "column": "FPRICEUNITID",
+      "reference": "e6213815-6b93-4cff-83bf-f26f807b7f4d",
+      "line": 10287
+    },
+    "FBaseUnitId": {
+      "name": "基本单位",
+      "property": "BaseUnitId",
+      "column": "FBASEUNITID",
+      "reference": "e6213815-6b93-4cff-83bf-f26f807b7f4d",
+      "line": 1458
+    },
+    "FBASEMRBQTY": {
+      "name": "累计退料数量(基本)",
+      "property": "BASEMRBQTY",
+      "column": "FBASEMRBQTY",
+      "reference": null,
+      "line": 10321
+    },
+    "FBASERECEIVEQTY": {
+      "name": "累计收料数量(基本)",
+      "property": "BASERECEIVEQTY",
+      "column": "FBASERECEIVEQTY",
+      "reference": null,
+      "line": 10339
+    },
+    "FBASESTOCKINQTY": {
+      "name": "累计入库数量(基本)",
+      "property": "BASESTOCKINQTY",
+      "column": "FBASESTOCKINQTY",
+      "reference": null,
+      "line": 10356
+    },
+    "FJOINQTY": {
+      "name": "关联数量",
+      "property": "JOINQTY",
+      "column": "FJOINQTY",
+      "reference": null,
+      "line": 10374
+    },
+    "FBaseJoinQty": {
+      "name": "基本单位关联数量",
+      "property": "BaseJoinQty",
+      "column": "FBASEJOINQTY",
+      "reference": null,
+      "line": 10391
+    },
+    "FPDMrbQty": {
+      "name": "累计退料数量",
+      "property": "FProxyField1",
+      "column": null,
+      "reference": null,
+      "line": 10399
+    },
+    "FPDRemainStockQty": {
+      "name": "剩余入库数量",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 10407
+    },
+    "FPDRemainReceiveQty": {
+      "name": "剩余收料数量",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 10415
+    },
+    "FPDStockQty": {
+      "name": "累计入库数量",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 10423
+    },
+    "FPDReceiveQty": {
+      "name": "累计收料数量",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 10431
+    },
+    "FPDChangeFlag": {
+      "name": "变更标志",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 10439
+    },
+    "FAuxPropId": {
+      "name": "辅助属性",
+      "property": "AuxPropId",
+      "column": "FAUXPROPID",
+      "reference": null,
+      "line": 10478
+    },
+    "FPDSRCBillTypeId": {
+      "name": "源单类型",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 10486
+    },
+    "FPDSRCBillNo": {
+      "name": "源单单号",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 10495
+    },
+    "FContractNo": {
+      "name": "合同单号",
+      "property": "ContractNo",
+      "column": "FCONTRACTNO",
+      "reference": null,
+      "line": 10506
+    },
+    "FReqTraceNo": {
+      "name": "需求跟踪号",
+      "property": "ReqTraceNo",
+      "column": "FREQTRACENO",
+      "reference": null,
+      "line": 10518
+    },
+    "FPDReqTraceNo": {
+      "name": "需求跟踪号",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 10527
+    },
+    "FPDContractlNo": {
+      "name": "合同单号",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 10536
+    },
+    "FProxyField": {
+      "name": "价格系数",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 10544
+    },
+    "FProxyField1": {
+      "name": "计价单位",
+      "property": "FProxyField1",
+      "column": null,
+      "reference": null,
+      "line": 10552
+    },
+    "FProxyField2": {
+      "name": "计价数量",
+      "property": "FProxyField2",
+      "column": null,
+      "reference": null,
+      "line": 10560
+    },
+    "FProxyField3": {
+      "name": "折扣率%",
+      "property": "FProxyField3",
+      "column": null,
+      "reference": null,
+      "line": 10568
+    },
+    "FProxyField6": {
+      "name": "折扣额",
+      "property": "FProxyField6",
+      "column": null,
+      "reference": null,
+      "line": 10576
+    },
+    "FProxyField7": {
+      "name": "净价",
+      "property": "FProxyField7",
+      "column": null,
+      "reference": null,
+      "line": 10584
+    },
+    "FBusinessType": {
+      "name": "业务类型",
+      "property": "BusinessType",
+      "column": "FBUSINESSTYPE",
+      "reference": null,
+      "line": 10604
+    },
+    "FPDPayOrgId": {
+      "name": "付款组织",
+      "property": "FProxyField",
+      "column": null,
+      "reference": null,
+      "line": 10612
+    },
+    "FPayConditionId": {
+      "name": "付款条件",
+      "property": "PayConditionId",
+      "column": "FPAYCONDITIONID",
+      "reference": "68f14812-932f-4c41-8b38-b9ff9056bba1",
+      "line": 10684
+    },
+    "FSrcBillTypeId": {
+      "name": "源单类型",
+      "property": "SrcBillTypeId",
+      "column": "FSRCBILLTYPEID",
+      "reference": null,
+      "line": 10700
+    },
+    "FSrcBillNo": {
+      "name": "源单编号",
+      "property": "SrcBillNo",
+      "column": "FSRCBILLNO",
+      "reference": null,
+      "line": 10713
+    },
+    "FPayAdvanceBillId": {
+      "name": "预付单号",
+      "property": "PayAdvanceBillId",
+      "column": "FPAYADVANCEBILLID",
+      "reference": "8d9a2c17-cf6f-4270-b465-6ce8c7f963cd",
+      "line": 10736
+    },
+    "FPDLot": {
+      "name": "批号",
+      "property": "FProxyField10",
+      "column": null,
+      "reference": null,
+      "line": 10744
+    },
+    "FPDEntryTaxRate": {
+      "name": "税率%",
+      "property": "FProxyField10",
+      "column": null,
+      "reference": null,
+      "line": 10752
+    },
+    "FIsIncludedTax": {
+      "name": "含税",
+      "property": "IsIncludedTax",
+      "column": "FISINCLUDEDTAX",
+      "reference": null,
+      "line": 5575
+    },
+    "FTaxCombination": {
+      "name": "税组合",
+      "property": "FTaxCombination",
+      "column": "FTAXCOMBINATION",
+      "reference": "c1dc1eac-f946-4601-b795-09da4579afba",
+      "line": 10842
+    },
+    "FLot": {
+      "name": "批号",
+      "property": "FLot",
+      "column": "FLOT",
+      "reference": "bfe38f78-e681-4021-bf06-47f8a77cc156",
+      "line": 1430
+    },
+    "FTaxRateId": {
+      "name": "税率名称",
+      "property": "TaxRateId",
+      "column": "FTAXRATEID",
+      "reference": "1271c66b-c793-493d-8039-d2d2b0caa7d2",
+      "line": 4783
+    },
+    "FTaxRate": {
+      "name": "税率%",
+      "property": "TaxRate",
+      "column": "FTAXRATE",
+      "reference": null,
+      "line": 4787
+    },
+    "FTaxAmount": {
+      "name": "税额",
+      "property": "TaxAmount",
+      "column": "FTAXAMOUNT",
+      "reference": null,
+      "line": 4791
+    },
+    "FCostPercent": {
+      "name": "计入成本比例%",
+      "property": "CostPercent",
+      "column": "FCOSTPERCENT",
+      "reference": null,
+      "line": 4795
+    },
+    "FCostAmount": {
+      "name": "计入成本金额",
+      "property": "CostAmount",
+      "column": "FCOSTAMOUNT",
+      "reference": null,
+      "line": 4799
+    },
+    "FVAT": {
+      "name": "增值税",
+      "property": "VAT",
+      "column": "FVAT",
+      "reference": null,
+      "line": 4803
+    },
+    "FSellerWithholding": {
+      "name": "卖方代扣代缴",
+      "property": "SellerWithholding",
+      "column": "FSELLERWITHHOLDING",
+      "reference": null,
+      "line": 4807
+    },
+    "FBuyerWithholding": {
+      "name": "买方代扣代缴",
+      "property": "BuyerWithholding",
+      "column": "FBUYERWITHHOLDING",
+      "reference": null,
+      "line": 4811
+    },
+    "FELocationId": {
+      "name": "交货地点",
+      "property": "ELocationId",
+      "column": "FLOCATIONID",
+      "reference": "23adb940-af98-4d37-adb3-d53c3333b705",
+      "line": 11002
+    },
+    "FELocationAddress": {
+      "name": "交货地址",
+      "property": "ELocationAddress",
+      "column": "FLOCATIONADDRESS",
+      "reference": null,
+      "line": 11014
+    },
+    "FDeliveryMaxQty": {
+      "name": "交货上限",
+      "property": "DeliveryMaxQty",
+      "column": "FDELIVERYMAXQTY",
+      "reference": null,
+      "line": 11042
+    },
+    "FDeliveryMinQty": {
+      "name": "交货下限",
+      "property": "DeliveryMinQty",
+      "column": "FDELIVERYMINQTY",
+      "reference": null,
+      "line": 11070
+    },
+    "FSettleModeId": {
+      "name": "结算方式",
+      "property": "SettleModeId",
+      "column": "FSETTLEMODEID",
+      "reference": "cdc85b18-685b-43f3-a8ff-cada95242637",
+      "line": 11083
+    },
+    "FLocation": {
+      "name": "交货地点",
+      "property": "Location",
+      "column": "FLOCATION",
+      "reference": null,
+      "line": 11096
+    },
+    "FDeliveryLastDate": {
+      "name": "最晚交货日期",
+      "property": "DeliveryLastDate",
+      "column": "FDELIVERYLASTDATE",
+      "reference": null,
+      "line": 11128
+    },
+    "FDeliveryEarlyDate": {
+      "name": "最早交货日期",
+      "property": "DeliveryEarlyDate",
+      "column": "FDELIVERYEARLYDATE",
+      "reference": null,
+      "line": 11159
+    },
+    "FBaseDeliveryMaxQty": {
+      "name": "交货上限(基本单位)",
+      "property": "BaseDeliveryMaxQty",
+      "column": "FBASEDELIVERYMAXQTY",
+      "reference": null,
+      "line": 11176
+    },
+    "FBaseDeliveryMinQty": {
+      "name": "交货下限(基本单位)",
+      "property": "BaseDeliveryMinQty",
+      "column": "FBASEDELIVERYMINQTY",
+      "reference": null,
+      "line": 11193
+    },
+    "FBaseUnitQty": {
+      "name": "采购基本数量",
+      "property": "BaseUnitQty",
+      "column": "FBASEUNITQTY",
+      "reference": null,
+      "line": 11210
+    },
+    "FInventoryQty": {
+      "name": "当前库存",
+      "property": "InventoryQty",
+      "column": "",
+      "reference": null,
+      "line": 11227
+    },
+    "FMaterialDesc": {
+      "name": "物料说明",
+      "property": "MaterialDesc",
+      "column": "FMATERIALDESC",
+      "reference": null,
+      "line": 11238
+    },
+    "FProductType": {
+      "name": "委外产品类型",
+      "property": "ProductType",
+      "column": "FPRODUCTTYPE",
+      "reference": null,
+      "line": 11257
+    },
+    "FCOPYENTRYID": {
+      "name": "联副产品分录id",
+      "property": "CopyEntryId",
+      "column": "FCOPYENTRYID",
+      "reference": null,
+      "line": 11270
+    },
+    "FRowId": {
+      "name": "产品行主键",
+      "property": "RowId",
+      "column": "FROWID",
+      "reference": null,
+      "line": 11281
+    },
+    "FParentRowId": {
+      "name": "父产品行主键",
+      "property": "ParentRowId",
+      "column": "FPARENTROWID",
+      "reference": null,
+      "line": 11292
+    },
+    "FGroup": {
+      "name": "组别",
+      "property": "Group",
+      "column": "FGROUP",
+      "reference": null,
+      "line": 11304
+    },
+    "FProviderAddress": {
+      "name": "供货方地址",
+      "property": "ProviderAddress",
+      "column": "FPROVIDERADDRESS",
+      "reference": null,
+      "line": 11314
+    },
+    "FBASECHECKRETQTY": {
+      "name": "收料可退数量(基本单位)",
+      "property": "BASECHECKRETQTY",
+      "column": "FBASECHECKRETQTY",
+      "reference": null,
+      "line": 11331
+    },
+    "FBASESTOCKRETQTY": {
+      "name": "库存可退数量(基本单位)",
+      "property": "BASESTOCKRETQTY",
+      "column": "FBASESTOCKRETQTY",
+      "reference": null,
+      "line": 11348
+    },
+    "FCHECKRETQTY": {
+      "name": "收料可退数量",
+      "property": "CHECKRETQTY",
+      "column": "FCHECKRETQTY",
+      "reference": null,
+      "line": 11366
+    },
+    "FSTOCKRETQTY": {
+      "name": "库存可退数量",
+      "property": "STOCKRETQTY",
+      "column": "FSTOCKRETQTY",
+      "reference": null,
+      "line": 11384
+    },
+    "FPCHECKRETQTY": {
+      "name": "收料可退数量",
+      "property": "FProxyField4",
+      "column": null,
+      "reference": null,
+      "line": 11391
+    },
+    "FPFSTOCKRETQTY": {
+      "name": "库存可退数量",
+      "property": "FProxyField5",
+      "column": null,
+      "reference": null,
+      "line": 11398
+    },
+    "FBFLowId": {
+      "name": "业务流程",
+      "property": "FBFLowId",
+      "column": "FBFLOWID",
+      "reference": "b189e718-fedb-490f-97dd-0bedbba1729a",
+      "line": 11420
+    },
+    "FPDBFlowId": {
+      "name": "业务流程",
+      "property": "FProxyField4",
+      "column": null,
+      "reference": null,
+      "line": 11427
+    },
+    "FBasePlanQty": {
+      "name": "数量（基本单位）",
+      "property": "BasePlanQty",
+      "column": "FBASEPLANQTY",
+      "reference": null,
+      "line": 11443
+    },
+    "FBaseDeliCommitQty": {
+      "name": "已交货数量（基本单位）",
+      "property": "BaseDeliCommitQty",
+      "column": "FBASEDELICOMMITQTY",
+      "reference": null,
+      "line": 11459
+    },
+    "FBaseDeliRemainQty": {
+      "name": "剩余数量（基本单位）",
+      "property": "BaseDeliRemainQty",
+      "column": "FBASEDELIREMAINQTY",
+      "reference": null,
+      "line": 11475
+    },
+    "FSupMatId": {
+      "name": "供应商物料编码",
+      "property": "SupMatId",
+      "column": "FSUPMATID",
+      "reference": null,
+      "line": 11487
+    },
+    "FSupMatName": {
+      "name": "供应商物料名称",
+      "property": "SupMatName",
+      "column": "FSUPMATNAME",
+      "reference": null,
+      "line": 11498
+    },
+    "FIsInventory": {
+      "name": "允许库存",
+      "property": "IsInventory",
+      "column": null,
+      "reference": null,
+      "line": 5816
+    },
+    "FPlanUnitID": {
+      "name": "计划单位",
+      "property": "PlanUnitID",
+      "column": "FPLANUNITID",
+      "reference": "e6213815-6b93-4cff-83bf-f26f807b7f4d",
+      "line": 11525
+    },
+    "FPlanBaseUnitID": {
+      "name": "计划基本单位",
+      "property": "PlanBaseUnitID",
+      "column": "FPLANBASEUNITID",
+      "reference": "e6213815-6b93-4cff-83bf-f26f807b7f4d",
+      "line": 11540
+    },
+    "FEntrySettleModeId": {
+      "name": "结算方式",
+      "property": "EntrySettleModeId",
+      "column": "FSETTLETYPEID",
+      "reference": "cdc85b18-685b-43f3-a8ff-cada95242637",
+      "line": 11555
+    },
+    "FPEntrySettleModeId": {
+      "name": "结算方式",
+      "property": "FProxyField4",
+      "column": null,
+      "reference": null,
+      "line": 11562
+    },
+    "FPTaxCombination": {
+      "name": "税组合",
+      "property": "FProxyField4",
+      "column": null,
+      "reference": null,
+      "line": 11569
+    },
+    "FAssignSupplierId": {
+      "name": "指定供应商",
+      "property": "AssignSupplierId",
+      "column": "FASSIGNSUPPLIERID",
+      "reference": "6099b796-9e56-434e-895e-a1628d12d4c2",
+      "line": 11583
+    },
+    "FDeliveryDate_Plan": {
+      "name": "交货日期",
+      "property": "PlanDeliveryDate",
+      "column": "FDELIVERYDATE",
+      "reference": null,
+      "line": 11603
+    },
+    "FDeliveryDate": {
+      "name": "交货日期",
+      "property": "DeliveryDate",
+      "column": "FDELIVERYDATE",
+      "reference": null,
+      "line": 11624
+    },
+    "FPreMatchAmountFor": {
+      "name": "预付已核销金额",
+      "property": "PreMatchAmountFor",
+      "column": "FPREMATCHAMOUNTFOR",
+      "reference": null,
+      "line": 11640
+    },
+    "FMtoNo": {
+      "name": "计划跟踪号",
+      "property": "MtoNo",
+      "column": "FMTONO",
+      "reference": null,
+      "line": 11651
+    },
+    "FPDMtoNo": {
+      "name": "计划跟踪号",
+      "property": "FProxyField4",
+      "column": null,
+      "reference": null,
+      "line": 11658
+    },
+    "FGiveAway": {
+      "name": "是否赠品",
+      "property": "GiveAway",
+      "column": "FGIVEAWAY",
+      "reference": null,
+      "line": 11671
+    },
+    "FYFDATE": {
+      "name": "应付日期",
+      "property": "YFDATE",
+      "column": "FYFDATE",
+      "reference": null,
+      "line": 11696
+    },
+    "FYFAMOUNT": {
+      "name": "应付金额",
+      "property": "YFAMOUNT",
+      "column": "FYFAMOUNT",
+      "reference": null,
+      "line": 11750
+    },
+    "FYFRATIO": {
+      "name": "应付比例(%)",
+      "property": "YFRATIO",
+      "column": "FYFRATIO",
+      "reference": null,
+      "line": 11778
+    },
+    "FACTUALAMOUNT": {
+      "name": "实际预付金额",
+      "property": "ACTUALAMOUNT",
+      "column": "FACTUALAMOUNT",
+      "reference": null,
+      "line": 11795
+    },
+    "FISPREPAYMENT": {
+      "name": "是否预付",
+      "property": "ISPREPAYMENT",
+      "column": "FISPREPAYMENT",
+      "reference": null,
+      "line": 11808
+    },
+    "FRelBillNo": {
+      "name": "预付单号",
+      "property": "RelBillNo",
+      "column": "FRELBILLNO",
+      "reference": null,
+      "line": 11821
+    },
+    "FPAYBILLID": {
+      "name": "付款单内码",
+      "property": "PAYBILLID",
+      "column": "FPAYADVANCEBILLID",
+      "reference": null,
+      "line": 11835
+    },
+    "FPAYBILLENTITYID": {
+      "name": "付款单分录内码",
+      "property": "PAYBILLENTITYID",
+      "column": "FPAYBILLENTITYID",
+      "reference": null,
+      "line": 11849
+    },
+    "FPOORDERID": {
+      "name": "采购订单内码",
+      "property": "POORDERID",
+      "column": "FPOORDERID",
+      "reference": null,
+      "line": 11863
+    },
+    "FAmount": {
+      "name": "实付预付金额",
+      "property": "Amount",
+      "column": "FAMOUNT",
+      "reference": null,
+      "line": 11880
+    },
+    "FPREAMOUNT": {
+      "name": "预分配金额",
+      "property": "PREAMOUNT",
+      "column": "FPREAMOUNT",
+      "reference": null,
+      "line": 11897
+    },
+    "FRemarks": {
+      "name": "备注",
+      "property": "FRemarks",
+      "column": "FREMARKS",
+      "reference": null,
+      "line": 11911
+    },
+    "FSEPSETTLE": {
+      "name": "集中结算(6.0废弃)",
+      "property": "SEPSETTLE",
+      "column": "FSEPSETTLE",
+      "reference": null,
+      "line": 11929
+    },
+    "FCorrespondOrgId": {
+      "name": "对应组织",
+      "property": "CorrespondOrgId",
+      "column": "FCORRESPONDORGID",
+      "reference": "3f8da3f4-fe84-4456-9548-7c2c38b7c57f",
+      "line": 5273
+    },
+    "FCentSettleOrgId": {
+      "name": "集中结算组织(6.0废弃)",
+      "property": "CentSettleOrgId",
+      "column": "FCENTSETTLEORGID",
+      "reference": "3f8da3f4-fe84-4456-9548-7c2c38b7c57f",
+      "line": 11959
+    },
+    "FDispSettleOrgId": {
+      "name": "分散结算组织(6.0废弃)",
+      "property": "DispSettleOrgId",
+      "column": "FDISPSETTLEORGID",
+      "reference": "3f8da3f4-fe84-4456-9548-7c2c38b7c57f",
+      "line": 11976
+    },
+    "FAPJoinAmount": {
+      "name": "关联应付金额",
+      "property": "APJoinAmount",
+      "column": "FAPJOINAMOUNT",
+      "reference": null,
+      "line": 11992
+    },
+    "FChargeProjectID": {
+      "name": "费用项目",
+      "property": "ChargeProjectID",
+      "column": "FCHARGEPROJECTID",
+      "reference": "9d521fa8-cce9-481d-bb25-e1c05fb3cc69",
+      "line": 12005
+    },
+    "FinsPayAdvanceRate": {
+      "name": "预付比例%",
+      "property": "InsPayAdvanceRate",
+      "column": "FPAYADVANCERATE",
+      "reference": null,
+      "line": 12018
+    },
+    "FInsPayAdvanceAmount": {
+      "name": "预付款",
+      "property": "InsPayAdvanceAmount",
+      "column": "FPAYADVANCEAMOUNT",
+      "reference": null,
+      "line": 12032
+    },
+    "FInsPrepaidAmount": {
+      "name": "单次预付额度",
+      "property": "InsPrepaidAmount",
+      "column": "FPREPAIDAMOUNT",
+      "reference": null,
+      "line": 12046
+    },
+    "FReceiveDeptId": {
+      "name": "收料部门",
+      "property": "ReceiveDeptId",
+      "column": "FRECEIVEDEPTID",
+      "reference": "5b43df86-906c-4b59-95bc-884f05e2533c",
+      "line": 12066
+    },
+    "FPDRECEIVEDEPTID": {
+      "name": "收料部门",
+      "property": "FProxyField4",
+      "column": null,
+      "reference": null,
+      "line": 12073
+    },
+    "FSUPPLIERDELIVERYDATE": {
+      "name": "供应商发货日期",
+      "property": "FSUPPLIERDELIVERYDATE",
+      "column": "FSUPPLIERDELIVERYDATE",
+      "reference": null,
+      "line": 12087
+    },
+    "FTRLT": {
+      "name": "运输提前期",
+      "property": "FTRLT",
+      "column": "FTRLT",
+      "reference": null,
+      "line": 12108
+    },
+    "FPREARRIVALDATE": {
+      "name": "预计到货日期",
+      "property": "FPREARRIVALDATE",
+      "column": "FPREARRIVALDATE",
+      "reference": null,
+      "line": 12122
+    },
+    "FMaxPrice": {
+      "name": "最高报价(6.1废弃)",
+      "property": "MaxPrice",
+      "column": "FMAXPRICE",
+      "reference": null,
+      "line": 12137
+    },
+    "FMinPrice": {
+      "name": "最低报价(6.1废弃)",
+      "property": "MinPrice",
+      "column": "FMINPRICE",
+      "reference": null,
+      "line": 12152
+    },
+    "FAPPLYAMOUNT": {
+      "name": "付款申请关联金额",
+      "property": "APPLYAMOUNT",
+      "column": "FAPPLYAMOUNT",
+      "reference": null,
+      "line": 12168
+    },
+    "FIsStock": {
+      "name": "是否可库存",
+      "property": "IsStock",
+      "column": "FISSTOCK",
+      "reference": null,
+      "line": 12186
+    },
+    "FPAYADVANCEAMOUNT": {
+      "name": "单次预付额度",
+      "property": "FPAYADVANCEAMOUNT",
+      "column": "",
+      "reference": null,
+      "line": 12201
+    },
+    "FSupToOderExchangeBusRate": {
+      "name": "单次预付额度汇率",
+      "property": "FSupToOderExchangeBusRate",
+      "column": "",
+      "reference": null,
+      "line": 12221
+    },
+    "FConsumeSumQty": {
+      "name": "消耗汇总数量",
+      "property": "ConsumeSumQty",
+      "column": "FCONSUMESUMQTY",
+      "reference": null,
+      "line": 12237
+    },
+    "FBaseConsumeSumQty": {
+      "name": "消耗汇总基本单位数量",
+      "property": "FBaseConsumeSumQty",
+      "column": "FBASECONSUMESUMQTY",
+      "reference": null,
+      "line": 12252
+    },
+    "FProxyField4": {
+      "name": "消耗汇总数量",
+      "property": "FProxyField4",
+      "column": null,
+      "reference": null,
+      "line": 12260
+    },
+    "FPayJoinAmount": {
+      "name": "付款关联金额",
+      "property": "PayJoinAmount",
+      "column": "FPAYJOINAMOUNT",
+      "reference": null,
+      "line": 12276
+    },
+    "FProviderContact": {
+      "name": "供货方联系人(旧)",
+      "property": "ProviderContact",
+      "column": "FPROVIDERCONTACT",
+      "reference": null,
+      "line": 12285
+    },
+    "FPDMaterialId_mxFIN": {
+      "name": "物料编码",
+      "property": "FProxyField5",
+      "column": null,
+      "reference": null,
+      "line": 12293
+    },
+    "FPDMaterialName_mxFIN": {
+      "name": "物料名称",
+      "property": "FProxyField8",
+      "column": null,
+      "reference": null,
+      "line": 12301
+    },
+    "FBaseSalJoinQty": {
+      "name": "销售订单关联数量（采购基本）",
+      "property": "BaseSalJoinQty",
+      "column": "FBASESALJOINQTY",
+      "reference": null,
+      "line": 12317
+    },
+    "FSalJoinQty": {
+      "name": "销售订单关联数量（采购）",
+      "property": "SalJoinQty",
+      "column": "FSALJOINQTY",
+      "reference": null,
+      "line": 12334
+    },
+    "FIsModificationOperator": {
+      "name": "修改变更操作",
+      "property": "IsModificationOperator",
+      "column": "",
+      "reference": null,
+      "line": 12346
+    },
+    "FNetOrderBillNo": {
+      "name": "供应商协同平台订单编号(6.1废弃)",
+      "property": "NETORDERBILLNO",
+      "column": "FNETORDERBILLNO",
+      "reference": null,
+      "line": 12357
+    },
+    "FNetOrderEntryId": {
+      "name": "供应商协同平台订单分录ID(6.1废弃)",
+      "property": "NetOrderEntryId",
+      "column": "FNETORDERENTRYID",
+      "reference": null,
+      "line": 12370
+    },
+    "FNetOrderBillId": {
+      "name": "供应商协同平台订单ID(6.1废弃)",
+      "property": "NetOrderBillId",
+      "column": "FNETORDERBILLID",
+      "reference": null,
+      "line": 12382
+    },
+    "FPriceBaseQty": {
+      "name": "计价基本数量",
+      "property": "PriceBaseQty",
+      "column": "FPRICEBASEQTY",
+      "reference": null,
+      "line": 12397
+    },
+    "FSetPriceUnitID": {
+      "name": "定价单位",
+      "property": "SetPriceUnitID",
+      "column": "FSETPRICEUNITID",
+      "reference": "e6213815-6b93-4cff-83bf-f26f807b7f4d",
+      "line": 12412
+    },
+    "FSalUnitID": {
+      "name": "销售单位",
+      "property": "SalUnitID",
+      "column": "FSALUNITID",
+      "reference": "e6213815-6b93-4cff-83bf-f26f807b7f4d",
+      "line": 12448
+    },
+    "FSalQty": {
+      "name": "销售数量",
+      "property": "SalQty",
+      "column": "FSALQTY",
+      "reference": null,
+      "line": 12523
+    },
+    "FSalBaseQty": {
+      "name": "销售基本数量",
+      "property": "SalBaseQty",
+      "column": "FSALBASEQTY",
+      "reference": null,
+      "line": 12537
+    },
+    "FStockUnitID": {
+      "name": "库存单位",
+      "property": "StockUnitID",
+      "column": "FSTOCKUNITID",
+      "reference": "e6213815-6b93-4cff-83bf-f26f807b7f4d",
+      "line": 12574
+    },
+    "FStockQty": {
+      "name": "库存单位数量",
+      "property": "StockQty",
+      "column": "FSTOCKQTY",
+      "reference": null,
+      "line": 12649
+    },
+    "FStockBaseQty": {
+      "name": "库存基本数量",
+      "property": "StockBaseQty",
+      "column": "FSTOCKBASEQTY",
+      "reference": null,
+      "line": 12663
+    },
+    "FSRCBIZUNITID": {
+      "name": "携带的主业务单位",
+      "property": "SRCBIZUNITID",
+      "column": "FSRCBIZUNITID",
+      "reference": "e6213815-6b93-4cff-83bf-f26f807b7f4d",
+      "line": 12680
+    },
+    "FPurBaseNum": {
+      "name": "采购基本分子",
+      "property": "PurBaseNum",
+      "column": "FPURBASENUM",
+      "reference": null,
+      "line": 12702
+    },
+    "FStockBaseDen": {
+      "name": "库存基本分母",
+      "property": "StockBaseDen",
+      "column": "FSTOCKBASEDEN",
+      "reference": null,
+      "line": 12724
+    },
+    "FSTOCKJOINBASEQTY": {
+      "name": "库存关联数量(基本单位)",
+      "property": "STOCKJOINBASEQTY",
+      "column": "FSTOCKJOINBASEQTY",
+      "reference": null,
+      "line": 12740
+    },
+    "FStockBaseSalJoinQty": {
+      "name": "销售订单关联数量（库存基本）",
+      "property": "StockBaseSalJoinQty",
+      "column": "FSTOCKBASESALJOINQTY",
+      "reference": null,
+      "line": 12756
+    },
+    "FStockBaseAPJoinQty": {
+      "name": "关联应付数量（库存基本)",
+      "property": "StockBaseAPJoinQty",
+      "column": "FSTOCKBASEAPJOINQTY",
+      "reference": null,
+      "line": 12772
+    },
+    "FSTOCKBASESTOCKINQTY": {
+      "name": "累计入库数量(库存基本)",
+      "property": "STOCKBASESTOCKINQTY",
+      "column": "FSTOCKBASESTOCKINQTY",
+      "reference": null,
+      "line": 12788
+    },
+    "FFOCUSSETTLEORGID": {
+      "name": "集中结算组织",
+      "property": "FOCUSSETTLEORGID",
+      "column": "FFOCUSSETTLEORGID",
+      "reference": "3f8da3f4-fe84-4456-9548-7c2c38b7c57f",
+      "line": 12804
+    },
+    "FPriceListEntry": {
+      "name": "分录价目表",
+      "property": "PriceListEntry",
+      "column": "FPRICELISTENTRY",
+      "reference": "36fbe0c0-77ac-44bd-89c3-fd9a64a57460",
+      "line": 12826
+    },
+    "FPDPriceListEntry": {
+      "name": "分录价目表",
+      "property": "FProxyField51",
+      "column": null,
+      "reference": null,
+      "line": 12834
+    },
+    "FConfirmStatus": {
+      "name": "确认状态",
+      "property": "ConfirmStatus",
+      "column": "FCONFIRMSTATUS",
+      "reference": null,
+      "line": 12869
+    },
+    "FConfirmerId": {
+      "name": "确认人",
+      "property": "ConfirmerId",
+      "column": "FCONFIRMERID",
+      "reference": "d629d494-b3a3-489d-97a1-bb79d64171b1",
+      "line": 12880
+    },
+    "FConfirmDate": {
+      "name": "确认日期",
+      "property": "ConfirmDate",
+      "column": "FCONFIRMDATE",
+      "reference": null,
+      "line": 12889
+    },
+    "FConfirmDeliQty": {
+      "name": "确认交货数量",
+      "property": "ConfirmDeliQty",
+      "column": "FCONFIRMDELIQTY",
+      "reference": null,
+      "line": 12905
+    },
+    "FConfirmDeliDate": {
+      "name": "确认交货日期",
+      "property": "ConfirmDeliDate",
+      "column": "FCONFIRMDELIDATE",
+      "reference": null,
+      "line": 12917
+    },
+    "FConfirmInfo": {
+      "name": "确认意见",
+      "property": "ConfirmInfo",
+      "column": "FCONFIRMINFO",
+      "reference": null,
+      "line": 12930
+    },
+    "FSubOrgId": {
+      "name": "委外组织",
+      "property": "SubOrgId",
+      "column": "FSUBORGID",
+      "reference": "3f8da3f4-fe84-4456-9548-7c2c38b7c57f",
+      "line": 12946
+    },
+    "FPayMaterialId": {
+      "name": "物料编码",
+      "property": "PayMaterialId",
+      "column": "FPAYMATERIALID",
+      "reference": "624b39cf-5504-42e0-9124-7d75e64a05f1",
+      "line": 12969
+    },
+    "FPayMaterialName": {
+      "name": "物料名称",
+      "property": "PayMaterialName",
+      "column": null,
+      "reference": null,
+      "line": 12982
+    },
+    "FMATERIALSEQ": {
+      "name": "物料行号",
+      "property": "FMATERIALSEQ",
+      "column": "FMATERIALSEQ",
+      "reference": null,
+      "line": 12992
+    },
+    "FPURCHASEORDERNO": {
+      "name": "采购订单号",
+      "property": "FPURCHASEORDERNO",
+      "column": "FPURCHASEORDERNO",
+      "reference": null,
+      "line": 13005
+    },
+    "FOrderEntryId": {
+      "name": "订单明细行内码",
+      "property": "OrderEntryId",
+      "column": "FORDERENTRYID",
+      "reference": null,
+      "line": 13017
+    },
+    "FIsQuota": {
+      "name": "配额生成",
+      "property": "IsQuota",
+      "column": "FISQUOTA",
+      "reference": null,
+      "line": 13038
+    },
+    "FPFISQUOTA": {
+      "name": "配额生成",
+      "property": "F_PAEZ_ProxyField",
+      "column": null,
+      "reference": null,
+      "line": 13046
+    },
+    "FProviderContactId": {
+      "name": "供货方联系人",
+      "property": "ProviderContactId",
+      "column": "FPROVIDERCONTACTID",
+      "reference": "8f720c26-6733-4df8-afd2-31ea4e3dbdc6",
+      "line": 13072
+    },
+    "FProviderJob": {
+      "name": "职务",
+      "property": "ProviderJob",
+      "column": null,
+      "reference": null,
+      "line": 13084
+    },
+    "FProviderPhone": {
+      "name": "手机",
+      "property": "ProviderPhone",
+      "column": null,
+      "reference": null,
+      "line": 13096
+    },
+    "FISPRICEEXCLUDETAX": {
+      "name": "价外税",
+      "property": "FISPRICEEXCLUDETAX",
+      "column": "FISPRICEEXCLUDETAX",
+      "reference": null,
+      "line": 13160
+    },
+    "FELocation": {
+      "name": "交货地点",
+      "property": "ELocation",
+      "column": "FLOCATION",
+      "reference": null,
+      "line": 13182
+    },
+    "FPPSettleOrgId": {
+      "name": "结算组织",
+      "property": "SettleOrgId",
+      "column": "FSETTLEORGID",
+      "reference": "3f8da3f4-fe84-4456-9548-7c2c38b7c57f",
+      "line": 13198
+    },
+    "FAPPLYBILLNO": {
+      "name": "付款申请单号",
+      "property": "APPLYBILLNO",
+      "column": "FAPPLYBILLNO",
+      "reference": null,
+      "line": 13210
+    },
+    "FPREPAYBillNo": {
+      "name": "预付单号",
+      "property": "PREPAYBillNo",
+      "column": "FPREPAYBILLNO",
+      "reference": null,
+      "line": 13222
+    },
+    "FPAPPLYAMOUNT": {
+      "name": "付款申请关联金额",
+      "property": "PAPPLYAMOUNT",
+      "column": "FPAPPLYAMOUNT",
+      "reference": null,
+      "line": 13237
+    },
+    "FPPayJoinAmount": {
+      "name": "付款关联金额",
+      "property": "PPayJoinAmount",
+      "column": "FPPAYJOINAMOUNT",
+      "reference": null,
+      "line": 13252
+    },
+    "FDEMANDTYPE": {
+      "name": "需求来源",
+      "property": "DEMANDTYPE",
+      "column": "FDEMANDTYPE",
+      "reference": null,
+      "line": 13270
+    },
+    "FDEMANDBILLNO": {
+      "name": "需求单据编号",
+      "property": "DEMANDBILLNO",
+      "column": "FDEMANDBILLNO",
+      "reference": null,
+      "line": 13284
+    },
+    "FDEMANDBILLENTRYSEQ": {
+      "name": "需求单据行号",
+      "property": "DEMANDBILLENTRYSEQ",
+      "column": "FDEMANDBILLENTRYSEQ",
+      "reference": null,
+      "line": 13297
+    },
+    "FDEMANDBILLENTRYID": {
+      "name": "需求单据分录内码",
+      "property": "DEMANDBILLENTRYID",
+      "column": "FDEMANDBILLENTRYID",
+      "reference": null,
+      "line": 13310
+    },
+    "FPFDEMANDTYPE": {
+      "name": "需求来源",
+      "property": "FProxyField5",
+      "column": null,
+      "reference": null,
+      "line": 13318
+    },
+    "FPFDEMANDBILLNO": {
+      "name": "需求单据编号",
+      "property": "FProxyField8",
+      "column": null,
+      "reference": null,
+      "line": 13326
+    },
+    "FPFDEMANDBILLENTRYSEQ": {
+      "name": "需求单据行号",
+      "property": "FProxyField9",
+      "column": null,
+      "reference": null,
+      "line": 13334
+    },
+    "FPayPlanQty": {
+      "name": "数量",
+      "property": "PayPlanQty",
+      "column": "FPAYPLANQTY",
+      "reference": null,
+      "line": 13362
+    },
+    "FPayPlanPrice": {
+      "name": "含税单价",
+      "property": "PayPlanPrice",
+      "column": "FPAYPLANPRICE",
+      "reference": null,
+      "line": 13379
+    },
+    "FPAYPLANPRICEUNITID": {
+      "name": "计价单位",
+      "property": "PAYPLANPRICEUNITID",
+      "column": "FPAYPLANPRICEUNITID",
+      "reference": "e6213815-6b93-4cff-83bf-f26f807b7f4d",
+      "line": 13405
+    },
+    "FBasePayPlanQty": {
+      "name": "数量(基本单位)",
+      "property": "BasePayPlanQty",
+      "column": "FBASEPAYPLANQTY",
+      "reference": null,
+      "line": 13418
+    },
+    "FAppliedQty": {
+      "name": "已申请关联数量",
+      "property": "AppliedQty",
+      "column": "FAPPLIEDQTY",
+      "reference": null,
+      "line": 13434
+    },
+    "FActualPayQty": {
+      "name": "实际预付关联数量",
+      "property": "ActualPayQty",
+      "column": "FACTUALPAYQTY",
+      "reference": null,
+      "line": 13450
+    },
+    "FBasePriceUnit": {
+      "name": "计价基本单位",
+      "property": "BasePriceUnit",
+      "column": "FBASEPRICEUNIT",
+      "reference": "e6213815-6b93-4cff-83bf-f26f807b7f4d",
+      "line": 13464
+    },
+    "FRowType": {
+      "name": "产品类型",
+      "property": "RowType",
+      "column": "FROWTYPE",
+      "reference": null,
+      "line": 13486
+    },
+    "FPARENTMATID": {
+      "name": "父项产品",
+      "property": "PARENTMATID",
+      "column": "FPARENTMATID",
+      "reference": "624b39cf-5504-42e0-9124-7d75e64a05f1",
+      "line": 13502
+    },
+    "FPARENTBOMID": {
+      "name": "父项BOM版本",
+      "property": "PARENTBOMID",
+      "column": "FPARENTBOMID",
+      "reference": "bb4cbb8c-414d-4f60-b725-2f3dbee21c04",
+      "line": 13519
+    },
+    "FDepositRatio": {
+      "name": "保证金比例%",
+      "property": "DepositRatio",
+      "column": "FDEPOSITRATIO",
+      "reference": null,
+      "line": 5285
+    },
+    "FDeposit": {
+      "name": "保证金",
+      "property": "Deposit",
+      "column": "FDEPOSIT",
+      "reference": null,
+      "line": 13572
+    },
+    "FRelateDeposit": {
+      "name": "关联保证金",
+      "property": "RelateDeposit",
+      "column": "FRELATEDEPOSIT",
+      "reference": null,
+      "line": 13587
+    },
+    "FAPPLYRELATEDEPOSIT": {
+      "name": "申请关联保证金",
+      "property": "ApplyRelateDeposit",
+      "column": "FAPPLYRELATEDEPOSIT",
+      "reference": null,
+      "line": 13602
+    },
+    "FRelateRefundDeposit": {
+      "name": "关联退款保证金",
+      "property": "RelateRefundDeposit",
+      "column": "FRELATEREFUNDDEPOSIT",
+      "reference": null,
+      "line": 13617
+    },
+    "FPriceDiscount": {
+      "name": "单价折扣",
+      "property": "PriceDiscount",
+      "column": "FPRICEDISCOUNT",
+      "reference": null,
+      "line": 13631
+    },
+    "FPFPriceDiscount": {
+      "name": "单价折扣",
+      "property": "F_PAEZ_ProxyField",
+      "column": null,
+      "reference": null,
+      "line": 13639
+    },
+    "FPRILSTENTRYID": {
+      "name": "价目表分录id",
+      "property": "PRILSTENTRYID",
+      "column": "FPRILSTENTRYID",
+      "reference": null,
+      "line": 13652
+    },
+    "FBarcode": {
+      "name": "零售条形码",
+      "property": "FBarcode",
+      "column": "FBARCODE",
+      "reference": null,
+      "line": 13665
+    },
+    "FSourceBillNo": {
+      "name": "源单编号",
+      "property": "FSourceBillNo",
+      "column": "FSOURCEBILLNO",
+      "reference": null,
+      "line": 13676
+    },
+    "FBranchId": {
+      "name": "收货门店",
+      "property": "FBranchId",
+      "column": "FBRANCHID",
+      "reference": "bc5ff403-fd28-82bb-11e5-4c94571f4158",
+      "line": 13694
+    },
+    "FPDRequireOrgId1": {
+      "name": "收货门店",
+      "property": "FPDRequireOrgId1",
+      "column": null,
+      "reference": null,
+      "line": 13702
+    },
+    "FBASEFINAPQTY": {
+      "name": "先收票数量（基本单位）",
+      "property": "BASEFINAPQTY",
+      "column": "FBASEFINAPQTY",
+      "reference": null,
+      "line": 13718
+    },
+    "FChangeStatus": {
+      "name": "变更状态",
+      "property": "ChangeStatus",
+      "column": "FCHANGESTATUS",
+      "reference": null,
+      "line": 13757
+    },
+    "FBASECHECKCUTPAYQTY": {
+      "name": "累计检验退料并扣款数量（基本）",
+      "property": "BASECHECKCUTPAYQTY",
+      "column": "FBASECHECKCUTPAYQTY",
+      "reference": null,
+      "line": 13773
+    },
+    "FSAMPLEDAMAGEBASEQTY": {
+      "name": "我方承担样本破坏基本数量",
+      "property": "SAMPLEDAMAGEBASEQTY",
+      "column": "FSAMPLEDAMAGEBASEQTY",
+      "reference": null,
+      "line": 13789
+    },
+    "FACCTYPE": {
+      "name": "验收方式",
+      "property": "FACCTYPE",
+      "column": "FACCTYPE",
+      "reference": null,
+      "line": 13808
+    },
+    "FSUMACCALLAMOUNT": {
+      "name": "累计验收金额",
+      "property": "SUMACCALLAMOUNT",
+      "column": "FSUMACCALLAMOUNT",
+      "reference": null,
+      "line": 13824
+    },
+    "FSUMACCRATE": {
+      "name": "累计验收比例%",
+      "property": "SUMACCRATE",
+      "column": "FSUMACCRATE",
+      "reference": null,
+      "line": 13839
+    },
+    "FPayMaterialDesc": {
+      "name": "物料说明",
+      "property": "PayMaterialDesc",
+      "column": "FPAYMATERIALDESC",
+      "reference": null,
+      "line": 13850
+    },
+    "FPayModel": {
+      "name": "规格型号",
+      "property": "PayModel",
+      "column": null,
+      "reference": null,
+      "line": 13863
+    },
+    "FRelReqStatus": {
+      "name": "释放采购申请",
+      "property": "FRelReqStatus",
+      "column": "FRELREQSTATUS",
+      "reference": null,
+      "line": 13896
+    },
+    "FSTOCKBASEFINAPQTY": {
+      "name": "先收票数量（库存基本）",
+      "property": "STOCKBASEFINAPQTY",
+      "column": "FSTOCKBASEFINAPQTY",
+      "reference": null,
+      "line": 13912
+    },
+    "FTailDiffFlag": {
+      "name": "尾差处理标识",
+      "property": "TailDiffFlag",
+      "column": "FTAILDIFFFLAG",
+      "reference": null,
+      "line": 13927
+    },
+    "FPayAuxPropId": {
+      "name": "辅助属性",
+      "property": "AuxPropId",
+      "column": "FPAYAUXPROPID",
+      "reference": null,
+      "line": 13942
+    },
+    "FMANUALCLOSE": {
+      "name": "手工关闭",
+      "property": "MANUALCLOSE",
+      "column": "FMANUALCLOSE",
+      "reference": null,
+      "line": 13960
+    },
+    "FAllAmountExceptDisCount": {
+      "name": "价税合计（折前）",
+      "property": "AllAmountExceptDisCount",
+      "column": "FALLAMOUNTEXCEPTDISCOUNT",
+      "reference": null,
+      "line": 13974
+    },
+    "FAllDisCount": {
+      "name": "整单折扣额",
+      "property": "AllDisCount",
+      "column": "FALLDISCOUNT",
+      "reference": null,
+      "line": 14002
+    },
+    "FProviderEMail": {
+      "name": "邮箱",
+      "property": "ProviderEMail",
+      "column": "FPROVIDEREMAIL",
+      "reference": null,
+      "line": 14011
+    },
+    "FCloseReason": {
+      "name": "关闭原因",
+      "property": "CloseReason",
+      "column": "FCLOSEREASON",
+      "reference": null,
+      "line": 14022
+    },
+    "FIsMobBill": {
+      "name": "移动单据",
+      "property": "IsMobBill",
+      "column": "FISMOBBILL",
+      "reference": null,
+      "line": 14034
+    },
+    "FInqueryGetId": {
+      "name": "询价报价采纳分录id",
+      "property": "InqueryGetId",
+      "column": "FINQUERYGETID",
+      "reference": null,
+      "line": 14046
+    },
+    "FIsUseDrpSalePOPush": {
+      "name": "分销销售订单生成",
+      "property": "IsUseDrpSalePOPush",
+      "column": "FISUSEDRPSALEPOPUSH",
+      "reference": null,
+      "line": 14059
+    },
+    "FIsCreateStraightOutIN": {
+      "name": "生成直运出入库",
+      "property": "IsCreateStraightOutIN",
+      "column": "FISCREATESTRAIGHTOUTIN",
+      "reference": null,
+      "line": 14072
+    },
+    "FPayChargeProjectID": {
+      "name": "费用项目",
+      "property": "PayChargeProjectID",
+      "column": "FPAYCHARGEPROJECTID",
+      "reference": "9d521fa8-cce9-481d-bb25-e1c05fb3cc69",
+      "line": 14087
+    },
+    "FUPPERBELIEL": {
+      "name": "超额比例%",
+      "property": "UPPERBELIEL",
+      "column": "FUPPERBELIEL",
+      "reference": null,
+      "line": 14111
+    },
+    "FALLPAYAPPLYAMOUNT": {
+      "name": "累计付款申请金额",
+      "property": "ALLPAYAPPLYAMOUNT",
+      "column": "FALLPAYAPPLYAMOUNT",
+      "reference": null,
+      "line": 14126
+    },
+    "FALLPAYAMOUNT": {
+      "name": "累计付款金额",
+      "property": "ALLPAYAMOUNT",
+      "column": "FALLPAYAMOUNT",
+      "reference": null,
+      "line": 14141
+    },
+    "FALLAPPYNOPAYAMOUNT": {
+      "name": "申请单未付款金额",
+      "property": "ALLAPPYNOPAYAMOUNT",
+      "column": "FALLAPPYNOPAYAMOUNT",
+      "reference": null,
+      "line": 14156
+    },
+    "FPAYRELATAMOUNT": {
+      "name": "付款金额（关联）",
+      "property": "PAYRELATAMOUNT",
+      "column": "FPAYRELATAMOUNT",
+      "reference": null,
+      "line": 14171
+    },
+    "FPAYNOTRELATAMOUNT": {
+      "name": "付款单非关联核销金额",
+      "property": "PAYNOTRELATAMOUNT",
+      "column": "FPAYNOTRELATAMOUNT",
+      "reference": null,
+      "line": 14186
+    },
+    "FAPNOTRELATAMOUNT": {
+      "name": "应付单非关联核销金额",
+      "property": "APNOTRELATAMOUNT",
+      "column": "FAPNOTRELATAMOUNT",
+      "reference": null,
+      "line": 14201
+    },
+    "FORMID": {
+      "name": "关联单据",
+      "property": "ORMID",
+      "column": "FORMID",
+      "reference": "4fedf7af-3213-4e12-891c-67e34918e183",
+      "line": 14218
+    },
+    "FRELATBILLNO": {
+      "name": "关联单据编号",
+      "property": "RELATBILLNO",
+      "column": "FRELATBILLNO",
+      "reference": null,
+      "line": 14230
+    },
+    "FPAYAPPLYAMOUNT": {
+      "name": "申请付款金额",
+      "property": "PAYAPPLYAMOUNT",
+      "column": "FPAYAPPLYAMOUNT",
+      "reference": null,
+      "line": 14246
+    },
+    "FAMAmount": {
+      "name": "付款金额",
+      "property": "AMAmount",
+      "column": "FPAYAMOUNT",
+      "reference": null,
+      "line": 14262
+    },
+    "FTYPE": {
+      "name": "核销记录单据",
+      "property": "TYPE",
+      "column": "FTYPE",
+      "reference": null,
+      "line": 14278
+    },
+    "FALLREFUNDAMOUNT": {
+      "name": "累计退款金额",
+      "property": "ALLREFUNDAMOUNT",
+      "column": "FALLREFUNDAMOUNT",
+      "reference": null,
+      "line": 14293
+    },
+    "FREFUNDAMOUNT": {
+      "name": "退款金额",
+      "property": "REFUNDAMOUNT",
+      "column": "FREFUNDAMOUNT",
+      "reference": null,
+      "line": 14309
+    },
+    "FWBADUBASEPURQTY": {
+      "name": "反写调整数量(采购基本)",
+      "property": "WBADUBASEPURQTY",
+      "column": "FWBADUBASEPURQTY",
+      "reference": null,
+      "line": 14325
+    },
+    "FWBADUBASESTOCKQTY": {
+      "name": "反写调整数量(库存基本)",
+      "property": "WBADUBASESTOCKQTY",
+      "column": "FWBADUBASESTOCKQTY",
+      "reference": null,
+      "line": 14341
+    },
+    "FWWPickMtlQty": {
+      "name": "委外领料套数",
+      "property": "WWPickMtlQty",
+      "column": "FWWPICKMTLQTY",
+      "reference": null,
+      "line": 14356
+    },
+    "FPAYDATE": {
+      "name": "业务日期",
+      "property": "FPAYDATE",
+      "column": "FPAYDATE",
+      "reference": null,
+      "line": 14368
+    },
+    "FMYDAMAGESAMPLEBASEQTY": {
+      "name": "我方破坏样本数量",
+      "property": "MYDAMAGESAMPLEBASEQTY",
+      "column": "FMYDAMAGESAMPLEBASEQTY",
+      "reference": null,
+      "line": 14384
+    },
+    "FSUBREQBILLNO": {
+      "name": "委外订单编号",
+      "property": "SUBREQBILLNO",
+      "column": "FSUBREQBILLNO",
+      "reference": null,
+      "line": 14395
+    },
+    "FSUBREQBILLSEQ": {
+      "name": "委外订单行号",
+      "property": "SUBREQBILLSEQ",
+      "column": "FSUBREQBILLSEQ",
+      "reference": null,
+      "line": 14406
+    },
+    "FSUBREQENTRYID": {
+      "name": "委外订单分录内码",
+      "property": "SUBREQENTRYID",
+      "column": "FSUBREQENTRYID",
+      "reference": null,
+      "line": 14417
+    },
+    "FContractType": {
+      "name": "合同类型",
+      "property": "FContractType",
+      "column": "FCONTRACTTYPE",
+      "reference": null,
+      "line": 14432
+    },
+    "FALLNOPAYAMOUNT": {
+      "name": "订单未付款金额",
+      "property": "ALLNOPAYAMOUNT",
+      "column": "FALLNOPAYAMOUNT",
+      "reference": null,
+      "line": 14447
+    },
+    "FRepOldMaterialNumber": {
+      "name": "替代物料原编码",
+      "property": "RepOldMaterialNumber",
+      "column": "FREPOLDMATERIALNUMBER",
+      "reference": null,
+      "line": 14459
+    },
+    "FIsRepMaterial": {
+      "name": "是否替代料采购",
+      "property": "IsRepMaterial",
+      "column": "FISREPMATERIAL",
+      "reference": null,
+      "line": 14473
+    },
+    "FDiscSeq": {
+      "name": "序号",
+      "property": "Seq",
+      "column": "FSEQ",
+      "reference": null,
+      "line": 17421
+    },
+    "FDiscDiscountType": {
+      "name": "折扣类型",
+      "property": "DiscountType",
+      "column": "FDISCOUNTTYPE",
+      "reference": null,
+      "line": 17434
+    },
+    "FDiscComputeMode": {
+      "name": "计算方式",
+      "property": "ComputeMode",
+      "column": "FCOMPUTEMODE",
+      "reference": null,
+      "line": 17447
+    },
+    "FDiscDiscountRate": {
+      "name": "折扣率",
+      "property": "DiscountRate",
+      "column": "FDISCOUNTRATE",
+      "reference": null,
+      "line": 17460
+    },
+    "FDiscDiscount": {
+      "name": "折扣额",
+      "property": "Discount",
+      "column": "FDISCOUNT",
+      "reference": null,
+      "line": 17473
+    },
+    "FDiscEndAmount": {
+      "name": "折扣后金额",
+      "property": "EndAmount",
+      "column": "FENDAMOUNT",
+      "reference": null,
+      "line": 17486
+    },
+    "FDiscDescription": {
+      "name": "折扣描述",
+      "property": "Description",
+      "column": "FDESCRIPTION",
+      "reference": null,
+      "line": 17495
+    }
+  }
+}

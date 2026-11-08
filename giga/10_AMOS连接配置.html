@@ -1,61 +1,35 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AMOS连接配置</title>
-<link rel="stylesheet" href="common.css">
-</head>
-<body>
-<div class="page">
-  <div class="toolbar">
-    <button class="btn p" type="button" onclick="act('保存连接配置')">保存</button>
-    <button class="btn" type="button" onclick="act('测试连接')">测试连接</button>
-  </div>
-  <div class="panel">
-    <table class="grid">
-      <thead>
-        <tr>
-          <th style="width:28%">配置项</th>
-          <th style="width:36%">配置值</th>
-          <th>示例/说明</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>环境根地址<br><code>AMOS_API_BASE</code></td>
-          <td><input type="text" style="width:100%;box-sizing:border-box;padding:6px 8px;border:1px solid #d0d5dd;border-radius:3px" value="https://amos-test.example.com"></td>
-          <td>测试/生产 HTTPS 根地址，路径再拼 event-sources</td>
-        </tr>
-        <tr>
-          <td>永久集成令牌<br><code>AMOS_INTEGRATION_TOKEN</code></td>
-          <td><input type="password" style="width:100%;box-sizing:border-box;padding:6px 8px;border:1px solid #d0d5dd;border-radius:3px" value="amos-demo-token-********"></td>
-          <td>Bearer 令牌；不自动过期，可撤销替换；不用金蝶 AppSecret</td>
-        </tr>
-        <tr>
-          <td>环境标识</td>
-          <td>
-            <select style="width:100%;box-sizing:border-box;padding:6px 8px;border:1px solid #d0d5dd;border-radius:3px">
-              <option selected>测试</option>
-              <option>生产</option>
-            </select>
-          </td>
-          <td>测试 / 生产，与根地址、令牌成对</td>
-        </tr>
-        <tr>
-          <td>超时时间(ms)</td>
-          <td><input type="text" style="width:100%;box-sizing:border-box;padding:6px 8px;border:1px solid #d0d5dd;border-radius:3px" value="30000"></td>
-          <td>建议会议定默认值；超时按失败重试</td>
-        </tr>
-        <tr>
-          <td>重试间隔与告警责任</td>
-          <td><input type="text" style="width:100%;box-sizing:border-box;padding:6px 8px;border:1px solid #d0d5dd;border-radius:3px" value="间隔 60s × 3 次；超时告警对接运维"></td>
-          <td>文档要求联调前双方确认；可先占位</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-<script src="_ui.js"></script>
-</body>
-</html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AMOS连接配置</title><link rel="stylesheet" href="common.css"><style>.config input,.config select,.config textarea{width:100%;padding:7px 9px;border:1px solid #d0d5dd;border-radius:3px;font:inherit}.config textarea{min-height:65px}.grid td{line-height:1.8;vertical-align:top}.tip{margin:12px 0}h1{font-size:18px;margin-bottom:12px}.section-title{margin-top:18px}.status{padding:12px;background:white;border:1px solid #e5e8ef;margin:12px 0;line-height:1.8;white-space:pre-line}.error{color:#b42318}.paths{overflow:auto}.footer{color:#738096;line-height:1.8;margin-top:15px}</style></head><body><main class="page">
+<h1>AMOS连接配置 · 1108</h1>
+<div class="toolbar"><button class="btn p" id="save">保存（演示）</button><button class="btn" id="test">测试连接（演示）</button></div>
+<div class="tip warn">新版接收适配：待确认。第三方文档说明通用入口仍要求旧信封；五个采购入口须先完成精简报文适配，再启用发送。保存配置不代表接口已就绪。</div>
+<div class="status" id="feedback" role="status" aria-live="polite">以下为虚构演示配置，请勿填写真实密钥。实际账套、组织及令牌授权须成套核准。</div>
+<form id="configForm"><div class="panel"><table class="grid config"><thead><tr><th style="width:24%">配置项</th><th style="width:34%">配置值</th><th>说明</th></tr></thead><tbody>
+<tr><td><label for="base">环境根地址</label><br><code>AMOS_API_BASE</code></td><td><input id="base" type="url" required value="https://amos-test.example.com"></td><td>HTTPS服务根地址，程序拼接下列固定接口路径；示例域名不是真实服务。</td></tr>
+<tr><td><label for="token">集成令牌</label><br><code>AMOS_INTEGRATION_TOKEN</code></td><td><input id="token" type="password" required value="DEMO-TOKEN-PLACEHOLDER" autocomplete="off"></td><td>AMOS线下提供，使用Bearer；有效期、撤销及替换规则由双方确认。服务端私密保存，不进入日志；不是金蝶AppSecret。</td></tr>
+<tr><td><label for="environment">环境标识</label></td><td><select id="environment"><option>测试</option><option>生产</option></select></td><td>环境、根地址、令牌、账套及组织授权成套核对；切换选项不会自动取得生产授权。</td></tr>
+<tr><td><label for="account">绑定来源账套</label><br><code>data.context.accountId</code></td><td><input id="account" required value="DEMO-ACCOUNT"></td><td>填写真实账套ID，与集成授权一致，不能只用账套显示名称。</td></tr>
+<tr><td><label for="organizations">允许同步的组织范围</label></td><td><textarea id="organizations" required>1 | 100 | 演示采购组织</textarea></td><td>演示格式：每行「组织ID | 编码 | 名称」。通知取实际单据组织的id、number、name，校验在授权范围内，不统一填默认组织。列表须双方核准。</td></tr>
+<tr><td><label for="timeout">超时时间（毫秒）</label></td><td><input id="timeout" type="number" min="1" step="1" required value="30000"></td><td>30000为建议值，待联调确认。超时表示接收结果未知，AMOS可能已接收，不能直接记为业务失败。</td></tr>
+<tr><td><label for="retryPolicy">退避重试策略</label></td><td><textarea id="retryPolicy" required>建议退避重试；初始间隔、最大间隔、次数上限待双方确认。</textarea></td><td>429、5xx、超时重投原业务内容；原请求id、sourceVersion如有则保持不变，不随重试递增或重新生成。</td></tr>
+<tr><td><label for="alertOwner">失败告警责任</label></td><td><input id="alertOwner" required value="待双方确认责任人、通知渠道及升级规则"></td><td>重试上限、投递顺序及告警责任待确认，不无限重试。AMOS将已接收通知关联到最终处理结果并告警。</td></tr>
+</tbody></table></div></form>
+<div class="section-title">五个采购接口 · POST</div><div class="panel paths"><table class="grid"><thead><tr><th>接口</th><th>用途</th><th>根地址后拼接路径</th></tr></thead><tbody>
+<tr><td>A-003</td><td>申请完整内容／已有申请状态</td><td><code>/api/open/v1/event-sources/kingdee-procurement/events</code></td></tr>
+<tr><td>A-007</td><td>首次订单／已有订单状态</td><td><code>/api/open/v1/event-sources/kingdee-procurement-orders/events</code></td></tr>
+<tr><td>A-PO-CHANGE</td><td>审核后订单变更</td><td><code>/api/open/v1/event-sources/kingdee-procurement-order-changes/events</code></td></tr>
+<tr><td>A-REQ-DEL</td><td>申请整单／部分行删除</td><td><code>/api/open/v1/event-sources/kingdee-procurement-requisition-deletions/events</code></td></tr>
+<tr><td>A-PO-DEL</td><td>订单整单／部分行独立删除</td><td><code>/api/open/v1/event-sources/kingdee-procurement-order-deletions/events</code></td></tr>
+</tbody></table></div>
+<div class="section-title">接收结果与重试处理</div><div class="panel"><table class="grid"><thead><tr><th>结果</th><th>处理方式</th></tr></thead><tbody>
+<tr><td>202 已接收</td><td>仅表示请求与待处理记录已持久化，保存recordPid；业务判重、更新及冲突由AMOS内部跟踪，金蝶无须新增轮询或回调。</td></tr>
+<tr><td>400</td><td>修正缺少或非法字段，不反查补齐，不盲目重试原错误请求。</td></tr>
+<tr><td>401 / 403</td><td>核对令牌及账套、组织授权，不无限重试。</td></tr>
+<tr><td>409</td><td>接收时发现可选请求id被用于不同业务意图，核查原请求，不简单换id重发；后台业务冲突另记内部结果。</td></tr>
+<tr><td>413</td><td>核准容量或调整申请选择范围，不截断完整订单。</td></tr>
+<tr><td>429 / 5xx / 超时</td><td>按核准策略退避重投原业务内容；超时接收状态未知，保留原追踪信息。</td></tr>
+</tbody></table></div>
+<div class="tip"><b>用户对应：</b>在AMOS用户资料维护kingdeeUserId；完整内容通知的data.userId取业务用户，不在连接页固定一个用户代替所有采购员。data.context.operator只记录本次操作审计。</div>
+<div class="tip"><b>追踪与版本：</b>不强制Idempotency-Key；正文id有现成消息ID则复用，没有可省略。sourceVersion须以核准的真实源版本为依据；已启用版本保护的记录更新不能省略，不能固定填1或用FID代替。</div>
+<p class="footer">保存仅保留当前页面输入，刷新恢复示例；测试仅检查本地格式，不发送请求，不验证真实连通性、令牌或授权。实际连接测试须覆盖地址、认证及账套／组织授权，并与业务成功分开展示。<br>依据：<a href="https://auraboot.feishu.cn/wiki/JqFDwH8adiXE2mkwCI8chWm9nTe" target="_blank" rel="noopener">第三方采购接口文档（11月7日更新）</a>。超时、退避参数、容量、告警和适配状态待确认。</p>
+</main><script src="scripts/amos-config-1108.js"></script></body></html>

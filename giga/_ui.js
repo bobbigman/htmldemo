@@ -129,13 +129,13 @@
     dr.innerHTML =
       '<div class="xy-drawer-hd"><b>新增与修改怎么同步</b><span class="xy-x" data-close>×</span></div>' +
       '<div class="xy-drawer-bd">' +
-      '<div class="xy-tip warn">这是给会议/演示看的说明；正式产品里审核只提示「审核成功」，不会自动同步。</div>' +
-      '<div class="xy-tip">表上常把「新增后同步」和「修改后同步」写成两行；对 AMOS 仍是<strong>同一套' + syncName + '</strong>，不另开接口。触发方式统一为手工点「同步到AMOS」。</div>' +
-      '<div style="margin-bottom:8px">说的是本列表里的' + billName + '（含订单变更单）。</div>' +
+      (isReq ? '<div class="xy-tip warn">这是给会议/演示看的说明；正式产品里审核只提示「审核成功」，不会自动同步。</div>' : '<div class="xy-tip warn">本页为操作演示。正式对接中，首次审核及后续状态变化提交后，须通知AMOS。</div>') +
+      (isReq ? '<div class="xy-tip">表上常把「新增后同步」和「修改后同步」写成两行；对 AMOS 仍是<strong>同一套' + syncName + '</strong>，不另开接口。触发方式统一为手工点「同步到AMOS」。</div>' : '<div class="xy-tip">首次订单及后续状态使用A-007；审核后的内容修改使用A-PO-CHANGE。金蝶直接发送业务内容，AMOS不按单号反查补齐。</div>') +
+      '<div style="margin-bottom:8px">说的是本列表里的' + billName + '及其后续变更。</div>' +
       '<ol class="xy-steps">' +
-      '<li><strong>审核</strong>：只改单据状态，不通知 AMOS。</li>' +
-      '<li><strong>新增后 / 修改后再同步</strong>：勾选单据或明细，点工具栏<strong>同步到AMOS</strong>；AMOS 按身份重取最新内容。</li>' +
-      '<li>不另做「改单同步」按钮；申请/订单/变更单都走同一组合菜单。</li>' +
+      (isReq ? '<li><strong>审核</strong>：只改单据状态，不通知 AMOS。</li>' : '<li><strong>首次同步</strong>：订单须由AMOS采购流程创建并已审核；未关联的金蝶自建订单不自动导入。</li>') +
+      (isReq ? '<li><strong>新增后 / 修改后再同步</strong>：勾选单据或明细，点工具栏<strong>同步到AMOS</strong>；AMOS 按身份重取最新内容。</li>' : '<li><strong>状态变化</strong>：反审核、关闭、作废、恢复时，只更新相应状态，保留已生效的数量和价格。</li>') +
+      (isReq ? '<li>不另做「改单同步」按钮；申请/订单/变更单都走同一组合菜单。</li>' : '<li>内容修改须审核生效后同步变更，明确列出删除的明细；保留已发生的发货和物流记录。</li>') +
       '</ol>' +
       '<div class="xy-tip" style="margin-top:14px">细字段对照可到左轨「字段分析」，或申请/订单下的同步字段页。</div>' +
       '</div>' +
@@ -520,9 +520,9 @@
       return;
     }
     kdPrompt(billNosPhrase(rows) + '，审核成功！', {
-      detail: '未同步到 AMOS。需要同步时请点工具栏「同步到AMOS」。',
+      detail: document.getElementById('poGrid') ? '本页仅演示审核。正式对接须在审核提交后通知AMOS；本页可点“同步到AMOS”演示同步结果。' : '未同步到 AMOS。需要同步时请点工具栏「同步到AMOS」。',
       linkText: '新增与修改怎么同步',
-      linkHint: '手工同步，同一接口',
+      linkHint: document.getElementById('poGrid') ? '首次、状态与变更说明' : '手工同步，同一接口',
       onLink: function () { openAuditSameApiDrawer(); }
     });
   }
@@ -557,7 +557,7 @@
   /**
    * 删除确认：对标金蝶工具栏下黄底「是 / 否」；右侧「查看删除说明」
    */
-  function deleteThenSyncAmos() {
+  function deleteThenSyncAmos(opts) {
     var rows = selectedRows();
     if (!rows.length) {
       toast('请先勾选要删除的单据');
@@ -594,6 +594,10 @@
     bar.querySelector('[data-no]').addEventListener('click', closeKdAsk);
     bar.querySelector('[data-yes]').addEventListener('click', function () {
       closeKdAsk();
+      if (opts && opts.onConfirm) {
+        opts.onConfirm(rows);
+        return;
+      }
       showDeleteProgress(delApi, rows);
     });
     var help = bar.querySelector('[data-help]');
@@ -629,22 +633,26 @@
   function clearSyncFlag() {
     var rows = selectedRows();
     if (!rows.length) {
-      toast('请先勾选要取消标记的行');
+      kdPrompt('请先勾选要取消同步标记的记录。', { error: true });
       return;
     }
-    dlg(
-      '取消同步标记',
-      '<div class="xy-tip">仅清除金蝶侧同步标记/状态，<b>不调用</b> AMOS 删除接口。</div>' +
-      '<div>将对已选 ' + rows.length + ' 行恢复为「未同步」。</div>',
-      {
-        okText: '确认取消标记',
-        onOk: function () {
-          markSync('未同步', '-');
-          closeDlg();
-          kdPrompt('已取消同步标记。');
-        }
-      }
-    );
+    ensureStyle();
+    closeDlg();
+    closeKdMsg();
+    closeKdAsk();
+    var bar = document.createElement('div');
+    bar.className = 'xy-kd-ask';
+    bar.innerHTML = '<div class="xy-kd-ask-main"><div class="xy-kd-ask-ico">!</div><div>' +
+      '<div class="xy-kd-ask-q">你确认要取消选定记录的同步标记?</div>' +
+      '<div class="xy-kd-ask-btns"><button type="button" data-yes>是</button>' +
+      '<button type="button" data-no>否</button></div></div></div>';
+    insertBelowMenubar(bar);
+    bar.querySelector('[data-no]').addEventListener('click', closeKdAsk);
+    bar.querySelector('[data-yes]').addEventListener('click', function () {
+      markSync('未同步', '-', rows);
+      closeKdAsk();
+      kdPrompt('已取消同步标记。');
+    });
   }
 
   function resolvePayloadRows(el) {
@@ -673,13 +681,33 @@
     var where = bill
       ? '当前行：' + bill + ' · 接口 <b>' + apiHint + '</b>。'
       : '接口 <b>' + apiHint + '</b>。';
-    dlg(
+    showInlinePayload(
       '同步报文',
       '<div class="xy-tip">' + where + '演示数据；正式环境从同步日志读取。</div>' +
       '<b>请求</b><div class="xy-mono">' + JSON.stringify(req, null, 2) + '</div>' +
       '<div style="height:10px"></div><b>返回（HTTP 202）</b><div class="xy-mono">' + JSON.stringify(resp, null, 2) + '</div>',
-      { wide: true }
     );
+  }
+
+  function showInlinePayload(title, content) {
+    ensureStyle();
+    closeDlg();
+    closeKdMsg();
+    closeKdAsk();
+    var previous = document.querySelector('.xy-kd-payload');
+    if (previous) previous.remove();
+    var bar = document.createElement('div');
+    bar.className = 'xy-kd-ask xy-kd-payload';
+    bar.style.display = 'block';
+    bar.innerHTML = '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><strong>' + title + '</strong><button class="btn" type="button" data-close>关闭</button></div>' + content;
+    bar.querySelectorAll('.xy-mono, .xy-tip').forEach(function (section) {
+      section.style.background = 'transparent';
+      section.style.color = 'inherit';
+      section.style.border = '0';
+    });
+    insertBelowMenubar(bar);
+    bar.querySelector('[data-close]').onclick = function () { bar.remove(); };
+    document.querySelectorAll('.combo.open').forEach(function (box) { box.classList.remove('open'); });
   }
 
   function toggleCombo(btn) {
@@ -783,6 +811,12 @@
   };
 
   window.xyToast = toast;
+  window.xyKdPrompt = kdPrompt;
+  window.xyKdDialog = dlg;
+  window.xyKdInlinePayload = showInlinePayload;
+  window.xyConfirmDelete = function (onConfirm) {
+    deleteThenSyncAmos({ onConfirm: onConfirm });
+  };
   window.toggleCombo = toggleCombo;
 
   /** 同步日志：点行/勾选改为单选，避免换行后仍带着默认删除行 */
